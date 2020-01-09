@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  calendar: false
+  display: false
+  map_display: false
+  booking: false
+  project: one
+
+two:
+  calendar: false
+  display: false
+  map_display: false
+  booking: false
+  project: two
