@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dashboard: false
+  acitivty_feed: false
+  uploading: false
+  profiles: false
+  transactional_email: false
+  tags: false
+  rating: false
+  audio_video: false
+  searching: false
+  project: one
+
+two:
+  dashboard: false
+  acitivty_feed: false
+  uploading: false
+  profiles: false
+  transactional_email: false
+  tags: false
+  rating: false
+  audio_video: false
+  searching: false
+  project: two

@@ -1,6 +1,6 @@
 class Api::BillingsController < ApplicationController
   before_action :set_project
-  before_action :set_billing
+  before_action :billing_params
 
   def index
     render json: @project.billings
@@ -35,7 +35,7 @@ class Api::BillingsController < ApplicationController
     @project = Project.find(params[:project_id])
   end
 
-  def set_billing
+  def billing_params
     params.require(:billing).permit(:payment_processing, :shopping_cart, :user_marketplace, :product_managment)
   end
 end
