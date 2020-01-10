@@ -26,6 +26,45 @@ ActiveRecord::Schema.define(version: 2020_01_10_013827) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_billings_on_project_id"
   end
+  
+  create_table "accounts", force: :cascade do |t|
+    t.boolean "email_pass"
+    t.boolean "facebook"
+    t.boolean "twitter"
+    t.boolean "google"
+    t.boolean "linkedin"
+    t.boolean "github"
+    t.boolean "invitation"
+    t.boolean "multi_account"
+    t.boolean "subdomain"
+    t.boolean "custom"
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_accounts_on_project_id"
+  end
+
+  create_table "date_locations", force: :cascade do |t|
+    t.boolean "calendar"
+    t.boolean "display"
+    t.boolean "map_display"
+    t.boolean "booking"
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_date_locations_on_project_id"
+  end
+
+  create_table "integrations", force: :cascade do |t|
+    t.boolean "third_party"
+    t.boolean "messaging"
+    t.boolean "api_integrate"
+    t.boolean "phone_number"
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_integrations_on_project_id"
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string "name"
@@ -94,6 +133,9 @@ ActiveRecord::Schema.define(version: 2020_01_10_013827) do
   end
 
   add_foreign_key "billings", "projects"
+  add_foreign_key "accounts", "projects"
+  add_foreign_key "date_locations", "projects"
+  add_foreign_key "integrations", "projects"
   add_foreign_key "projects", "users"
   add_foreign_key "securities", "projects"
   add_foreign_key "user_contents", "projects"
