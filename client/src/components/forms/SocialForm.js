@@ -4,7 +4,7 @@ import Avatar from '@material-ui/core/Avatar';
 
 export default class SocialForm extends Component {
 
-state = { messaging: false, forums:false, sharing:false, facebook_graph:false }
+state = { messaging: false, forums: false, sharing: false, facebook_graph: false }
 
 
   toggleMessaging = () => {

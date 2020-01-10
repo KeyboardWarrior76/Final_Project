@@ -4,7 +4,7 @@ import Avatar from '@material-ui/core/Avatar';
 
 export default class IntegrationForm extends Component {
 
-state = { third_party: false, api_integrate:false, messaging:false, phone_number:false }
+state = { third_party: false, api_integrate: false, messaging: false, phone_number: false }
 
 
   toggleThird = () => {

@@ -1,43 +1,81 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React from 'react'
+import { AuthConsumer, } from "../../providers/AuthProvider";
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import ToolBar from '@material-ui/core/ToolBar';
 import IconButton from '@material-ui/core/IconButton';
-import HomeIcon from '@material-ui/icons/Home';
-import {NavLink} from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import { Link, withRouter, } from 'react-router-dom'
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
+class Navbar extends React.Component {
 
-export default function ButtonAppBar() {
-  const classes = useStyles();
+  rightNavItems = () => {
+    const { auth: { user, handleLogout, }, location, } = this.props;
 
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <NavLink to='/' activeStyle={{ color: 'inherit' }}>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-              <HomeIcon />
-            </IconButton>
-          </NavLink>
-          <Typography variant="h6" className={classes.title}>
-            App Estimator
-          </Typography>
-          <Button color="inherit">Login/Register</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+    if (user) {
+      return (
+        <ToolBar position='right'>
+          <Button
+            name='logout'
+            onClick={ () => handleLogout(this.props.history) }>
+            Logout
+          </Button>
+        </ToolBar>
+      )
+    } else {
+      return (
+        <ToolBar position='right'>
+          <Link to='/login'>
+            <Button
+              id='login'
+              name='login'
+              active={location.pathname === '/login'}>
+              Login
+            </Button>
+          </Link>
+          <Link to='/register'>
+            <Button
+              id='register'
+              name='register'
+              active={location.pathname === '/register'}>
+              Register
+            </Button>
+          </Link>
+        </ToolBar>
+      )
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <AppBar position='static'>
+          <Link to='/'>
+            <ToolBar>
+              <Button
+                name='home'
+                id='home'
+                active={this.props.location.pathname === '/'}>
+                Home
+              </Button>
+            </ToolBar>
+          </Link>
+          { this.rightNavItems() }
+        </AppBar>
+      </div>
+    )
+  }
 }
+
+export class ConnectedNavbar extends React.Component {
+  render() {
+    return (
+      <AuthConsumer>
+        { auth =>
+          <Navbar { ...this.props } auth={auth} />
+        }
+      </AuthConsumer>
+    )
+  }
+}
+
+export default withRouter(ConnectedNavbar);
