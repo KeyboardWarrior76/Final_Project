@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_010503) do
+ActiveRecord::Schema.define(version: 2020_01_10_013827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 2020_01_10_010503) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "securities", force: :cascade do |t|
+    t.boolean "certificate"
+    t.boolean "factor_authentication"
+    t.string "dos_protection"
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_securities_on_project_id"
   end
 
   create_table "user_contents", force: :cascade do |t|
@@ -85,5 +95,6 @@ ActiveRecord::Schema.define(version: 2020_01_10_010503) do
 
   add_foreign_key "billings", "projects"
   add_foreign_key "projects", "users"
+  add_foreign_key "securities", "projects"
   add_foreign_key "user_contents", "projects"
 end
