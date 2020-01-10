@@ -10,45 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_013827) do
+ActiveRecord::Schema.define(version: 2020_01_10_035713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "billings", force: :cascade do |t|
-    t.boolean "subscription_plan"
-    t.boolean "payment_processing"
-    t.boolean "shopping_cart"
-    t.boolean "user_marketplace"
-    t.boolean "product_managment"
-    t.bigint "project_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["project_id"], name: "index_billings_on_project_id"
-  end
-  
   create_table "accounts", force: :cascade do |t|
-    t.boolean "email_pass"
-    t.boolean "facebook"
-    t.boolean "twitter"
-    t.boolean "google"
-    t.boolean "linkedin"
-    t.boolean "github"
-    t.boolean "invitation"
-    t.boolean "multi_account"
-    t.boolean "subdomain"
-    t.boolean "custom"
+    t.boolean "email_pass", default: false
+    t.boolean "facebook", default: false
+    t.boolean "twitter", default: false
+    t.boolean "google", default: false
+    t.boolean "linkedin", default: false
+    t.boolean "github", default: false
+    t.boolean "invitation", default: false
+    t.boolean "multi_account", default: false
+    t.boolean "subdomain", default: false
+    t.boolean "custom", default: false
     t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_accounts_on_project_id"
   end
 
+  create_table "billings", force: :cascade do |t|
+    t.boolean "subscription_plan", default: false
+    t.boolean "payment_processing", default: false
+    t.boolean "shopping_cart", default: false
+    t.boolean "user_marketplace", default: false
+    t.boolean "product_managment", default: false
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_billings_on_project_id"
+  end
+
   create_table "date_locations", force: :cascade do |t|
-    t.boolean "calendar"
-    t.boolean "display"
-    t.boolean "map_display"
-    t.boolean "booking"
+    t.boolean "calendar", default: false
+    t.boolean "display", default: false
+    t.boolean "map_display", default: false
+    t.boolean "booking", default: false
     t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -56,10 +56,10 @@ ActiveRecord::Schema.define(version: 2020_01_10_013827) do
   end
 
   create_table "integrations", force: :cascade do |t|
-    t.boolean "third_party"
-    t.boolean "messaging"
-    t.boolean "api_integrate"
-    t.boolean "phone_number"
+    t.boolean "third_party", default: false
+    t.boolean "messaging", default: false
+    t.boolean "api_integrate", default: false
+    t.boolean "phone_number", default: false
     t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -77,25 +77,25 @@ ActiveRecord::Schema.define(version: 2020_01_10_013827) do
   end
 
   create_table "securities", force: :cascade do |t|
-    t.boolean "certificate"
-    t.boolean "factor_authentication"
-    t.string "dos_protection"
+    t.boolean "certificate", default: false
+    t.boolean "factor_authentication", default: false
     t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "dos_protection", default: false
     t.index ["project_id"], name: "index_securities_on_project_id"
   end
 
   create_table "user_contents", force: :cascade do |t|
-    t.boolean "dashboard"
-    t.boolean "acitivty_feed"
-    t.boolean "uploading"
-    t.boolean "profiles"
-    t.boolean "transactional_email"
-    t.boolean "tags"
-    t.boolean "rating"
-    t.boolean "audio_video"
-    t.boolean "searching"
+    t.boolean "dashboard", default: false
+    t.boolean "acitivty_feed", default: false
+    t.boolean "uploading", default: false
+    t.boolean "profiles", default: false
+    t.boolean "transactional_email", default: false
+    t.boolean "tags", default: false
+    t.boolean "rating", default: false
+    t.boolean "audio_video", default: false
+    t.boolean "searching", default: false
     t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -132,8 +132,8 @@ ActiveRecord::Schema.define(version: 2020_01_10_013827) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
-  add_foreign_key "billings", "projects"
   add_foreign_key "accounts", "projects"
+  add_foreign_key "billings", "projects"
   add_foreign_key "date_locations", "projects"
   add_foreign_key "integrations", "projects"
   add_foreign_key "projects", "users"
