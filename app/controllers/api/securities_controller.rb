@@ -39,4 +39,4 @@ class Api::SecuritiesController < ApplicationController
     params.require(:security).permit(:certificate, :factor_authentication, :dos_protection)
   end
 end
-end
+
