@@ -36,6 +36,6 @@ class Api::AppsController < ApplicationController
   end
 
   def app_params
-    params.require(:app).permit(:email_pass, :facebook, :twitter, :google, :linkedin, :github, :invitation, :multi_app, :subdomain, :custom)
+    params.require(:app).permit(:ui_level, :size)
   end
 end

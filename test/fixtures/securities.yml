@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  certificate: false
+  factor_authentication: false
+  dos_protection: false
+  project: one
+
+two:
+  certificate: false
+  factor_authentication: false
+  dos_protection: false
+  project: two

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_14_013929) do
+ActiveRecord::Schema.define(version: 2020_01_14_024800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,18 @@ ActiveRecord::Schema.define(version: 2020_01_14_013929) do
     t.index ["project_id"], name: "index_apps_on_project_id"
   end
 
+  create_table "billings", force: :cascade do |t|
+    t.boolean "subscription_plans"
+    t.boolean "payment_processing"
+    t.boolean "shopping_cart"
+    t.boolean "user_marketplace"
+    t.boolean "product_management"
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_billings_on_project_id"
+  end
+
   create_table "date_locations", force: :cascade do |t|
     t.boolean "calendar"
     t.boolean "display"
@@ -69,8 +81,8 @@ ActiveRecord::Schema.define(version: 2020_01_14_013929) do
 
   create_table "integrations", force: :cascade do |t|
     t.boolean "third_party"
-    t.boolean "messaging"
     t.boolean "api_integrate"
+    t.boolean "messaging"
     t.boolean "phone_number"
     t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -88,6 +100,16 @@ ActiveRecord::Schema.define(version: 2020_01_14_013929) do
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
+  create_table "securities", force: :cascade do |t|
+    t.boolean "certificate"
+    t.boolean "factor_authentication"
+    t.boolean "dos_protection"
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_securities_on_project_id"
+  end
+
   create_table "socials", force: :cascade do |t|
     t.boolean "facebook_graph"
     t.boolean "sharing"
@@ -97,6 +119,22 @@ ActiveRecord::Schema.define(version: 2020_01_14_013929) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_socials_on_project_id"
+  end
+
+  create_table "user_contents", force: :cascade do |t|
+    t.boolean "dashboard"
+    t.boolean "activity_feed"
+    t.boolean "uploading"
+    t.boolean "profiles"
+    t.boolean "transactional_emails"
+    t.boolean "tags"
+    t.boolean "ratings"
+    t.boolean "audio_video"
+    t.boolean "searching"
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_user_contents_on_project_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -132,8 +170,11 @@ ActiveRecord::Schema.define(version: 2020_01_14_013929) do
   add_foreign_key "accounts", "projects"
   add_foreign_key "analytics", "projects"
   add_foreign_key "apps", "projects"
+  add_foreign_key "billings", "projects"
   add_foreign_key "date_locations", "projects"
   add_foreign_key "integrations", "projects"
   add_foreign_key "projects", "users"
+  add_foreign_key "securities", "projects"
   add_foreign_key "socials", "projects"
+  add_foreign_key "user_contents", "projects"
 end

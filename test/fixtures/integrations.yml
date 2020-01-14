@@ -2,14 +2,14 @@
 
 one:
   third_party: false
-  messaging: false
   api_integrate: false
+  messaging: false
   phone_number: false
   project: one
 
 two:
   third_party: false
-  messaging: false
   api_integrate: false
+  messaging: false
   phone_number: false
   project: two

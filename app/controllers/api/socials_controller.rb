@@ -36,6 +36,6 @@ class Api::SocialsController < ApplicationController
   end
 
   def social_params
-    params.require(:social).permit(:email_pass, :facebook, :twitter, :google, :linkedin, :github, :invitation, :multi_social, :subdomain, :custom)
+    params.require(:social).permit(:facebook_graph, :sharing, :forums, :messaging)
   end
 end

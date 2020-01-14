@@ -36,6 +36,6 @@ class Api::AnalyticsController < ApplicationController
   end
 
   def analytic_params
-    params.require(:analytic).permit(:email_pass, :facebook, :twitter, :google, :linkedin, :github, :invitation, :multi_analytic, :subdomain, :custom)
+    params.require(:analytic).permit(:cms, :admin, :moderation, :intercom, :crash_report, :performance, :multilingual)
   end
 end
