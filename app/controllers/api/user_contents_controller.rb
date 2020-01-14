@@ -39,4 +39,4 @@ class Api::UserContentsController < ApplicationController
     params.require(:user_content).permit(:acitivty_feed, :uploading, :profiles, :transactional_email, :tags, :rating,:audio_video, :searching)
   end
 end
-end
+
