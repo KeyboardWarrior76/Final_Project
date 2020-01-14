@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_09_053528) do
+ActiveRecord::Schema.define(version: 2020_01_14_013929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,30 @@ ActiveRecord::Schema.define(version: 2020_01_09_053528) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_accounts_on_project_id"
+  end
+
+  create_table "analytics", force: :cascade do |t|
+    t.boolean "cms"
+    t.boolean "admin"
+    t.boolean "moderation"
+    t.boolean "intercom"
+    t.boolean "usage"
+    t.boolean "crash_report"
+    t.boolean "performance"
+    t.boolean "multilingual"
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_analytics_on_project_id"
+  end
+
+  create_table "apps", force: :cascade do |t|
+    t.string "ui_level"
+    t.string "size"
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_apps_on_project_id"
   end
 
   create_table "date_locations", force: :cascade do |t|
@@ -64,6 +88,17 @@ ActiveRecord::Schema.define(version: 2020_01_09_053528) do
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
+  create_table "socials", force: :cascade do |t|
+    t.boolean "facebook_graph"
+    t.boolean "sharing"
+    t.boolean "forums"
+    t.boolean "messaging"
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_socials_on_project_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false
@@ -95,7 +130,10 @@ ActiveRecord::Schema.define(version: 2020_01_09_053528) do
   end
 
   add_foreign_key "accounts", "projects"
+  add_foreign_key "analytics", "projects"
+  add_foreign_key "apps", "projects"
   add_foreign_key "date_locations", "projects"
   add_foreign_key "integrations", "projects"
   add_foreign_key "projects", "users"
+  add_foreign_key "socials", "projects"
 end

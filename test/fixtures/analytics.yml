@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cms: false
+  admin: false
+  moderation: false
+  intercom: false
+  usage: false
+  crash_report: false
+  performance: false
+  multilingual: false
+  project: one
+
+two:
+  cms: false
+  admin: false
+  moderation: false
+  intercom: false
+  usage: false
+  crash_report: false
+  performance: false
+  multilingual: false
+  project: two

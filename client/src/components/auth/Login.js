@@ -29,7 +29,7 @@ class Login extends React.Component {
     return (
       <Container>
         <Typography variant='h2' textAlign='center'>Login</Typography>
-        <FormGroup onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
 
           <FormControl>
             <InputLabel htmlFor="emailInput">Email</InputLabel>
@@ -46,14 +46,13 @@ class Login extends React.Component {
               id="passInput"
               name='password'
               value={password}
+              type='password'
               onChange={this.handleChange} />
           </FormControl>
 
-          <div align='center'>
-            <Button primary type='submit'>Submit</Button>
-          </div>
+          <Button color='primary' type='submit'>Submit</Button>
 
-        </FormGroup>
+        </form>
       </Container>
     )
   }
