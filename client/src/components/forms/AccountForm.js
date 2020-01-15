@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import Fab from '@material-ui/core/Fab';
+import Button from '@material-ui/core/Button';
 import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
 class AccountForm extends Component {
 
   render() {
-    const { value: { categories, toggleCategoryItem } } = this.props;
   return(
     <div align='center'>
       <h3><p>Accounts & Users</p></h3>
@@ -65,12 +65,9 @@ class AccountForm extends Component {
       } variant="extended">
         Subdomain
       </Fab>
-      <Fab onClick={() => toggleCategoryItem(
-        categories.account,
-        categories.account.custom)
-      } variant="extended">
+      <Button onClick={() => this.props.toggleCategoryItem()} variant="extended">
         Custom
-      </Fab>
+      </Button>
     </div>
     )
   }
@@ -80,7 +77,7 @@ export default class ConnectedAccountForm extends React.Component {
   render() {
     return (
       <ProjectConsumer>
-        { value => <AccountForm {...this.props} value={value} />}
+        { value => <AccountForm {...this.props} value={value} toggleCategoryItem={value.toggleCategoryItem} />}
       </ProjectConsumer>
     )
   }

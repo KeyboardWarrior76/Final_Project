@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const ProjectContext = React.createContext();
 export const ProjectConsumer = ProjectContext.Consumer;
+
 export default class ProjectProvider extends Component {
 
   state = { project: null, estimate: 0, isNew: true,
@@ -76,8 +77,10 @@ export default class ProjectProvider extends Component {
 
   }
 
-  toggleCategoryItem = (category, property) => {
-    this.setState({ categories: {...this.state.categories, [category]: {[property]: !property} } })
+  toggleCategoryItem = () => {
+    const {account} = this.state.categories
+    const {custom} = this.state.categories.account
+    this.setState({ categories: {account: {custom: !custom}, ...this.state.categories} })
   }
 
   render(){

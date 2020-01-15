@@ -48,17 +48,20 @@ class Navbar extends React.Component {
     return (
       <div>
         <AppBar position='static'>
-          <Link to='/'>
-            <ToolBar>
+
+          <ToolBar>
+            <Link to='/'>
               <Button
+                edge='start'
                 name='home'
                 id='home'
                 active={this.props.location.pathname ? '/' : undefined}>
                 Home
               </Button>
-            </ToolBar>
-          </Link>
-          { this.rightNavItems() }
+            </Link>
+            { this.rightNavItems() }
+          </ToolBar>
+
         </AppBar>
       </div>
     )
