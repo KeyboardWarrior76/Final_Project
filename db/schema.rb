@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_14_024800) do
+ActiveRecord::Schema.define(version: 2020_01_15_030245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2020_01_14_024800) do
     t.boolean "payment_processing", default: false
     t.boolean "shopping_cart", default: false
     t.boolean "user_marketplace", default: false
-    t.boolean "product_managment", default: false
+    t.boolean "product_management", default: false
     t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -81,8 +81,8 @@ ActiveRecord::Schema.define(version: 2020_01_14_024800) do
 
   create_table "integrations", force: :cascade do |t|
     t.boolean "third_party", default: false
-    t.boolean "messaging", default: false
     t.boolean "api_integrate", default: false
+    t.boolean "messaging", default: false
     t.boolean "phone_number", default: false
     t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -123,9 +123,9 @@ ActiveRecord::Schema.define(version: 2020_01_14_024800) do
 
   create_table "user_contents", force: :cascade do |t|
     t.boolean "dashboard", default: false
-    t.boolean "acitivty_feed", default: false
+    t.boolean "activity_feed", default: false
     t.boolean "uploading", default: false
-    t.boolean "profiles", default: false
+    t.boolean "profile", default: false
     t.boolean "transactional_email", default: false
     t.boolean "tags", default: false
     t.boolean "rating", default: false

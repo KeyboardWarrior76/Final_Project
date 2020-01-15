@@ -1,7 +1,7 @@
 class CreateBillings < ActiveRecord::Migration[6.0]
   def change
     create_table :billings do |t|
-      t.boolean :subscription_plans
+      t.boolean :subscription_plan
       t.boolean :payment_processing
       t.boolean :shopping_cart
       t.boolean :user_marketplace

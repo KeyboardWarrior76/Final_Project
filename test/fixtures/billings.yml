@@ -5,7 +5,7 @@ one:
   payment_processing: false
   shopping_cart: false
   user_marketplace: false
-  product_managment: false
+  product_management: false
   project: one
 
 two:
@@ -13,5 +13,5 @@ two:
   payment_processing: false
   shopping_cart: false
   user_marketplace: false
-  product_managment: false
+  product_management: false
   project: two
