@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
 import SocialForm from './forms/SocialForm';
 import UserContentForm from './forms/UserContentForm';
 import SecurityForm from './forms/SecurityForm';

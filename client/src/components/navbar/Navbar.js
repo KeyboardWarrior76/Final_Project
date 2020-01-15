@@ -2,7 +2,6 @@ import React from 'react'
 import { AuthConsumer, } from "../../providers/AuthProvider";
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/ToolBar';
-import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import { Link, withRouter, } from 'react-router-dom'
 
@@ -28,7 +27,7 @@ class Navbar extends React.Component {
             <Button
               id='login'
               name='login'
-              active={location.pathname === '/login'}>
+              active={location.pathname ? '/login' : undefined}>
               Login
             </Button>
           </Link>
@@ -36,7 +35,7 @@ class Navbar extends React.Component {
             <Button
               id='register'
               name='register'
-              active={location.pathname === '/register'}>
+              active={location.pathname ? '/register' : undefined}>
               Register
             </Button>
           </Link>
@@ -54,7 +53,7 @@ class Navbar extends React.Component {
               <Button
                 name='home'
                 id='home'
-                active={this.props.location.pathname === '/'}>
+                active={this.props.location.pathname ? '/' : undefined}>
                 Home
               </Button>
             </ToolBar>

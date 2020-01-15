@@ -21,9 +21,9 @@ class AddDefaultsToModels < ActiveRecord::Migration[6.0]
     change_column_default :securities, :certificate, from: nil, to: false
     change_column_default :securities, :factor_authentication, from: nil, to: false
     change_column_default :user_contents, :dashboard, from: nil, to: false
-    change_column_default :user_contents, :acitivty_feed, from: nil, to: false
+    change_column_default :user_contents, :activity_feed, from: nil, to: false
     change_column_default :user_contents, :uploading, from: nil, to: false
-    change_column_default :user_contents, :profiles, from: nil, to: false
+    change_column_default :user_contents, :profile, from: nil, to: false
     change_column_default :user_contents, :transactional_email, from: nil, to: false
     change_column_default :user_contents, :tags, from: nil, to: false
     change_column_default :user_contents, :rating, from: nil, to: false

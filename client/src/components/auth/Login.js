@@ -5,7 +5,6 @@ import Typography from '@material-ui/core/Typography';
 import FormGroup from '@material-ui/core/FormGroup';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 
@@ -28,7 +27,7 @@ class Login extends React.Component {
 
     return (
       <Container>
-        <Typography variant='h2' textAlign='center'>Login</Typography>
+        <Typography variant='h2'>Login</Typography>
         <form onSubmit={this.handleSubmit}>
 
           <FormControl>

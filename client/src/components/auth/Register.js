@@ -34,7 +34,7 @@ class Register extends React.Component {
 
     return (
       <Container>
-        <Typography variant='h2' textAlign='center'>Register</Typography>
+        <Typography variant='h2'>Register</Typography>
         <form onSubmit={this.handleSubmit}>
 
           <FormControl>
