@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 const ProjectContext = React.createContext();
-export const ProjectConsumer = AuthContext.Consumer;
+export const ProjectConsumer = ProjectContext.Consumer;
 export default class ProjectProvider extends Component {
 
   state = { project: null, estimate: 0, isNew: true,
@@ -52,7 +52,7 @@ export default class ProjectProvider extends Component {
         uploading: false, profile: false,
         transactional_email: false, tags: false,
         rating: false, audio_video: false, searching: false
-      },
+      }
     }
   }
 
@@ -72,18 +72,19 @@ export default class ProjectProvider extends Component {
 
   }
 
-  updateProject = () => {
+  updateProject = (category, property) => {
 
   }
 
-  toggleCategoryItem = () => {
-
+  toggleCategoryItem = (category, property) => {
+    this.setState({ categories: {...this.state.categories, [category]: {[property]: !property} } })
   }
 
   render(){
     return(
       <ProjectContext.Provider value={{
         ...this.state,
+        toggleCategoryItem: this.toggleCategoryItem
       }}>
         { this.props.children }
       </ProjectContext.Provider>
