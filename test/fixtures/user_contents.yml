@@ -2,24 +2,24 @@
 
 one:
   dashboard: false
-  activity_feed: false
+  acitivty_feed: false
   uploading: false
   profiles: false
-  transactional_emails: false
+  transactional_email: false
   tags: false
-  ratings: false
+  rating: false
   audio_video: false
   searching: false
   project: one
 
 two:
   dashboard: false
-  activity_feed: false
+  acitivty_feed: false
   uploading: false
   profiles: false
-  transactional_emails: false
+  transactional_email: false
   tags: false
-  ratings: false
+  rating: false
   audio_video: false
   searching: false
   project: two

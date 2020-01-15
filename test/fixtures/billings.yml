@@ -1,17 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  subscription_plans: false
+  subscription_plan: false
   payment_processing: false
   shopping_cart: false
   user_marketplace: false
-  product_management: false
+  product_managment: false
   project: one
 
 two:
-  subscription_plans: false
+  subscription_plan: false
   payment_processing: false
   shopping_cart: false
   user_marketplace: false
-  product_management: false
+  product_managment: false
   project: two

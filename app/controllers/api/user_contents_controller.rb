@@ -36,6 +36,6 @@ class Api::UserContentsController < ApplicationController
   end
 
   def user_content_params
-    params.require(:user_content).permit(:dashboard, :activity_feed, :uploading, :profiles, :transactional_emails, :tags, :ratings, :audio_video, :searching)
+    params.require(:user_content).permit(:dashboard, :acitivty_feed, :uploading, :profiles, :transactional_email, :tags, :rating,:audio_video, :searching)
   end
 end
