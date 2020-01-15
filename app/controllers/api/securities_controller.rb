@@ -1,6 +1,6 @@
 class Api::SecuritiesController < ApplicationController
+
   before_action :set_project
-  before_action :security_params
 
   def index
     render json: @project.securities
@@ -26,7 +26,7 @@ class Api::SecuritiesController < ApplicationController
 
   def destroy
     @project.securities.find(params[:id]).destroy
-    render json: {message: 'security has been destroyed'}
+    render json: {message: 'security has been wrecked, bro'}
   end
 
   private
@@ -39,4 +39,3 @@ class Api::SecuritiesController < ApplicationController
     params.require(:security).permit(:certificate, :factor_authentication, :dos_protection)
   end
 end
-

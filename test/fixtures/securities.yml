@@ -3,11 +3,11 @@
 one:
   certificate: false
   factor_authentication: false
-  dos_protection: MyString
+  dos_protection: false
   project: one
 
 two:
   certificate: false
   factor_authentication: false
-  dos_protection: MyString
+  dos_protection: false
   project: two

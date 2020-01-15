@@ -1,6 +1,6 @@
 class Api::UserContentsController < ApplicationController
+
   before_action :set_project
-  before_action :user_content_params
 
   def index
     render json: @project.user_contents
@@ -26,7 +26,7 @@ class Api::UserContentsController < ApplicationController
 
   def destroy
     @project.user_contents.find(params[:id]).destroy
-    render json: {message: 'user_content has been destroyed'}
+    render json: {message: 'user_content has been wrecked, bro'}
   end
 
   private
@@ -36,7 +36,6 @@ class Api::UserContentsController < ApplicationController
   end
 
   def user_content_params
-    params.require(:user_content).permit(:acitivty_feed, :uploading, :profiles, :transactional_email, :tags, :rating,:audio_video, :searching)
+    params.require(:user_content).permit(:dashboard, :acitivty_feed, :uploading, :profiles, :transactional_email, :tags, :rating,:audio_video, :searching)
   end
 end
-

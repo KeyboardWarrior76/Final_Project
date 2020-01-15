@@ -1,6 +1,6 @@
 class Api::BillingsController < ApplicationController
   before_action :set_project
-  
+
 
   def index
     render json: @project.billings
@@ -26,7 +26,7 @@ class Api::BillingsController < ApplicationController
 
   def destroy
     @project.billings.find(params[:id]).destroy
-    render json: {message: 'billing has been destroyed'}
+    render json: {message: 'billing has been wrecked, bro'}
   end
 
   private
@@ -36,7 +36,6 @@ class Api::BillingsController < ApplicationController
   end
 
   def billing_params
-    params.require(:billing).permit(:payment_processing, :shopping_cart, :user_marketplace, :product_managment)
+    params.require(:billing).permit(:subscription_plan, :payment_processing, :shopping_cart, :user_marketplace, :product_management)
   end
 end
-
