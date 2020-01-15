@@ -76,7 +76,7 @@ export default class ProjectProvider extends Component {
 
   }
 
-  updateCategory = () => {
+  toggleCategoryItem = () => {
 
   }
 
