@@ -4,10 +4,10 @@ class CreateUserContents < ActiveRecord::Migration[6.0]
       t.boolean :dashboard
       t.boolean :activity_feed
       t.boolean :uploading
-      t.boolean :profiles
-      t.boolean :transactional_emails
+      t.boolean :profile
+      t.boolean :transactional_email
       t.boolean :tags
-      t.boolean :ratings
+      t.boolean :rating
       t.boolean :audio_video
       t.boolean :searching
       t.belongs_to :project, null: false, foreign_key: true

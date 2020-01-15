@@ -7,7 +7,6 @@ import Estimator from './components/Estimator';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import FetchUser from './components/auth/FetchUser';
-import Container from '@material-ui/core/Container';
 
 const App = () => (
 
