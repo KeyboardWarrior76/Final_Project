@@ -27,7 +27,7 @@ render() {
 
 return(
     <div align='center'>
-      <p>Integration</p>
+      <h3><p>Integration</p></h3>
       <Button onClick={this.toggleThird}><Avatar>T</Avatar></Button>
       <Button onClick={this.toggleApi}><Avatar>A</Avatar></Button>
       <Button onClick={this.toggleMessaging}><Avatar>M</Avatar></Button>

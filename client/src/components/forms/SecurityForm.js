@@ -23,7 +23,7 @@ render() {
 
 return(
     <div align='center'>
-      <p>Security</p>
+      <h3><p>Security</p></h3>
       <Button onClick={this.toggleCertificate}><Avatar label='c'>C</Avatar></Button>
       <Button onClick={this.toggleFactor}><Avatar>F</Avatar></Button>
       <Button onClick={this.toggleDos}><Avatar>D</Avatar></Button>

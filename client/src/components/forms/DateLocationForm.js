@@ -27,7 +27,7 @@ render() {
 
 return(
     <div align='center'>
-      <p>Date & Location</p>
+      <h3><p>Date & Location</p></h3>
       <Button onClick={this.toggleCalendar}><Avatar>Ca</Avatar></Button>
       <Button onClick={this.toggleDisplay}><Avatar>DC</Avatar></Button>
       <Button onClick={this.toggleMap}><Avatar>Ma</Avatar></Button>

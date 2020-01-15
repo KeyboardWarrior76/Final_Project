@@ -54,7 +54,7 @@ render() {
 
 return(
     <div align='center'>
-      <p>User Content</p>
+      <h3><p>User Content</p></h3>
       <Button onClick={this.toggleDashboard}><Avatar>Da</Avatar></Button>
       <Button onClick={this.toggleActivityFeed}><Avatar>AF</Avatar></Button>
       <Button onClick={this.toggleUploading}><Avatar>Up</Avatar></Button>

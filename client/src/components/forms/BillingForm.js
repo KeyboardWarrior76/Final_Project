@@ -31,7 +31,7 @@ export default class BillingForm extends Component {
 
   return(
       <div align='center'>
-        <p>Billing</p>
+        <h3><p>Billing</p></h3>
         <Button onClick={this.toggleSubscription}><Avatar>Su</Avatar></Button>
         <Button onClick={this.togglePayment}><Avatar>Pa</Avatar></Button>
         <Button onClick={this.toggleShopping}><Avatar>Sh</Avatar></Button>

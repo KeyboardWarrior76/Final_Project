@@ -27,7 +27,7 @@ render() {
 
 return(
     <div align='center'>
-      <p>Social</p>
+      <h3><p>Social</p></h3>
       <Button onClick={this.toggleMessaging}><Avatar>M</Avatar></Button>
       <Button onClick={this.toggleForums}><Avatar>Fo</Avatar></Button>
       <Button onClick={this.toggleSharing}><Avatar>Sh</Avatar></Button>

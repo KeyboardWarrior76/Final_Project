@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
+import Fab from '@material-ui/core/Fab';
 
 export default class AnalyticForm extends Component {
 
@@ -49,15 +48,16 @@ render() {
 
 return(
     <div align='center'>
-      <p>Analytics</p>
-      <Button onClick={this.toggleCms}><Avatar>C</Avatar></Button>
-      <Button onClick={this.toggleAdmin}><Avatar>Ad</Avatar></Button>
-      <Button onClick={this.toggleModeration}><Avatar>Mo</Avatar></Button>
-      <Button onClick={this.toggleIntercom}><Avatar>In</Avatar></Button>
-      <Button onClick={this.toggleUsage}><Avatar>Us</Avatar></Button>
-      <Button onClick={this.toggleCrash}><Avatar>Cr</Avatar></Button>
-      <Button onClick={this.togglePerformance}><Avatar>Pm</Avatar></Button>
-      <Button onClick={this.toggleMulti}><Avatar>Mu</Avatar></Button>
+      <h3><p>Analytics</p></h3>
+      <Fab onClick={this.toggleCms} variant="extended">CMS</Fab>
+      <Fab onClick={this.toggleAdmin} variant="extended">Admin</Fab>
+      <Fab onClick={this.toggleModeration} variant="extended">Moderation</Fab>
+      <Fab onClick={this.toggleIntercom} variant="extended">Intercoms</Fab>
+      <p></p>
+      <Fab onClick={this.toggleUsage} variant="extended">Usage Data</Fab>
+      <Fab onClick={this.toggleCrash} variant="extended">Crash Reports</Fab>
+      <Fab onClick={this.togglePerformance} variant="extended">Performance</Fab>
+      <Fab onClick={this.toggleMulti} variant="extended">Multi-lingual</Fab>
     </div>
     )
   }

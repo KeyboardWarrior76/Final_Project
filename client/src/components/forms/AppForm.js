@@ -35,13 +35,13 @@ export default class AppForm extends Component {
   return(
     <>
       <div align='center'>
-        <p>App Size</p>
+        <h3><p>App Size</p></h3>
         <Button onClick={this.selectSmall}><Avatar>Sm</Avatar></Button>
         <Button onClick={this.selectMedium}><Avatar>Md</Avatar></Button>
         <Button onClick={this.selectLarge}><Avatar>Lg</Avatar></Button>
       </div>
       <div align='center'>
-        <p>UI Level</p>
+        <h3><p>UI Level</p></h3>
         <Button onClick={this.selectMvp}><Avatar>MV</Avatar></Button>
         <Button onClick={this.selectBasic}><Avatar>Bs</Avatar></Button>
         <Button onClick={this.selectPolished}><Avatar>Pl</Avatar></Button>

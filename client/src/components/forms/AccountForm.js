@@ -1,74 +1,76 @@
 import React, {Component} from 'react';
-import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
 import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
 class AccountForm extends Component {
 
   render() {
-    const{ categories, toggle } = this.props
+    const { value: { categories, toggleCategoryItem } } = this.props;
   return(
     <div align='center'>
-      <p>Accounts & Users</p>
-      <Button onClick={() => this.props.project.toggleCategoryItem(
+      <h3><p>Accounts & Users</p></h3>
+      <Fab onClick={() => this.props.project.toggleCategoryItem(
         this.props.state.categories.account,
         this.props.state.categories.account.email_pass)
-      }>
+      } variant="extended">
         Email & Password
-      </Button>
-      <Button onClick={() => this.props.project.toggleCategoryItem(
+      </Fab>
+      <Fab onClick={() => this.props.project.toggleCategoryItem(
         this.props.state.categories.account,
         this.props.state.categories.account.facebook)
-      }>
+      } variant="extended">
         Facebook
-      </Button>
-      <Button onClick={() => this.props.project.toggleCategoryItem(
+      </Fab>
+      <Fab onClick={() => this.props.project.toggleCategoryItem(
         this.props.state.categories.account,
         this.props.state.categories.account.twitter)
-      }>
+      } variant="extended">
         Twitter
-      </Button>
-      <Button onClick={() => this.props.project.toggleCategoryItem(
+      </Fab>
+      <p></p>
+      <Fab onClick={() => this.props.project.toggleCategoryItem(
         this.props.state.categories.account,
         this.props.state.categories.account.twitter)
-      }>
+      } variant="extended">
         Google
-      </Button>
-      <Button onClick={() => this.props.project.toggleCategoryItem(
+      </Fab>
+      <Fab onClick={() => this.props.project.toggleCategoryItem(
         this.props.state.categories.account,
         this.props.state.categories.account.linkedin)
-      }>
+      } variant="extended">
         Linkedin
-      </Button>
-      <Button onClick={() => this.props.project.toggleCategoryItem(
+      </Fab>
+      <Fab onClick={() => this.props.project.toggleCategoryItem(
         this.props.state.categories.account,
         this.props.state.categories.account.github)
-      }>
+      } variant="extended">
         GitHub
-      </Button>
-      <Button onClick={() => this.props.project.toggleCategoryItem(
+      </Fab>
+      <Fab onClick={() => this.props.project.toggleCategoryItem(
         this.props.state.categories.account,
         this.props.state.categories.account.invitation)
-      }>
+      } variant="extended">
         Invitation
-      </Button>
-      <Button onClick={() => this.props.project.toggleCategoryItem(
+      </Fab>
+      <p></p>
+      <Fab onClick={() => this.props.project.toggleCategoryItem(
         this.props.state.categories.account,
         this.props.state.categories.account.multi_account)
-      }>
+      } variant="extended">
         Multiple Accounts
-      </Button>
-      <Button onClick={() => this.props.project.toggleCategoryItem(
+      </Fab>
+      <Fab onClick={() => this.props.project.toggleCategoryItem(
         this.props.state.categories.account,
         this.props.state.categories.account.subdomain)
-      }>
+      } variant="extended">
         Subdomain
-      </Button>
-      <Button onClick={() => this.props.toggle(
+      </Fab>
+      <Fab onClick={() => toggleCategoryItem(
         categories.account,
         categories.account.custom)
-      }>
+      } variant="extended">
         Custom
-      </Button>
+      </Fab>
     </div>
     )
   }
@@ -78,7 +80,7 @@ export default class ConnectedAccountForm extends React.Component {
   render() {
     return (
       <ProjectConsumer>
-        { value => <AccountForm {...this.props} toggle={value.toggleCategoryItem} categories={value.categories} />}
+        { value => <AccountForm {...this.props} value={value} />}
       </ProjectConsumer>
     )
   }
