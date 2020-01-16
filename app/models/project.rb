@@ -6,4 +6,7 @@ class Project < ApplicationRecord
   has_many :socials, dependent: :destroy
   has_many :apps, dependent: :destroy
   has_many :analytics, dependent: :destroy
+  has_many :integrations, dependent: :destroy
+  has_many :accounts, dependent: :destroy
+  has_many :date_locations, dependent: :destroy
 end
