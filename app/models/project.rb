@@ -1,6 +1,12 @@
 class Project < ApplicationRecord
   belongs_to :user
-  has_many :billings
-  has_many :user_contents
-  has_many :securities
+  has_many :billings, dependent: :destroy
+  has_many :user_contents, dependent: :destroy
+  has_many :securities, dependent: :destroy
+  has_many :socials, dependent: :destroy
+  has_many :apps, dependent: :destroy
+  has_many :analytics, dependent: :destroy
+  has_many :integrations, dependent: :destroy
+  has_many :accounts, dependent: :destroy
+  has_many :date_locations, dependent: :destroy
 end
