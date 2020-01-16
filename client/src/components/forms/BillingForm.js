@@ -1,43 +1,42 @@
 import React, {Component} from 'react';
-import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
+import Fab from '@material-ui/core/Fab';
+import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
-export default class BillingForm extends Component {
-
-  state = { subscription_plans: false, payment_processing: false, shopping_cart: false, user_marketplace: false, product_management: false }
-
-
-  toggleSubscription = () => {
-    this.setState({ subscription_plans: !this.state.subscription_plans })
-  }
-
-  togglePayment = () => {
-    this.setState({ payment_processing: !this.state.payment_processing })
-  }
-
-  toggleShopping = () => {
-    this.setState({ shopping_cart: !this.state.shopping_cart })
-  }
-
-  toggleUser = () => {
-    this.setState({ user_marketplace: !this.state.user_marketplace })
-  }
-
-  toggleProduct = () => {
-    this.setState({ product_management: !this.state.product_management })
-  }
+class BillingForm extends Component {
 
   render() {
+
+    const{value: {toggleCategoryItem}} = this.props
 
   return(
       <div align='center'>
         <h3><p>Billing</p></h3>
-        <Button onClick={this.toggleSubscription}><Avatar>Su</Avatar></Button>
-        <Button onClick={this.togglePayment}><Avatar>Pa</Avatar></Button>
-        <Button onClick={this.toggleShopping}><Avatar>Sh</Avatar></Button>
-        <Button onClick={this.toggleUser}><Avatar>Us</Avatar></Button>
-        <Button onClick={this.toggleProduct}><Avatar>Pr</Avatar></Button>
+        <Fab variant="extended" onClick={() => toggleCategoryItem('billing', 'subscription_plan')}>
+          Subscription
+        </Fab>
+        <Fab variant="extended" onClick={() => toggleCategoryItem('billing', 'payment_processing')}>
+          Payment Processing
+        </Fab>
+        <Fab variant="extended" onClick={() => toggleCategoryItem('billing', 'shopping_cart')}>
+          Shopping Cart
+        </Fab>
+        <Fab variant="extended" onClick={() => toggleCategoryItem('billing', 'user_marketplace')}>
+          User Marketplace
+        </Fab>
+        <Fab variant="extended" onClick={() => toggleCategoryItem('billing', 'product_management')}>
+          Product Management
+        </Fab>
       </div>
+    )
+  }
+}
+
+export default class ConnectedBillingForm extends React.Component {
+  render() {
+    return (
+      <ProjectConsumer>
+        { value => <BillingForm {...this.props} value={value}/>}
+      </ProjectConsumer>
     )
   }
 }

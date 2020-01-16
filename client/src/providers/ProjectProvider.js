@@ -57,12 +57,29 @@ export default class ProjectProvider extends Component {
     }
   }
 
+  componentDidMount() {
+    axios.get('/api/projects')
+      .then( res => {
+        this.setState({ project: res.data })
+      })
+      .catch( err => {
+        console.log(err)
+      })
+  }
+
   estimateTotal = () => {
 
   }
 
-  createProject = () => {
-
+  createProject = (project) => {
+    axios.post('/api/projects', project)
+      .then( res => {
+        const { projects } = this.state
+        this.setState({ project: [...projects, res.data]})
+      })
+      .catch( err => {
+        console.log(err)
+      })
   }
 
   createCategory = () => {
@@ -77,15 +94,26 @@ export default class ProjectProvider extends Component {
 
   }
 
-  toggleCategoryItem = () => {
-    this.setState({ isNew: !this.state.isNew  })
+  toggleCategoryItem = (category, item) => {
+    const{ categories } = this.state
+    const newitem = !this.state.categories[category][item]
+    this.setState({
+      categories: {
+        ...categories,
+        [category]: {
+          ...categories[category],
+          [item]: newitem,
+        }
+      }
+    })
   }
 
   render(){
     return(
       <ProjectContext.Provider value={{
         ...this.state,
-        toggleCategoryItem: this.toggleCategoryItem
+        toggleCategoryItem: this.toggleCategoryItem,
+        createProject: this.createProject
       }}>
         { this.props.children }
       </ProjectContext.Provider>

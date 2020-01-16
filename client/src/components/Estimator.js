@@ -8,25 +8,15 @@ import BillingForm from './forms/BillingForm';
 import AppForm from './forms/AppForm';
 import AnalyticForm from './forms/AnalyticForm';
 import AccountForm from './forms/AccountForm';
-import axios from 'axios';
+import Button from '@material-ui/core/Button';
+import SaveIcon from '@material-ui/icons/Save';
+import { ProjectConsumer, } from "../providers/ProjectProvider";
 
-export default class Estimator extends Component {
-
-  state = {project: []}
-
-  addProject = (project) => {
-    axios.post('/api/projects', project)
-      .then( res => {
-        const { project } = this.state
-        this.setState({ project: [...project, res.data]})
-      })
-      .catch( err => {
-        console.log(err)
-      })
-  }
-
+class Estimator extends Component {
 
 render() {
+
+  const{value: { categories, createProject }} = this.props
 
 return(
     <>
@@ -39,7 +29,28 @@ return(
       <SecurityForm/>
       <SocialForm/>
       <UserContentForm/>
+      <div align='right'>
+        <Button
+          variant="contained"
+          color="primary"
+          endIcon={<SaveIcon/>}
+        >
+          Save Project
+        </Button>
+      </div>
     </>
     )
   }
 }
+
+const ConnectedEstimator = () => {
+
+  return(
+    <ProjectConsumer>
+      { value =>(
+        <Estimator value={value}/>
+      )}
+    </ProjectConsumer>
+  )
+}
+export default ConnectedEstimator;

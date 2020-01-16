@@ -1,33 +1,8 @@
 import React, {Component} from 'react';
 import Fab from '@material-ui/core/Fab';
+import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
-export default class AppForm extends Component {
-
-  state = { size: undefined, ui_level: undefined }
-
-  selectSmall = () => {
-    this.setState({ size: 'small' })
-  }
-
-  selectMedium = () => {
-    this.setState({ size: 'medium' })
-  }
-
-  selectLarge = () => {
-    this.setState({ size: 'large' })
-  }
-
-  selectMvp = () => {
-    this.setState({ ui_level: 'mvp' })
-  }
-
-  selectBasic = () => {
-    this.setState({ ui_level: 'basic' })
-  }
-
-  selectPolished = () => {
-    this.setState({ ui_level: 'polished' })
-  }
+class AppForm extends Component {
 
   render() {
 
@@ -46,6 +21,16 @@ export default class AppForm extends Component {
         <Fab onClick={this.selectPolished} variant="extended">Polished</Fab>
       </div>
     </>
+    )
+  }
+}
+
+export default class ConnectedAppForm extends React.Component {
+  render() {
+    return (
+      <ProjectConsumer>
+        { value => <AppForm {...this.props} value={value}/>}
+      </ProjectConsumer>
     )
   }
 }

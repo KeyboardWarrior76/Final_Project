@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Fab from '@material-ui/core/Fab';
-import Button from '@material-ui/core/Button';
 import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
 class AccountForm extends Component {
@@ -12,63 +11,36 @@ class AccountForm extends Component {
   return(
     <div align='center'>
       <h3><p>Accounts & Users</p></h3>
-      <Fab onClick={() => this.props.project.toggleCategoryItem(
-        this.props.state.categories.account,
-        this.props.state.categories.account.email_pass)
-      } variant="extended">
+      <Fab variant="extended" onClick={() => toggleCategoryItem("account", "email_pass")}>
         Email & Password
       </Fab>
-      <Fab onClick={() => this.props.project.toggleCategoryItem(
-        this.props.state.categories.account,
-        this.props.state.categories.account.facebook)
-      } variant="extended">
+      <Fab variant="extended" onClick={() => toggleCategoryItem("account", "facebook")}>
         Facebook
       </Fab>
-      <Fab onClick={() => this.props.project.toggleCategoryItem(
-        this.props.state.categories.account,
-        this.props.state.categories.account.twitter)
-      } variant="extended">
+      <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'twitter')}>
         Twitter
       </Fab>
       <p></p>
-      <Fab onClick={() => this.props.project.toggleCategoryItem(
-        this.props.state.categories.account,
-        this.props.state.categories.account.twitter)
-      } variant="extended">
+      <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'google')}>
         Google
       </Fab>
-      <Fab onClick={() => this.props.project.toggleCategoryItem(
-        this.props.state.categories.account,
-        this.props.state.categories.account.linkedin)
-      } variant="extended">
+      <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'linkedin')}>
         Linkedin
       </Fab>
-      <Fab onClick={() => this.props.project.toggleCategoryItem(
-        this.props.state.categories.account,
-        this.props.state.categories.account.github)
-      } variant="extended">
+      <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'github')}>
         GitHub
       </Fab>
-      <Fab onClick={() => this.props.project.toggleCategoryItem(
-        this.props.state.categories.account,
-        this.props.state.categories.account.invitation)
-      } variant="extended">
+      <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'invitation')}>
         Invitation
       </Fab>
       <p></p>
-      <Fab onClick={() => this.props.project.toggleCategoryItem(
-        this.props.state.categories.account,
-        this.props.state.categories.account.multi_account)
-      } variant="extended">
+      <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'multi_account')}>
         Multiple Accounts
       </Fab>
-      <Fab onClick={() => this.props.project.toggleCategoryItem(
-        this.props.state.categories.account,
-        this.props.state.categories.account.subdomain)
-      } variant="extended">
+      <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'subdomain')}>
         Subdomain
       </Fab>
-      <Fab onClick={() => toggleCategoryItem()} variant="extended">
+      <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'custom')}>
         Custom
       </Fab>
     </div>

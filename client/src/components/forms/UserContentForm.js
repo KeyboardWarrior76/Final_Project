@@ -1,70 +1,56 @@
 import React, {Component} from 'react';
-import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
+import Fab from '@material-ui/core/Fab';
+import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
-export default class UserContentForm extends Component {
+class UserContentForm extends Component {
 
-state = { dashboard: false,
-  activity_feed: false,
-  uploading: false,
-  profiles: false,
-  transactional_emails: false,
-  tags: false,
-  ratings: false,
-  audio_video: false,
-  searching: false }
+  render() {
 
-  toggleDashboard = () => {
-    this.setState({ dashboard: !this.state.dashboard })
-  }
+    const{value: {toggleCategoryItem}} = this.props
 
-  toggleActivityFeed = () => {
-    this.setState({ activity_feed: !this.state.activity_feed })
-  }
-
-  toggleUploading = () => {
-    this.setState({ uploading: !this.state.uploading })
-  }
-
-  toggleProfiles = () => {
-    this.setState({ profiles: !this.state.profiles })
-  }
-
-  toggleTransactional = () => {
-    this.setState({ transactional_emails: !this.state.transactional_emails })
-  }
-
-  toggleTags = () => {
-    this.setState({ tags: !this.state.tags })
-  }
-
-  toggleRatings = () => {
-    this.setState({ ratings: !this.state.ratings })
-  }
-
-  toggleAudioVideo = () => {
-    this.setState({ audio_video: !this.state.audio_video })
-  }
-
-  toggleSearching = () => {
-    this.setState({ searching: !this.state.searching })
-  }
-
-render() {
-
-return(
+  return(
     <div align='center'>
       <h3><p>User Content</p></h3>
-      <Button onClick={this.toggleDashboard}><Avatar>Da</Avatar></Button>
-      <Button onClick={this.toggleActivityFeed}><Avatar>AF</Avatar></Button>
-      <Button onClick={this.toggleUploading}><Avatar>Up</Avatar></Button>
-      <Button onClick={this.toggleProfiles}><Avatar>Pr</Avatar></Button>
-      <Button onClick={this.toggleTransactional}><Avatar>Tr</Avatar></Button>
-      <Button onClick={this.toggleTags}><Avatar>Ta</Avatar></Button>
-      <Button onClick={this.toggleRatings}><Avatar>R</Avatar></Button>
-      <Button onClick={this.toggleAudioVideo}><Avatar>AV</Avatar></Button>
-      <Button onClick={this.toggleSearching}><Avatar>S</Avatar></Button>
+      <Fab variant="extended" onClick={() => toggleCategoryItem("user_content", "dashboard")}>
+        User Dashboard
+      </Fab>
+      <Fab variant="extended" onClick={() => toggleCategoryItem("user_content", "activity_feed")}>
+        Activity Feed
+      </Fab>
+      <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'uploading')}>
+        Uploading
+      </Fab>
+      <p></p>
+      <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'profile')}>
+        Profile
+      </Fab>
+      <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'transactional_email')}>
+        Transactional Emails
+      </Fab>
+      <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'tags')}>
+        Tags
+      </Fab>
+      <p></p>
+      <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'rating')}>
+        Customer Ratings
+      </Fab>
+      <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'audio_video')}>
+        Audio Video
+      </Fab>
+      <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'searching')}>
+        Searching
+      </Fab>
     </div>
+    )
+  }
+}
+
+export default class ConnectedUserContentForm extends React.Component {
+  render() {
+    return (
+      <ProjectConsumer>
+        { value => <UserContentForm {...this.props} value={value}/>}
+      </ProjectConsumer>
     )
   }
 }

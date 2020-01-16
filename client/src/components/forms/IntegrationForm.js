@@ -1,38 +1,39 @@
 import React, {Component} from 'react';
-import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
+import Fab from '@material-ui/core/Fab';
+import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
-export default class IntegrationForm extends Component {
+class IntegrationForm extends Component {
 
-state = { third_party: false, api_integrate: false, messaging: false, phone_number: false }
+  render() {
 
+    const{value: {toggleCategoryItem}} = this.props
 
-  toggleThird = () => {
-    this.setState({ third_party: !this.state.third_party })
+  return(
+      <div align='center'>
+        <h3><p>Integrations</p></h3>
+        <Fab variant="extended" onClick={() => toggleCategoryItem('integration', 'third_party')}>
+          Third Party
+        </Fab>
+        <Fab variant="extended" onClick={() => toggleCategoryItem('integration', 'api_integrate')}>
+          API Integration
+        </Fab>
+        <Fab variant="extended" onClick={() => toggleCategoryItem('integration', 'messaging')}>
+          Messaging
+        </Fab>
+        <Fab variant="extended" onClick={() => toggleCategoryItem('integration', 'phone_number')}>
+          Phone Number
+        </Fab>
+      </div>
+    )
   }
+}
 
-  toggleApi = () => {
-    this.setState({ api_integrate: !this.state.api_integrate })
-  }
-
-  toggleMessaging = () => {
-    this.setState({ messaging: !this.state.messaging })
-  }
-
-  togglePhone = () => {
-    this.setState({ phone_number: !this.state.phone_number })
-  }
-
-render() {
-
-return(
-    <div align='center'>
-      <h3><p>Integration</p></h3>
-      <Button onClick={this.toggleThird}><Avatar>T</Avatar></Button>
-      <Button onClick={this.toggleApi}><Avatar>A</Avatar></Button>
-      <Button onClick={this.toggleMessaging}><Avatar>M</Avatar></Button>
-      <Button onClick={this.togglePhone}><Avatar>Ph</Avatar></Button>
-    </div>
+export default class ConnectedIntegrationForm extends React.Component {
+  render() {
+    return (
+      <ProjectConsumer>
+        { value => <IntegrationForm {...this.props} value={value}/>}
+      </ProjectConsumer>
     )
   }
 }
