@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_035713) do
+ActiveRecord::Schema.define(version: 2020_01_16_021707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,14 +33,14 @@ ActiveRecord::Schema.define(version: 2020_01_10_035713) do
   end
 
   create_table "analytics", force: :cascade do |t|
-    t.boolean "cms"
-    t.boolean "admin"
-    t.boolean "moderation"
-    t.boolean "intercom"
-    t.boolean "usage"
-    t.boolean "crash_report"
-    t.boolean "performance"
-    t.boolean "multilingual"
+    t.boolean "cms", default: false
+    t.boolean "admin", default: false
+    t.boolean "moderation", default: false
+    t.boolean "intercom", default: false
+    t.boolean "usage", default: false
+    t.boolean "crash_report", default: false
+    t.boolean "performance", default: false
+    t.boolean "multilingual", default: false
     t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -111,10 +111,10 @@ ActiveRecord::Schema.define(version: 2020_01_10_035713) do
   end
 
   create_table "socials", force: :cascade do |t|
-    t.boolean "facebook_graph"
-    t.boolean "sharing"
-    t.boolean "forums"
-    t.boolean "messaging"
+    t.boolean "facebook_graph", default: false
+    t.boolean "sharing", default: false
+    t.boolean "forums", default: false
+    t.boolean "messaging", default: false
     t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
