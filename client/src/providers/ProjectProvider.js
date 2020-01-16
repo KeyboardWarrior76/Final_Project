@@ -78,9 +78,7 @@ export default class ProjectProvider extends Component {
   }
 
   toggleCategoryItem = () => {
-    const {account} = this.state.categories
-    const {custom} = this.state.categories.account
-    this.setState({ categories: {account: {custom: !custom}, ...this.state.categories} })
+    this.setState({ isNew: !this.state.isNew  })
   }
 
   render(){

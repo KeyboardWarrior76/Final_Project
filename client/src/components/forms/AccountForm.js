@@ -6,6 +6,9 @@ import { ProjectConsumer, } from "../../providers/ProjectProvider";
 class AccountForm extends Component {
 
   render() {
+
+    const{value: {toggleCategoryItem}} = this.props
+
   return(
     <div align='center'>
       <h3><p>Accounts & Users</p></h3>
@@ -65,9 +68,9 @@ class AccountForm extends Component {
       } variant="extended">
         Subdomain
       </Fab>
-      <Button onClick={() => this.props.toggleCategoryItem()} variant="extended">
+      <Fab onClick={() => toggleCategoryItem()} variant="extended">
         Custom
-      </Button>
+      </Fab>
     </div>
     )
   }
@@ -77,7 +80,7 @@ export default class ConnectedAccountForm extends React.Component {
   render() {
     return (
       <ProjectConsumer>
-        { value => <AccountForm {...this.props} value={value} toggleCategoryItem={value.toggleCategoryItem} />}
+        { value => <AccountForm {...this.props} value={value}/>}
       </ProjectConsumer>
     )
   }
