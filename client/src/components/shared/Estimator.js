@@ -16,7 +16,7 @@ class Estimator extends Component {
 
 render() {
 
-  const{ value: {createCategory} } = this.props
+  const{ value: {createCategory, estimate} } = this.props
 
 return(
     <>
@@ -29,15 +29,21 @@ return(
       <SecurityForm/>
       <SocialForm/>
       <UserContentForm/>
-      <div align='right'>
-        <Button
-          variant="contained"
-          color="primary"
-          endIcon={<SaveIcon/>}
-          onClick={() => createCategory()}
-        >
-          Save Project
-        </Button>
+      <div>
+        <div>
+          Total:
+          {` ${estimate}`}
+        </div>
+        <div align='right'>
+          <Button
+            variant="contained"
+            color="primary"
+            endIcon={<SaveIcon/>}
+            onClick={() => createCategory()}
+          >
+            Save Project
+          </Button>
+        </div>
       </div>
     </>
     )
