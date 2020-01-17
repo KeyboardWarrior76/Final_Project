@@ -1,52 +1,36 @@
 import React, {Component} from 'react';
-import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
+import Fab from '@material-ui/core/Fab';
+import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
-export default class AppForm extends Component {
-
-  state = { size: undefined, ui_level: undefined }
-
-  selectSmall = () => {
-    this.setState({ size: 'small' })
-  }
-
-  selectMedium = () => {
-    this.setState({ size: 'medium' })
-  }
-
-  selectLarge = () => {
-    this.setState({ size: 'large' })
-  }
-
-  selectMvp = () => {
-    this.setState({ ui_level: 'mvp' })
-  }
-
-  selectBasic = () => {
-    this.setState({ ui_level: 'basic' })
-  }
-
-  selectPolished = () => {
-    this.setState({ ui_level: 'polished' })
-  }
+class AppForm extends Component {
 
   render() {
 
   return(
     <>
       <div align='center'>
-        <p>App Size</p>
-        <Button onClick={this.selectSmall}><Avatar>Sm</Avatar></Button>
-        <Button onClick={this.selectMedium}><Avatar>Md</Avatar></Button>
-        <Button onClick={this.selectLarge}><Avatar>Lg</Avatar></Button>
+        <h3><p>App Size</p></h3>
+        <Fab onClick={this.selectSmall} variant="extended">Small</Fab>
+        <Fab onClick={this.selectMedium} variant="extended">Medium</Fab>
+        <Fab onClick={this.selectLarge} variant="extended">Large</Fab>
       </div>
       <div align='center'>
-        <p>UI Level</p>
-        <Button onClick={this.selectMvp}><Avatar>MV</Avatar></Button>
-        <Button onClick={this.selectBasic}><Avatar>Bs</Avatar></Button>
-        <Button onClick={this.selectPolished}><Avatar>Pl</Avatar></Button>
+        <h3><p>UI Level</p></h3>
+        <Fab onClick={this.selectMvp} variant="extended">MVP</Fab>
+        <Fab onClick={this.selectBasic} variant="extended">Basic</Fab>
+        <Fab onClick={this.selectPolished} variant="extended">Polished</Fab>
       </div>
     </>
+    )
+  }
+}
+
+export default class ConnectedAppForm extends React.Component {
+  render() {
+    return (
+      <ProjectConsumer>
+        { value => <AppForm {...this.props} value={value}/>}
+      </ProjectConsumer>
     )
   }
 }

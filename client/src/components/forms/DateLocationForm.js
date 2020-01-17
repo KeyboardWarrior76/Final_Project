@@ -1,38 +1,39 @@
 import React, {Component} from 'react';
-import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
+import Fab from '@material-ui/core/Fab';
+import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
-export default class DateLocationForm extends Component {
+class DateLocationForm extends Component {
 
-state = { calendar: false, display: false, map_display: false, booking: false }
+  render() {
 
+    const{value: {toggleCategoryItem}} = this.props
 
-  toggleCalendar = () => {
-    this.setState({ calendar: !this.state.calendar })
+  return(
+      <div align='center'>
+        <h3><p>Dates & Locations</p></h3>
+        <Fab variant="extended" onClick={() => toggleCategoryItem('date_location', 'calendar')}>
+          Calendar
+        </Fab>
+        <Fab variant="extended" onClick={() => toggleCategoryItem('date_location', 'display')}>
+          Display
+        </Fab>
+        <Fab variant="extended" onClick={() => toggleCategoryItem('date_location', 'map_display')}>
+          Map Display
+        </Fab>
+        <Fab variant="extended" onClick={() => toggleCategoryItem('date_location', 'booking')}>
+          Booking
+        </Fab>
+      </div>
+    )
   }
+}
 
-  toggleDisplay = () => {
-    this.setState({ display: !this.state.display })
-  }
-
-  toggleMap = () => {
-    this.setState({ map_display: !this.state.map_display })
-  }
-
-  toggleBooking = () => {
-    this.setState({ booking: !this.state.booking })
-  }
-
-render() {
-
-return(
-    <div align='center'>
-      <p>Date & Location</p>
-      <Button onClick={this.toggleCalendar}><Avatar>Ca</Avatar></Button>
-      <Button onClick={this.toggleDisplay}><Avatar>DC</Avatar></Button>
-      <Button onClick={this.toggleMap}><Avatar>Ma</Avatar></Button>
-      <Button onClick={this.toggleBooking}><Avatar>Bo</Avatar></Button>
-    </div>
+export default class ConnectedDateLocationForm extends React.Component {
+  render() {
+    return (
+      <ProjectConsumer>
+        { value => <DateLocationForm {...this.props} value={value}/>}
+      </ProjectConsumer>
     )
   }
 }
