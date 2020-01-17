@@ -1,33 +1,36 @@
 import React, {Component} from 'react';
-import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
+import Fab from '@material-ui/core/Fab';
+import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
-export default class SecurityForm extends Component {
+class SecurityForm extends Component {
 
-state = { certificate: false, factor_authentication: false, dos_protection: false }
+  render() {
 
+    const{value: {toggleCategoryItem}} = this.props
 
-  toggleCertificate = () => {
-    this.setState({ certificate: !this.state.certificate })
+  return(
+      <div align='center'>
+        <h3><p>Security</p></h3>
+        <Fab variant="extended" onClick={() => toggleCategoryItem('security', 'certificate')}>
+          Certificate
+        </Fab>
+        <Fab variant="extended" onClick={() => toggleCategoryItem('security', 'factor_authentication')}>
+          Factor Authentication
+        </Fab>
+        <Fab variant="extended" onClick={() => toggleCategoryItem('security', 'dos_protection')}>
+          DOS Protection
+        </Fab>
+      </div>
+    )
   }
+}
 
-  toggleFactor = () => {
-    this.setState({ factor_authentication: !this.state.factor_authentication })
-  }
-
-  toggleDos = () => {
-    this.setState({ dos_protection: !this.state.dos_protection })
-  }
-
-render() {
-
-return(
-    <div align='center'>
-      <p>Security</p>
-      <Button onClick={this.toggleCertificate}><Avatar label='c'>C</Avatar></Button>
-      <Button onClick={this.toggleFactor}><Avatar>F</Avatar></Button>
-      <Button onClick={this.toggleDos}><Avatar>D</Avatar></Button>
-    </div>
+export default class ConnectedSecurityForm extends React.Component {
+  render() {
+    return (
+      <ProjectConsumer>
+        { value => <SecurityForm {...this.props} value={value}/>}
+      </ProjectConsumer>
     )
   }
 }

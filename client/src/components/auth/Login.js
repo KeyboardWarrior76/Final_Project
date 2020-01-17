@@ -30,26 +30,28 @@ class Login extends React.Component {
         <Typography variant='h2'>Login</Typography>
         <form onSubmit={this.handleSubmit}>
 
-          <FormControl>
-            <InputLabel htmlFor="emailInput">Email</InputLabel>
-            <OutlinedInput
-              id="emailInput"
-              name='email'
-              value={email}
-              onChange={this.handleChange} />
-          </FormControl>
+          <FormGroup>
+            <FormControl>
+              <InputLabel htmlFor="emailInput">Email</InputLabel>
+              <OutlinedInput
+                id="emailInput"
+                name='email'
+                value={email}
+                onChange={this.handleChange} />
+            </FormControl>
 
-          <FormControl>
-            <InputLabel htmlFor="passInput">Password</InputLabel>
-            <OutlinedInput
-              id="passInput"
-              name='password'
-              value={password}
-              type='password'
-              onChange={this.handleChange} />
-          </FormControl>
+            <FormControl>
+              <InputLabel htmlFor="passInput">Password</InputLabel>
+              <OutlinedInput
+                id="passInput"
+                name='password'
+                value={password}
+                type='password'
+                onChange={this.handleChange} />
+            </FormControl>
 
-          <Button color='primary' type='submit'>Submit</Button>
+            <Button color='primary' type='submit'>Submit</Button>
+          </FormGroup>
 
         </form>
       </Container>
