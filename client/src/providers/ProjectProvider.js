@@ -74,7 +74,7 @@ export default class ProjectProvider extends Component {
   createProject = (project) => {
     axios.post('/api/projects', project)
       .then( res => {
-        const { projects } = this.state
+        // const { projects } = this.state
         // this.setState({ project: [...projects, res.data]})
       })
       .catch( err => {

@@ -8,14 +8,14 @@ import { Link, withRouter, } from 'react-router-dom'
 class Navbar extends React.Component {
 
   rightNavItems = () => {
-    const { auth: { user, handleLogout, }, location, } = this.props;
+    const { auth: {user, handleLogout}, location: {pathname}, history } = this.props;
 
     if (user) {
       return (
         <ToolBar position='right'>
           <Button
             name='logout'
-            onClick={ () => handleLogout(this.props.history) }>
+            onClick={ () => handleLogout(history) }>
             Logout
           </Button>
         </ToolBar>
@@ -27,7 +27,7 @@ class Navbar extends React.Component {
             <Button
               id='login'
               name='login'
-              active={location.pathname ? '/login' : undefined}>
+              active={pathname ? '/login' : undefined}>
               Login
             </Button>
           </Link>
@@ -35,7 +35,7 @@ class Navbar extends React.Component {
             <Button
               id='register'
               name='register'
-              active={location.pathname ? '/register' : undefined}>
+              active={pathname ? '/register' : undefined}>
               Register
             </Button>
           </Link>
@@ -45,6 +45,7 @@ class Navbar extends React.Component {
   }
 
   render() {
+    const{ location: {pathname} } = this.props
     return (
       <div>
         <AppBar position='static'>
@@ -55,7 +56,7 @@ class Navbar extends React.Component {
                 edge='start'
                 name='home'
                 id='home'
-                active={this.props.location.pathname ? '/' : undefined}>
+                active={pathname ? '/' : undefined}>
                 Home
               </Button>
             </Link>
