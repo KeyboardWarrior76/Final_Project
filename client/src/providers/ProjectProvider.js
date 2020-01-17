@@ -6,7 +6,7 @@ export const ProjectConsumer = ProjectContext.Consumer;
 
 export default class ProjectProvider extends Component {
 
-  state = { project: null, estimate: 0, isNew: true,
+  state = { project: {}, estimate: 0, isNew: true,
     categories: {
       account: {
         email_pass: false, facebook: false,
@@ -71,27 +71,20 @@ export default class ProjectProvider extends Component {
 
   }
 
-  createProject = (project) => {
-    axios.post('/api/projects', project)
+  createProjectAndCategories = (id) => {
+    axios.post(`/api/users/${id}/projects`, this.state.project)
       .then( res => {
-        // const { projects } = this.state
-        // this.setState({ project: [...projects, res.data]})
+        this.setState({ project: res.data })
+        return axios.post(`/api/projects/${res.data.id}/categories`, this.state.categories)
+      })
+      .then(res => {
+        this.setState({ categories: res.data })
       })
       .catch( err => {
         console.log(err)
       })
-  }
 
-  createCategory = (category) => {
-    axios.post(`/api/${category}s`, category)
-      .then( res => {
-        // const { categories } = this.state
-        // this.setState({ categories: [...categories, res.data]})
-      })
-      .catch( err => {
-        console.log(err)
-      })
-  }
+    }
 
   initExistingProject = () => {
 
@@ -129,8 +122,7 @@ export default class ProjectProvider extends Component {
       <ProjectContext.Provider value={{
         ...this.state,
         toggleCategoryItem: this.toggleCategoryItem,
-        createProject: this.createProject,
-        createCategory: this.createCategory
+        createProjectAndCategories: this.createProjectAndCategories,
       }}>
         { this.props.children }
       </ProjectContext.Provider>

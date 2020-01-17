@@ -9,7 +9,7 @@ class Project < ApplicationRecord
   has_many :integrations, dependent: :destroy
   has_many :accounts, dependent: :destroy
   has_many :date_locations, dependent: :destroy
-  
+
   def create_project(params)
     categories = {}
 
@@ -18,7 +18,7 @@ class Project < ApplicationRecord
 
     # create category instances
     integration = self.integrations.create(params[:integration])
-    analytic = self.analytics.create(params[]:analytic])
+    analytic = self.analytics.create(params[:analytic])
     billing = self.billings.create(params[:billing])
     account = self.accounts.create(params[:account])
     app = self.apps.create(params[:app])
@@ -37,15 +37,15 @@ class Project < ApplicationRecord
     catagories[:date_location] = date_location
     catagories[:social] = social
     catagories[:security] = security
-    
+
     # check if categories are valid
     is_valid = (
-      integration.valid? && 
-      analytic.valid? && 
-      billing.valid? && 
-      account.valid? && 
-      app.valid? && 
-      user_content.valid? && 
+      integration.valid? &&
+      analytic.valid? &&
+      billing.valid? &&
+      account.valid? &&
+      app.valid? &&
+      user_content.valid? &&
       date_location.valid? &&
       social.valid? &&
       security.valid?
