@@ -85,8 +85,8 @@ export default class ProjectProvider extends Component {
   createCategory = (category) => {
     axios.post(`/api/${category}s`, category)
       .then( res => {
-        const { categories } = this.state
-        this.setState({ categories: [...categories, res.data]})
+        // const { categories } = this.state
+        // this.setState({ categories: [...categories, res.data]})
       })
       .catch( err => {
         console.log(err)
@@ -101,9 +101,18 @@ export default class ProjectProvider extends Component {
 
   }
 
+  calculate = (category, item) => {
+    const {estimate, categories} = this.state
+    const newitem = categories[category][item]
+    if (newitem === false)
+      this.setState({ estimate: (estimate + 1) })
+    else this.setState({ estimate: (estimate - 1) })
+  }
+
   toggleCategoryItem = (category, item) => {
     const{ categories } = this.state
-    const newitem = !this.state.categories[category][item]
+    const newitem = !categories[category][item]
+    this.calculate(category, item)
     this.setState({
       categories: {
         ...categories,

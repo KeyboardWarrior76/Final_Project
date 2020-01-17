@@ -3,10 +3,11 @@ import {NavLink} from 'react-router-dom';
 
 const NoMatch = () => (
 
-    <>
-      <h1>Oops! Page not found! 404</h1>
+    <div align='center'>
+      <h1>Oops! Page not found!</h1>
+      <h2>Error 404</h2>
       <NavLink to='/'>Go back home</NavLink>
-    </>
+    </div>
 )
 
 export default NoMatch;
