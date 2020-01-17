@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :date_location
       resources :social
       resources :security
+      resources :catagories
     end
 
   end
