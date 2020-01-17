@@ -20,7 +20,7 @@ class AccountForm extends Component {
       <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'twitter')}>
         Twitter
       </Fab>
-      <p></p>
+      <br/>
       <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'google')}>
         Google
       </Fab>
@@ -33,7 +33,7 @@ class AccountForm extends Component {
       <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'invitation')}>
         Invitation
       </Fab>
-      <p></p>
+      <br/>
       <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'multi_account')}>
         Multiple Accounts
       </Fab>

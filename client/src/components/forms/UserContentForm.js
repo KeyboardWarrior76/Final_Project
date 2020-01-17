@@ -20,7 +20,7 @@ class UserContentForm extends Component {
       <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'uploading')}>
         Uploading
       </Fab>
-      <p></p>
+      <br/>
       <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'profile')}>
         Profile
       </Fab>
@@ -30,7 +30,7 @@ class UserContentForm extends Component {
       <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'tags')}>
         Tags
       </Fab>
-      <p></p>
+      <br/>
       <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'rating')}>
         Customer Ratings
       </Fab>

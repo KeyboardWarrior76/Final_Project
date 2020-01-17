@@ -23,7 +23,7 @@ return(
       <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'intercom')}>
         Intercoms
       </Fab>
-      <p></p>
+      <br/>
       <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'usage')}>
         Usage Data
       </Fab>

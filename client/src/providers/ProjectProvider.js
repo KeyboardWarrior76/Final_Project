@@ -75,15 +75,22 @@ export default class ProjectProvider extends Component {
     axios.post('/api/projects', project)
       .then( res => {
         const { projects } = this.state
-        this.setState({ project: [...projects, res.data]})
+        // this.setState({ project: [...projects, res.data]})
       })
       .catch( err => {
         console.log(err)
       })
   }
 
-  createCategory = () => {
-
+  createCategory = (category) => {
+    axios.post(`/api/${category}s`, category)
+      .then( res => {
+        const { categories } = this.state
+        this.setState({ categories: [...categories, res.data]})
+      })
+      .catch( err => {
+        console.log(err)
+      })
   }
 
   initExistingProject = () => {
@@ -113,7 +120,8 @@ export default class ProjectProvider extends Component {
       <ProjectContext.Provider value={{
         ...this.state,
         toggleCategoryItem: this.toggleCategoryItem,
-        createProject: this.createProject
+        createProject: this.createProject,
+        createCategory: this.createCategory
       }}>
         { this.props.children }
       </ProjectContext.Provider>

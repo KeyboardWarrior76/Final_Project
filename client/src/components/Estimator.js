@@ -16,7 +16,7 @@ class Estimator extends Component {
 
 render() {
 
-  const{value: { categories, createProject }} = this.props
+  const{value: { categories, createProject, createCategory }} = this.props
 
 return(
     <>
@@ -34,6 +34,7 @@ return(
           variant="contained"
           color="primary"
           endIcon={<SaveIcon/>}
+          onClick={() => createCategory()}
         >
           Save Project
         </Button>
