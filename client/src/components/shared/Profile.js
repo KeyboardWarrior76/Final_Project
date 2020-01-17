@@ -1,6 +1,15 @@
 import React, {Component} from 'react';
+import {ProjectConsumer} from "../../providers/ProjectProvider";
 
   class Profile extends Component {
+
+
+
+
+
+
+
+
      render () {
        return (
          <>
@@ -12,4 +21,15 @@ import React, {Component} from 'react';
   }
 
 
-export default Profile;
+
+
+
+export default class ConnectedProfile extends React.Component {
+  render () {
+    return (
+       <ProjectConsumer>
+         <Profile/>
+       </ProjectConsumer>
+    )
+  }
+}
