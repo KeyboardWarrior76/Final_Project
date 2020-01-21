@@ -57,16 +57,6 @@ export default class ProjectProvider extends Component {
     }
   }
 
-  componentDidMount() {
-    axios.get('/api/projects')
-      .then( res => {
-        this.setState({ project: res.data })
-      })
-      .catch( err => {
-        console.log(err)
-      })
-  }
-
   estimateTotal = () => {
 
   }

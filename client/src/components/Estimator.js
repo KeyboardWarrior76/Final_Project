@@ -10,13 +10,14 @@ import AnalyticForm from './forms/AnalyticForm';
 import AccountForm from './forms/AccountForm';
 import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
-import { ProjectConsumer, } from "../providers/ProjectProvider";
+import { ProjectConsumer } from "../providers/ProjectProvider";
+import { AuthConsumer } from "../providers/AuthProvider";
 
 class Estimator extends Component {
 
 render() {
 
-  const{ value: {createProjectAndCategories, estimate} } = this.props
+  const{ value: {createProjectAndCategories, estimate}, auth: {user} } = this.props
 
 return(
     <>
@@ -35,11 +36,12 @@ return(
           {` ${estimate}`}
         </div>
         <div align='right'>
+          <Button>Email Form</Button>
           <Button
             variant="contained"
             color="primary"
             endIcon={<SaveIcon/>}
-            onClick={() => createProjectAndCategories()}
+            onClick={() => createProjectAndCategories(user.id)}
           >
             Save Project
           </Button>
@@ -50,14 +52,25 @@ return(
   }
 }
 
-const ConnectedEstimator = () => {
+
+const ConnectedEstimator = ({auth}) => {
 
   return(
     <ProjectConsumer>
       { value =>(
-        <Estimator value={value}/>
+        <Estimator value={value} auth={auth}/>
       )}
     </ProjectConsumer>
   )
 }
-export default ConnectedEstimator;
+const ConnectedAuthEst = () => {
+  return(
+    <AuthConsumer>
+      { auth =>(
+      <ConnectedEstimator auth={auth} />
+    )}
+    </AuthConsumer>
+  )
+}
+
+export default ConnectedAuthEst;
