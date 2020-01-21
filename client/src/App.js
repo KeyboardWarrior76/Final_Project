@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Route, Switch} from 'react-router-dom';
-import Navbar from './components/sharedNavbar';
+import Navbar from './components/shared/Navbar';
 import NoMatch from './components/shared/NoMatch';
 import Estimator from './components/shared/Estimator';
 import Login from './components/auth/Login';

@@ -11,15 +11,15 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 
 class Register extends React.Component {
 
-  state = { email: '', password: '', passwordConfirmation: '', };
+  state = { email: '', password: '', passwordConfirmation: '', first_name: '', last_name: '' };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { email, password, passwordConfirmation } = this.state;
-    const { auth: { handleRegister, }, history, } = this.props;
+    const { email, password, passwordConfirmation, last_name, first_name } = this.state;
+    const { auth: { handleRegister }, history, } = this.props;
 
     if (password === passwordConfirmation)
-      handleRegister({ email, password, passwordConfirmation, }, history);
+      handleRegister({ email, password, passwordConfirmation, first_name, last_name}, history);
     else
       alert('Passwords Do Not Match!')
   }
@@ -30,7 +30,7 @@ class Register extends React.Component {
   }
 
   render() {
-    const { email, password, passwordConfirmation, } = this.state;
+    const { email, password, passwordConfirmation, first_name, last_name} = this.state;
 
     return (
       <Container>
@@ -38,6 +38,22 @@ class Register extends React.Component {
         <form onSubmit={this.handleSubmit}>
 
           <FormGroup>
+          <FormControl>
+              <InputLabel htmlFor="firstInput">First Name</InputLabel>
+              <OutlinedInput
+                id="firstInput"
+                name='first_name'
+                value={first_name}
+                onChange={this.handleChange} />
+            </FormControl>
+            <FormControl>
+              <InputLabel htmlFor="lastInput">Last Name</InputLabel>
+              <OutlinedInput
+                id="lastInput"
+                name='last_name'
+                value={last_name}
+                onChange={this.handleChange} />
+            </FormControl>
             <FormControl>
               <InputLabel htmlFor="emailInput">Email</InputLabel>
               <OutlinedInput
