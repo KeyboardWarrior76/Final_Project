@@ -12,21 +12,13 @@ import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
 import { ProjectConsumer } from "../../providers/ProjectProvider";
 import { AuthConsumer } from "../../providers/AuthProvider";
-import Modal from '@material-ui/core/Modal';
+import EmailModal from './EmailModal';
 
 class Estimator extends Component {
-
-  state = {modal: false}
-
-  toggleModal = () => {
-    const {modal} = this.state
-    this.setState({modal: !modal})
-  }
 
 render() {
 
   const{ value: {createProjectAndCategories, estimate}, auth: {user} } = this.props
-  const{modal} = this.state
 
 return(
     <>
@@ -40,34 +32,17 @@ return(
       <SocialForm/>
       <UserContentForm/>
       <div>
-        <div>
-          <div>
-            Total:
-            {` ${estimate}`}
-          </div>
-          <Button variant="contained" color="primary"
-            onClick={this.toggleModal}
-          >
-            Send Estimate
-          </Button>
-          <Modal open={modal} onClose={this.toggleModal}>
-            <div>
-              <h2>Send App Estimate</h2>
-              <p>Email Form</p>
-              <Button variant="contained" color="primary">Send</Button>
-            </div>
-          </Modal>
-        </div>
-        <div align='right'>
-          <Button
-            variant="contained"
-            color="primary"
-            endIcon={<SaveIcon/>}
-            onClick={() => createProjectAndCategories(user.id)}
-          >
-            Save Project
-          </Button>
-        </div>
+        Total:{` ${estimate}`}
+        <br/>
+        <EmailModal/>
+        <Button
+          variant="contained"
+          color="primary"
+          endIcon={<SaveIcon/>}
+          onClick={() => createProjectAndCategories(user.id)}
+        >
+          Save Project
+        </Button>
       </div>
     </>
     )
