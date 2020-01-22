@@ -1,13 +1,13 @@
 require 'test_helper'
 
-class Api::CatagoriesControllerTest < ActionDispatch::IntegrationTest
+class Api::CategoriesControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get api_catagories_index_url
+    get api_categories_index_url
     assert_response :success
   end
 
   test "should get create" do
-    get api_catagories_create_url
+    get api_categories_create_url
     assert_response :success
   end
 

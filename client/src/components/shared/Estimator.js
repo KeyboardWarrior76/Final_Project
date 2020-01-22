@@ -18,7 +18,7 @@ class Estimator extends Component {
 
 render() {
 
-  const{ value: {createProjectAndCategories, estimate}, auth: {user} } = this.props
+  const{ value: {createProjectAndCategories, project}, auth: {user} } = this.props
 
 return(
     <>
@@ -32,7 +32,7 @@ return(
       <SocialForm/>
       <UserContentForm/>
       <div>
-        Total:{` ${estimate}`}
+        Total:{` ${project.total}`}
         <br/>
         <EmailModal/>
         <Button

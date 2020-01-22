@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       resources :projects
     end
 
-    resources :projects, only: [] do
+    resources :projects do
       resources :integration
       resources :analytic
       resources :billing
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       resources :date_location
       resources :social
       resources :security
-      resources :catagories
+      resources :categories
     end
 
   end

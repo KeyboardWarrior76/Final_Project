@@ -6,7 +6,7 @@ export const ProjectConsumer = ProjectContext.Consumer;
 
 export default class ProjectProvider extends Component {
 
-  state = { project: {}, estimate: 0, isNew: true,
+  state = { project: {name: '', total: 0, days: 0}, isNew: true,
     categories: {
       account: {
         email_pass: false, facebook: false,
@@ -57,12 +57,8 @@ export default class ProjectProvider extends Component {
     }
   }
 
-  estimateTotal = () => {
-
-  }
-
   createProjectAndCategories = (id) => {
-    axios.post(`/api/users/${id}/projects`, this.state.project)
+    axios.post(`/api/user/${id}/projects`, this.state.project)
       .then( res => {
         this.setState({ project: res.data })
         return axios.post(`/api/projects/${res.data.id}/categories`, this.state.categories)
@@ -84,18 +80,18 @@ export default class ProjectProvider extends Component {
 
   }
 
-  calculate = (category, item) => {
-    const {estimate, categories} = this.state
+  calculateEstimate = (category, item) => {
+    const {project, categories} = this.state
     const newitem = categories[category][item]
     if (newitem === false)
-      this.setState({ estimate: (estimate + 1) })
-    else this.setState({ estimate: (estimate - 1) })
+      this.setState({ project: {total: (project.total + 1)} })
+    else this.setState({ project: {total: (project.total - 1)} })
   }
 
   toggleCategoryItem = (category, item) => {
     const{ categories } = this.state
     const newitem = !categories[category][item]
-    this.calculate(category, item)
+    this.calculateEstimate(category, item)
     this.setState({
       categories: {
         ...categories,

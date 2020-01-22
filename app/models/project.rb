@@ -10,7 +10,7 @@ class Project < ApplicationRecord
   has_many :accounts, dependent: :destroy
   has_many :date_locations, dependent: :destroy
 
-  def create_project(params)
+  def create_categories(params)
     categories = {}
 
     # logging for test purposes
@@ -29,14 +29,14 @@ class Project < ApplicationRecord
 
     # store categories in hash
     categories[:integration] = integration
-    catagories[:analytic] = analytic
-    catagories[:billing] = billing
-    catagories[:account] = account
-    catagories[:app] = app
-    catagories[:user_content] = user_content
-    catagories[:date_location] = date_location
-    catagories[:social] = social
-    catagories[:security] = security
+    categories[:analytic] = analytic
+    categories[:billing] = billing
+    categories[:account] = account
+    categories[:app] = app
+    categories[:user_content] = user_content
+    categories[:date_location] = date_location
+    categories[:social] = social
+    categories[:security] = security
 
     # check if categories are valid
     is_valid = (
@@ -58,8 +58,8 @@ class Project < ApplicationRecord
     end
   end
 
-  def get_catagories
-    catagories = {}
+  def get_categories
+    categories = {}
 
     # create category instances
     integration = self.integrations
@@ -74,14 +74,14 @@ class Project < ApplicationRecord
 
     # store categories in hash
     categories[:integration] = integration
-    catagories[:analytic] = analytic
-    catagories[:billing] = billing
-    catagories[:account] = account
-    catagories[:app] = app
-    catagories[:user_content] = user_content
-    catagories[:date_location] = date_location
-    catagories[:social] = social
-    catagories[:security] = security
+    categories[:analytic] = analytic
+    categories[:billing] = billing
+    categories[:account] = account
+    categories[:app] = app
+    categories[:user_content] = user_content
+    categories[:date_location] = date_location
+    categories[:social] = social
+    categories[:security] = security
 
     return categories
   end
