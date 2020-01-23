@@ -13,19 +13,35 @@ class Project < ApplicationRecord
   def create_categories(params)
     categories = {}
 
-    # logging for test purposes
     puts params
 
-    # create category instances
-    integration = self.integrations.create(params[:integration])
-    analytic = self.analytics.create(params[:analytic])
-    billing = self.billings.create(params[:billing])
-    account = self.accounts.create(params[:account])
-    app = self.apps.create(params[:app])
-    user_content = self.user_contents.create(params[:user_content])
-    date_location = self.date_locations.create(params[:date_location])
-    social = self.socials.create(params[:social])
-    security = self.securities.create(params[:security])
+    integration = self.integrations.create(params.require(:integration).permit(
+      :third_party, :messaging, :api_integrate, :phone_number
+      ))
+    analytic = self.analytics.create(params.require(:analytic).permit(
+      :cms, :admin, :moderation, :intercom, :crash_report, :performance, :multilingual, :usage
+      ))
+    billing = self.billings.create(params.require(:billing).permit(
+      :subscription_plan, :payment_processing, :shopping_cart, :user_marketplace, :product_management
+      ))
+    account = self.accounts.create(params.require(:account).permit(
+      :email_pass, :facebook, :twitter, :google, :linkedin, :github, :invitation, :multi_account, :subdomain, :custom
+      ))
+    app = self.apps.create(params.require(:app).permit(
+      :ui_level, :size
+      ))
+    user_content = self.user_contents.create(params.require(:user_content).permit(
+      :dashboard, :activity_feed, :uploading, :profile, :transactional_email, :tags, :rating,:audio_video, :searching
+      ))
+    date_location = self.date_locations.create(params.require(:date_location).permit(
+      :calendar, :display, :map_display, :booking
+      ))
+    social = self.socials.create(params.require(:social).permit(
+      :facebook_graph, :sharing, :forums, :messaging
+      ))
+    security = self.securities.create(params.require(:security).permit(
+      :certificate, :factor_authentication, :dos_protection
+      ))
 
     # store categories in hash
     categories[:integration] = integration

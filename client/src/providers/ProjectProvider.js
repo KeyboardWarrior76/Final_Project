@@ -22,7 +22,7 @@ export default class ProjectProvider extends Component {
         performance: false, multilingual: false
       },
       app: {
-        ui_level: '', size: ''
+        size: '', ui_level: ''
       },
       billing: {
         subscription_plan: false, payment_processing: false,
@@ -103,15 +103,33 @@ export default class ProjectProvider extends Component {
     })
   }
 
-  render(){
+  sizeSet = (size) => {
+    const{categories} = this.state
+    this.setState({ categories: { ...categories, app: { ...categories.app, size: size } } })
+  }
+  uiSet = (ui_level) => {
+    const{categories} = this.state
+    this.setState({ categories: { ...categories, app: { ...categories.app, ui_level: ui_level } } })
+  }
+
+  emailSubmit = () => {
+
+  }
+  
+  render() {
+
     return(
       <ProjectContext.Provider value={{
         ...this.state,
         toggleCategoryItem: this.toggleCategoryItem,
         createProjectAndCategories: this.createProjectAndCategories,
+        sizeSet: this.sizeSet,
+        uiSet: this.uiSet
       }}>
         { this.props.children }
       </ProjectContext.Provider>
     )
   }
 }
+
+export { ProjectContext };

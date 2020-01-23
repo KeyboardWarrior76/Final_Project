@@ -1,10 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import { makeStyles } from '@material-ui/core/styles';
+import { ProjectContext } from '../../providers/ProjectProvider';
 
 function getModalStyle() {
   const top = 50;
@@ -16,6 +17,7 @@ function getModalStyle() {
     transform: `translate(-${top}%, -${left}%)`,
   };
 }
+
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -30,7 +32,8 @@ const useStyles = makeStyles(theme => ({
 
 export default function EmailModal() {
   const classes = useStyles();
-
+  const project = useContext(ProjectContext);
+  
   const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState('')
@@ -52,9 +55,12 @@ export default function EmailModal() {
     <>
       <Button variant='contained' color="primary" onClick={handleOpen}>Send Estimate</Button>
       <Modal open={open} onClose={handleClose}>
-        <div align='center' style={modalStyle} className={classes.paper}>
-          <h3>Enter Email</h3>
-          <form>
+        <div style={modalStyle} className={classes.paper}>
+          <div align='left'>
+            <p>We'll send you and email of your app estimation</p>
+            <h5>Enter Email</h5>
+          </div>
+          <form >
             <FormControl>
               <InputLabel htmlFor="emailInput">Email</InputLabel>
               <OutlinedInput
@@ -63,7 +69,7 @@ export default function EmailModal() {
                 value={email}
                 onChange={handleChange} />
             </FormControl>
-            <Button color='primary' type='submit'>Submit</Button>
+            <Button variant="contained" color="primary" type='submit'>Submit</Button>
           </form>
         </div>
       </Modal>

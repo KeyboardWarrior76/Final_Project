@@ -16,6 +16,7 @@ import EmailModal from './EmailModal';
 
 class Estimator extends Component {
 
+
 render() {
 
   const{ value: {createProjectAndCategories, project}, auth: {user} } = this.props
