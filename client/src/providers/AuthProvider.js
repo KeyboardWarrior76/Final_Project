@@ -5,7 +5,7 @@ const AuthContext = React.createContext();
 export const AuthConsumer = AuthContext.Consumer;
 export default class AuthProvider extends Component {
 
-  state = { user: null }
+  state = { user: null, edit:false}
 
   handleRegister = (user, history) => {
     axios.post('/api/auth', user)
@@ -34,6 +34,19 @@ export default class AuthProvider extends Component {
       .catch(err => console.log(err))
   }
 
+  toggleEdit = () => {
+    this.setState({edit:!this.setState.edit})
+
+  }
+  
+  updateUser = (user) => {
+    axios.put('/api/auth', user)
+    .then(res => {
+      this.setState({user:res.data.data})
+    })
+    .catch(err => console.log(err))
+  }
+
   render() {
     return (
       <AuthContext.Provider value={{
@@ -42,6 +55,8 @@ export default class AuthProvider extends Component {
         handleLogin: this.handleLogin,
         handleLogout: this.handleLogout,
         authenticated: this.state.user !== null,
+        toggleEdit: this.toggleEdit,
+        updateUser: this.updateUser
       }}>
         {this.props.children}
       </AuthContext.Provider>

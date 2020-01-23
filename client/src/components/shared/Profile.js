@@ -1,19 +1,23 @@
 import React from 'react';
-import { AuthConsumer } from "../../providers/AuthProvider"
+import { AuthConsumer } from "../../providers/AuthProvider";
 import { makeStyles } from '@material-ui/core/styles';
+
+import UserFormModal from "./UserFormModal"
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
+
 import EmailIcon from '@material-ui/icons/Email';
 import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import Container from '@material-ui/core/Container';
+import Modal from '@material-ui/core/Modal';
 
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
 const useStyles = makeStyles(theme => ({
+  
   root: {
     marginTop: 100,
     width: '100%',
@@ -50,10 +54,20 @@ const Profile = ({ auth }) =>
           
         
           </List>
+          <div>
+          
+        <UserFormModal/>
+      
+    </div>
          </CardContent>
         </Card>
       
     </div>
+    
+
+
+
+
   </Container>
   )
 
