@@ -27,7 +27,7 @@ class ProjectSenderMailer < ApplicationMailer
 		# 	end
 		# }
 
-		turn all true into ✓ and all false into ✗
+		# turn all true into ✓ and all false into ✗
 		cat[:account].each do |key, value|
 			if value === true
 				value = '✓'
