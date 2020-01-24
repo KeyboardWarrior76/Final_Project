@@ -10,9 +10,9 @@ class BillingForm extends Component {
 
   return(
       <div align='center'>
-        <h3><p>Billing</p></h3>
+        <h3><p>Billing & eCommerce</p></h3>
         <Fab variant="extended" onClick={() => toggleCategoryItem('billing', 'subscription_plan')}>
-          Subscription
+          Subscription Plans
         </Fab>
         <Fab variant="extended" onClick={() => toggleCategoryItem('billing', 'payment_processing')}>
           Payment Processing

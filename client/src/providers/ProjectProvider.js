@@ -22,7 +22,7 @@ export default class ProjectProvider extends Component {
         performance: false, multilingual: false
       },
       app: {
-        size: '', ui_level: ''
+        size: 'small', ui_level: 'simple'
       },
       billing: {
         subscription_plan: false, payment_processing: false,
@@ -117,7 +117,7 @@ export default class ProjectProvider extends Component {
     const params = {project, categories, email}
     axios.post('/api/project_senders', params)
     .then( res => {
-      console.log(res.data)
+      return res.data
     })
     .catch( err => {
       console.log(err)

@@ -10,18 +10,18 @@ class IntegrationForm extends Component {
 
   return(
       <div align='center'>
-        <h3><p>Integrations</p></h3>
+        <h3><p>External APIs & Integrations</p></h3>
         <Fab variant="extended" onClick={() => toggleCategoryItem('integration', 'third_party')}>
-          Third Party
+          Third Party Services
         </Fab>
         <Fab variant="extended" onClick={() => toggleCategoryItem('integration', 'api_integrate')}>
           API Integration
         </Fab>
         <Fab variant="extended" onClick={() => toggleCategoryItem('integration', 'messaging')}>
-          Messaging
+          SMS Messaging
         </Fab>
         <Fab variant="extended" onClick={() => toggleCategoryItem('integration', 'phone_number')}>
-          Phone Number
+          Phone Number Masking
         </Fab>
       </div>
     )

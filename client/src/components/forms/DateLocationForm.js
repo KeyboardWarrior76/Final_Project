@@ -12,16 +12,16 @@ class DateLocationForm extends Component {
       <div align='center'>
         <h3><p>Dates & Locations</p></h3>
         <Fab variant="extended" onClick={() => toggleCategoryItem('date_location', 'calendar')}>
-          Calendar
+          Calendaring
         </Fab>
         <Fab variant="extended" onClick={() => toggleCategoryItem('date_location', 'display')}>
-          Display
+          Custom Map
         </Fab>
         <Fab variant="extended" onClick={() => toggleCategoryItem('date_location', 'map_display')}>
-          Map Display
+          Geolocation
         </Fab>
         <Fab variant="extended" onClick={() => toggleCategoryItem('date_location', 'booking')}>
-          Booking
+          Bookings
         </Fab>
       </div>
     )

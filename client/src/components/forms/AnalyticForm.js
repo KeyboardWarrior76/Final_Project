@@ -10,31 +10,31 @@ render() {
 
 return(
     <div align='center'>
-      <h3><p>Analytics</p></h3>
+      <h3><p>Admin, Feedback, & Analytics</p></h3>
       <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'cms')}>
-        CMS
+        CMS Integration
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'admin')}>
-        Admin
+        User Admin Pages
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'moderation')}>
-        Moderation
+        Moderation/Content Approval
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'intercom')}>
-        Intercoms
+        Intercom
       </Fab>
       <br/>
       <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'usage')}>
-        Usage Data
+        Usage Analytics
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'crash_report')}>
         Crash Reports
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'performance')}>
-        Performance
+        Performance Monitoring
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'multilingual')}>
-        Multi-lingual
+        Multilingual Support
       </Fab>
     </div>
     )

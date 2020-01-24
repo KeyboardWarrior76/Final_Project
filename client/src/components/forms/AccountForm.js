@@ -10,38 +10,38 @@ class AccountForm extends Component {
 
   return(
     <div align='center'>
-      <h3><p>Accounts & Users</p></h3>
+      <h3><p>Users & Accounts</p></h3>
       <Fab variant="extended" onClick={() => toggleCategoryItem("account", "email_pass")}>
-        Email & Password
+        Email/Password Login
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem("account", "facebook")}>
-        Facebook
+        Facebook Login
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'twitter')}>
-        Twitter
+        Twitter Login
       </Fab>
       <br/>
       <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'google')}>
-        Google
+        Google Login
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'linkedin')}>
-        Linkedin
+        Linkedin Login
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'github')}>
-        GitHub
+        GitHub Login
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'invitation')}>
-        Invitation
+        User Invitation Emails
       </Fab>
       <br/>
       <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'multi_account')}>
-        Multiple Accounts
+        Multi-tenant Accounts
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'subdomain')}>
-        Subdomain
+        Subdomains
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'custom')}>
-        Custom
+        Custom Domains
       </Fab>
     </div>
     )

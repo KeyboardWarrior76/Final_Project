@@ -10,15 +10,15 @@ class SocialForm extends Component {
 
   return(
       <div align='center'>
-        <h3><p>Social</p></h3>
+        <h3><p>Social & Engagement</p></h3>
         <Fab variant="extended" onClick={() => toggleCategoryItem('social', 'facebook_graph')}>
-          Facebook Graph
+          Push to Facebook Graph
         </Fab>
         <Fab variant="extended" onClick={() => toggleCategoryItem('social', 'sharing')}>
-          Sharing
+          Social Sharing
         </Fab>
         <Fab variant="extended" onClick={() => toggleCategoryItem('social', 'forums')}>
-          Forums
+          Forums or Commenting
         </Fab>
         <Fab variant="extended" onClick={() => toggleCategoryItem('social', 'messaging')}>
           Messaging

@@ -1,40 +1,99 @@
 class ProjectSenderMailer < ApplicationMailer
-
 	# using SendGrid's Ruby Library
 	# https://github.com/sendgrid/sendgrid-ruby
+
 	require 'sendgrid-ruby'
 
 	include SendGrid
 
 	def send_project(params)
-		category = params[:categories]
+
+		cat = params[:categories]
 		email = params[:email]
 		project = params[:project]
-		total = project[:total]
 
-		account = category[:account]
-		analytic = category[:analytic]
-		app = category[:app]
-		billing = category[:billing]
-		date_location = category[:date_location]
-		integration = category[:integration]
-		security = category[:security]
-		social = category[:social]
-		user_content = category[:user_content]
-
-		email_pass = account[:email_pass]
-
-		account.each{ |item|
-			if item == true
-				item = 'yes'
-				puts item
+		#turn all true into yes and all false into no
+		cat[:account].each do |key, value|
+			if value === true
+				value = 'yes'
+				cat[:account].merge!({key => value})
 			else
-				item = 'no'
-				puts item
+				value = 'no'
+				cat[:account].merge!({key => value})
 			end
-		}
+		end
 
+		cat[:analytic].each do |key, value|
+			if value === true
+				value = 'yes'
+				cat[:analytic].merge!({key => value})
+			else
+				value = 'no'
+				cat[:analytic].merge!({key => value})
+			end
+		end
 
+		cat[:billing].each do |key, value|
+			if value === true
+				value = 'yes'
+				cat[:billing].merge!({key => value})
+			else
+				value = 'no'
+				cat[:billing].merge!({key => value})
+			end
+		end
+
+		cat[:date_location].each do |key, value|
+			if value === true
+				value = 'yes'
+				cat[:date_location].merge!({key => value})
+			else
+				value = 'no'
+				cat[:date_location].merge!({key => value})
+			end
+		end
+
+		cat[:integration].each do |key, value|
+			if value === true
+				value = 'yes'
+				cat[:integration].merge!({key => value})
+			else
+				value = 'no'
+				cat[:integration].merge!({key => value})
+			end
+		end
+
+		cat[:security].each do |key, value|
+			if value === true
+				value = 'yes'
+				cat[:security].merge!({key => value})
+			else
+				value = 'no'
+				cat[:security].merge!({key => value})
+			end
+		end
+
+		cat[:social].each do |key, value|
+			if value === true
+				value = 'yes'
+				cat[:social].merge!({key => value})
+			else
+				value = 'no'
+				cat[:social].merge!({key => value})
+			end
+		end
+
+		cat[:user_content].each do |key, value|
+			if value === true
+				value = 'yes'
+				cat[:user_content].merge!({key => value})
+			else
+				value = 'no'
+				cat[:user_content].merge!({key => value})
+			end
+		end
+
+		print cat
 		from = Email.new(email: 'chris.anderson955@gmail.com')
 		to = Email.new(email: "#{email}")
 		subject = 'Project Estimate'
@@ -47,40 +106,70 @@ class ProjectSenderMailer < ApplicationMailer
 				 Your app had the following selections:
 				 <ul>
 				 	<p><u>App Size</u></p>
-						 <li>Email & Password: #{account[:email_pass]}</li>
-						 <li>Facebook: #{email_pass}</li>
-						 <li>Twitter: #{email_pass}</li>
-						 <li>Google: #{email_pass}</li>
-						 <li>LinkedIn: #{email_pass}</li>
-						 <li>GitHub: #{email_pass}</li>
-						 <li>Invitation: #{email_pass}</li>
-						 <li>Multiple Accounts: #{email_pass}</li>
-						 <li>Subdomain: #{email_pass}</li>
-						 <li>Custom: #{email_pass}</li>
+						<li>#{cat[:app][:size].capitalize}</li>
 					 <p><u>UI Level</u></p>
-					 <li>#{email_pass}</li>
-					 <p><u>Accounts & Users</u></p>
-					 <li>#{email_pass}</li>
-					 <p><u>Analytics</u></p>
-					 <li>#{email_pass}</li>
-					 <p><u>Billing</u></p>
-					 <li>#{email_pass}</li>
-					 <p><u>Dates & Locations</u></p>
-					 <li>#{email_pass}</li>
-					 <p><u>Integrations</u></p>
-					 <li>#{security}</li>
-					 <p><u>Security</u></p>
-					 <li>#{email_pass}</li>
-					 <p><u>Social</u></p>
-					 <li>#{email_pass}</li>
-					 <p><u>User Content</u></p>
-					 <li>#{email_pass}</li>
-				 </ul>
-				 Based on your app,
-				 the total estimation would be $#{total}
-				</div>
-				</body>
-			</html>"
+					 	<li>#{cat[:app][:ui_level].capitalize}</li>
+					 <p><u>Users & Accounts</u></p>
+						 <li>Email/Password Login: #{cat[:account]["email_pass"]}</li>
+						 <li>Facebook Login: #{cat[:account]["facebook"]}</li>
+						 <li>Twitter Login: #{cat[:account]["twitter"]}</li>
+						 <li>Google Login: #{cat[:account]["google"]}</li>
+						 <li>LinkedIn Login: #{cat[:account]["linkedin"]}</li>
+						 <li>GitHub Login: #{cat[:account]["github"]}</li>
+						 <li>User Invitation Emails: #{cat[:account]["invitation"]}</li>
+						 <li>Multi-tenant Accounts: #{cat[:account]["multi_account"]}</li>
+						 <li>Subdomains: #{cat[:account]["subdomain"]}</li>
+						 <li>Custom Domains: #{cat[:account]["custom"]}</li>
+						<p><u>Admin, Feedback, & Analytics</u></p>
+						 <li>CMS Integration: #{cat[:analytic]["cms"]}</li>
+						 <li>User Admin Pages: #{cat[:analytic]["admin"]}</li>
+						 <li>Moderation/Content Approval: #{cat[:analytic]["moderation"]}</li>
+						 <li>Intercom: #{cat[:analytic]["intercom"]}</li>
+						 <li>Usage Analytics: #{cat[:analytic]["usage"]}</li>
+						 <li>Crash Reports: #{cat[:analytic]["crash_report"]}</li>
+						 <li>Performance Monitoring: #{cat[:analytic]["performance"]}</li>
+						 <li>Multilingual Support: #{cat[:analytic]["multilingual"]}</li>
+						<p><u>Billing & eCommerce</u></p>
+						 <li>Subscription Plans: #{cat[:billing]["subscription_plan"]}</li>
+						 <li>Payment Proccessing: #{cat[:billing]["payment_processing"]}</li>
+						 <li>Shopping Cart: #{cat[:billing]["shopping_cart"]}</li>
+						 <li>User Marketplace: #{cat[:billing]["user_marketplace"]}</li>
+						 <li>Product Management: #{cat[:billing]["product_management"]}</li>
+						<p><u>Dates & Locations</u></p>
+						 <li>Calendaring: #{cat[:date_location]["calendar"]}</li>
+						 <li>Display Custom Map: #{cat[:date_location]["display"]}</li>
+						 <li>Geolocation: #{cat[:date_location]["map_display"]}</li>
+						 <li>Bookings: #{cat[:date_location]["booking"]}</li>
+						<p><u>External APIs & Integrations</u></p>
+						 <li>Third Party Services: #{cat[:integration]["third_party"]}</li>
+						 <li>API Integration: #{cat[:integration]["api_integrate"]}</li>
+						 <li>SMS Messaging: #{cat[:integration]["messaging"]}</li>
+						 <li>Phone Number Masking: #{cat[:integration]["phone_number"]}</li>
+						<p><u>Security</u></p>
+							<li>SSL Certificate Based Security: #{cat[:security]["certificate"]}</li>
+							<li>Two-Factor Authentication: #{cat[:security]["factor_authentication"]}</li>
+							<li>DoS Protection: #{cat[:security]["dos_protection"]}</li>
+						<p><u>Social & Engagement</u></p>
+							<li>Push to Facebook Graph: #{cat[:social]["facebook_graph"]}</li>
+							<li>Forums or Commenting: #{cat[:social]["forums"]}</li>
+							<li>Social Sharing: #{cat[:social]["sharing"]}</li>
+							<li>Messaging: #{cat[:social]["messaging"]}</li>
+						<p><u>User Generated Content</u></p>
+							<li>Dashboard: #{cat[:user_content]["dashboard"]}</li>
+							<li>Activiy Feed: #{cat[:user_content]["activity_feed"]}</li>
+							<li>File Uploading: #{cat[:user_content]["uploading"]}</li>
+							<li>User Profiles: #{cat[:user_content]["profile"]}</li>
+							<li>Transactional Emails: #{cat[:user_content]["transactional_email"]}</li>
+							<li>Tags: #{cat[:user_content]["tags"]}</li>
+							<li>Ratings or Reviews: #{cat[:user_content]["rating"]}</li>
+							<li>Audio/Video Proccessing: #{cat[:user_content]["audio_video"]}</li>
+							<li>Free Text Searching: #{cat[:user_content]["searching"]}</li>
+				 	 </ul>
+					 Based on your app,
+					 the total estimation would be $#{project[:total]}
+					</div>
+					</body>
+				</html>"
 
 		)
 		mail = Mail.new(from, subject, to, content)

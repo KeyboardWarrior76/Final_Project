@@ -10,19 +10,19 @@ class UserContentForm extends Component {
 
   return(
     <div align='center'>
-      <h3><p>User Content</p></h3>
+      <h3><p>User Generated Content</p></h3>
       <Fab variant="extended" onClick={() => toggleCategoryItem("user_content", "dashboard")}>
-        User Dashboard
+        Dashboard
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem("user_content", "activity_feed")}>
         Activity Feed
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'uploading')}>
-        Uploading
+        File Uploading
       </Fab>
       <br/>
       <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'profile')}>
-        Profile
+        User Profile
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'transactional_email')}>
         Transactional Emails
@@ -32,13 +32,13 @@ class UserContentForm extends Component {
       </Fab>
       <br/>
       <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'rating')}>
-        Customer Ratings
+        Ratings or Reviews
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'audio_video')}>
-        Audio Video
+        Audio/Video Proccessing
       </Fab>
       <Fab variant="extended" onClick={() => toggleCategoryItem('user_content', 'searching')}>
-        Searching
+        Free Text Searching
       </Fab>
     </div>
     )

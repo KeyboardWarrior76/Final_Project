@@ -12,13 +12,13 @@ class SecurityForm extends Component {
       <div align='center'>
         <h3><p>Security</p></h3>
         <Fab variant="extended" onClick={() => toggleCategoryItem('security', 'certificate')}>
-          Certificate
+          SSL Certificate Based Security
         </Fab>
         <Fab variant="extended" onClick={() => toggleCategoryItem('security', 'factor_authentication')}>
-          Factor Authentication
+          Two-Factor Authentication
         </Fab>
         <Fab variant="extended" onClick={() => toggleCategoryItem('security', 'dos_protection')}>
-          DOS Protection
+          DoS Protection
         </Fab>
       </div>
     )
