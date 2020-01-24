@@ -5,6 +5,16 @@ import { AuthConsumer } from "../../providers/AuthProvider";
 
 
 class UserForm extends Component{
+  state = {email: '', password: '', first_name:'' , last_name: ''};
+component
+ handleSubmit = (e) => {
+   e.preventDefault();
+   this.props.auth.updateUser(this.state);
+ }
+
+
+
+
   render(){
     return (
       <>

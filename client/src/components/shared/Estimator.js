@@ -10,13 +10,16 @@ import AnalyticForm from '../forms/AnalyticForm';
 import AccountForm from '../forms/AccountForm';
 import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
-import { ProjectConsumer, } from "../../providers/ProjectProvider";
+import { ProjectConsumer } from "../../providers/ProjectProvider";
+import { AuthConsumer } from "../../providers/AuthProvider";
+import EmailModal from './EmailModal';
 
 class Estimator extends Component {
 
+
 render() {
 
-  const{ value: {createCategory, estimate} } = this.props
+  const{ value: {createProjectAndCategories, project}, auth: {user} } = this.props
 
 return(
     <>
@@ -30,34 +33,42 @@ return(
       <SocialForm/>
       <UserContentForm/>
       <div>
-        <div>
-          Total:
-          {` ${estimate}`}
-        </div>
-        <div align='right'>
-          <Button
-            variant="contained"
-            color="primary"
-            endIcon={<SaveIcon/>}
-            onClick={() => createCategory()}
-          >
-            Save Project
-          </Button>
-        </div>
+        Total:{` ${project.total}`}
+        <br/>
+        <EmailModal/>
+        <Button
+          variant="contained"
+          color="primary"
+          endIcon={<SaveIcon/>}
+          onClick={() => createProjectAndCategories(user.id)}
+        >
+          Save Project
+        </Button>
       </div>
     </>
     )
   }
 }
 
-const ConnectedEstimator = () => {
+
+const ConnectedEstimator = ({auth}) => {
 
   return(
     <ProjectConsumer>
       { value =>(
-        <Estimator value={value}/>
+        <Estimator value={value} auth={auth}/>
       )}
     </ProjectConsumer>
   )
 }
-export default ConnectedEstimator;
+const ConnectedAuthEst = () => {
+  return(
+    <AuthConsumer>
+      { auth =>(
+      <ConnectedEstimator auth={auth} />
+    )}
+    </AuthConsumer>
+  )
+}
+
+export default ConnectedAuthEst;
