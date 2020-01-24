@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'api/auth'
 
   namespace :api do
+    resources :project_senders, only: [:create]
     resources :projects do
       resources :integration
       resources :analytic
