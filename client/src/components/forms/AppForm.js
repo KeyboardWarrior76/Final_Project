@@ -5,20 +5,20 @@ import { ProjectConsumer, } from "../../providers/ProjectProvider";
 class AppForm extends Component {
 
   render() {
-
+    const{uiSet, sizeSet} = this.props.value
   return(
     <>
       <div align='center'>
         <h3><p>App Size</p></h3>
-        <Fab onClick={this.selectSmall} variant="extended">Small</Fab>
-        <Fab onClick={this.selectMedium} variant="extended">Medium</Fab>
-        <Fab onClick={this.selectLarge} variant="extended">Large</Fab>
+        <Fab onClick={()=>sizeSet('small')} variant="extended">Small</Fab>
+        <Fab onClick={()=>sizeSet('medium')} variant="extended">Medium</Fab>
+        <Fab onClick={()=>sizeSet('large')} variant="extended">Large</Fab>
       </div>
       <div align='center'>
         <h3><p>UI Level</p></h3>
-        <Fab onClick={this.selectMvp} variant="extended">MVP</Fab>
-        <Fab onClick={this.selectBasic} variant="extended">Basic</Fab>
-        <Fab onClick={this.selectPolished} variant="extended">Polished</Fab>
+        <Fab onClick={()=>uiSet('simple')} variant="extended">simple</Fab>
+        <Fab onClick={()=>uiSet('detailed')} variant="extended">detailed</Fab>
+        <Fab onClick={()=>uiSet('sophisticated')} variant="extended">sophisticated</Fab>
       </div>
     </>
     )

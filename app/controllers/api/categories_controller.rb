@@ -1,6 +1,6 @@
-class Api::CatagoriesController < ApplicationController
+class Api::CategoriesController < ApplicationController
   before_action :set_project
-  
+
   def index
     render json: @project.get_categories
   end
@@ -8,15 +8,14 @@ class Api::CatagoriesController < ApplicationController
   def create
     categories = @project.create_categories(params)
     if categories
-      render json: catagories
-    else 
+      render json: categories
+    else
       render json: {errors: 'Could Not Create Data'}, status: :unproccessable_entity
     end
   end
 
-  private 
-  def set_project
-    @project = Project.find(params[:project_id])
-  end
+  private
+    def set_project
+      @project = Project.find(params[:project_id])
+    end
 end
-
