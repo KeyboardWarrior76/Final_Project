@@ -12,88 +12,87 @@ class ProjectSenderMailer < ApplicationMailer
 		email = params[:email]
 		project = params[:project]
 
-		#turn all true into yes and all false into no
+		#turn all true into ✓ and all false into ✗
 		cat[:account].each do |key, value|
 			if value === true
-				value = 'yes'
+				value = '✓'
 				cat[:account].merge!({key => value})
 			else
-				value = 'no'
+				value = '✗'
 				cat[:account].merge!({key => value})
 			end
 		end
 
 		cat[:analytic].each do |key, value|
 			if value === true
-				value = 'yes'
+				value = '✓'
 				cat[:analytic].merge!({key => value})
 			else
-				value = 'no'
+				value = '✗'
 				cat[:analytic].merge!({key => value})
 			end
 		end
 
 		cat[:billing].each do |key, value|
 			if value === true
-				value = 'yes'
+				value = '✓'
 				cat[:billing].merge!({key => value})
 			else
-				value = 'no'
+				value = '✗'
 				cat[:billing].merge!({key => value})
 			end
 		end
 
 		cat[:date_location].each do |key, value|
 			if value === true
-				value = 'yes'
+				value = '✓'
 				cat[:date_location].merge!({key => value})
 			else
-				value = 'no'
+				value = '✗'
 				cat[:date_location].merge!({key => value})
 			end
 		end
 
 		cat[:integration].each do |key, value|
 			if value === true
-				value = 'yes'
+				value = '✓'
 				cat[:integration].merge!({key => value})
 			else
-				value = 'no'
+				value = '✗'
 				cat[:integration].merge!({key => value})
 			end
 		end
 
 		cat[:security].each do |key, value|
 			if value === true
-				value = 'yes'
+				value = '✓'
 				cat[:security].merge!({key => value})
 			else
-				value = 'no'
+				value = '✗'
 				cat[:security].merge!({key => value})
 			end
 		end
 
 		cat[:social].each do |key, value|
 			if value === true
-				value = 'yes'
+				value = '✓'
 				cat[:social].merge!({key => value})
 			else
-				value = 'no'
+				value = '✗'
 				cat[:social].merge!({key => value})
 			end
 		end
 
 		cat[:user_content].each do |key, value|
 			if value === true
-				value = 'yes'
+				value = '✓'
 				cat[:user_content].merge!({key => value})
 			else
-				value = 'no'
+				value = '✗'
 				cat[:user_content].merge!({key => value})
 			end
 		end
 
-		print cat
 		from = Email.new(email: 'chris.anderson955@gmail.com')
 		to = Email.new(email: "#{email}")
 		subject = 'Project Estimate'
