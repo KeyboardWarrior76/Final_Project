@@ -18,6 +18,14 @@ class Navbar extends React.Component {
             onClick={ () => handleLogout(history) }>
             Logout
           </Button>
+          <Link to='/profile'>
+            <Button
+              id='profile'
+              name='profile'
+              active={pathname ? '/profile' : undefined}>
+              Profile
+            </Button>
+          </Link>
         </ToolBar>
       )
     } else {
