@@ -5,11 +5,11 @@ const AuthContext = React.createContext();
 export const AuthConsumer = AuthContext.Consumer;
 export default class AuthProvider extends Component {
 
-  state = { user: null }
+  state = { user: null, edit:false}
 
   handleRegister = (user, history) => {
     axios.post('/api/auth', user)
-      .then( res => {
+      .then(res => {
         this.setState({ user: res.data.data })
         history.push('/')
       })
@@ -18,7 +18,7 @@ export default class AuthProvider extends Component {
 
   handleLogin = (user, history) => {
     axios.post('/api/auth/sign_in', user)
-      .then( res => {
+      .then(res => {
         this.setState({ user: res.data.data })
         history.push('/')
       })
@@ -27,24 +27,38 @@ export default class AuthProvider extends Component {
 
   handleLogout = (history) => {
     axios.delete('/api/auth/sign_out')
-      .then( res => {
+      .then(res => {
         this.setState({ user: null })
         history.push('/login')
       })
       .catch(err => console.log(err))
   }
 
-  render(){
-    return(
+  toggleEdit = () => {
+    this.setState({edit:!this.setState.edit})
+
+  }
+  
+  updateUser = (user) => {
+    axios.put('/api/auth', user)
+    .then(res => {
+      this.setState({user:res.data.data})
+    })
+    .catch(err => console.log(err))
+  }
+
+  render() {
+    return (
       <AuthContext.Provider value={{
         ...this.state,
         handleRegister: this.handleRegister,
         handleLogin: this.handleLogin,
         handleLogout: this.handleLogout,
         authenticated: this.state.user !== null,
-        setUser: (user) => this.setState({ user })
+        toggleEdit: this.toggleEdit,
+        updateUser: this.updateUser
       }}>
-        { this.props.children }
+        {this.props.children}
       </AuthContext.Provider>
     )
   }

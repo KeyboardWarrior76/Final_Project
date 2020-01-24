@@ -6,7 +6,7 @@ export const ProjectConsumer = ProjectContext.Consumer;
 
 export default class ProjectProvider extends Component {
 
-  state = { project: null, estimate: 0, isNew: true,
+  state = { project: {name: '', total: 0, days: 0}, isNew: true,
     categories: {
       account: {
         email_pass: false, facebook: false,
@@ -22,7 +22,7 @@ export default class ProjectProvider extends Component {
         performance: false, multilingual: false
       },
       app: {
-        ui_level: '', size: ''
+        size: '', ui_level: ''
       },
       billing: {
         subscription_plan: false, payment_processing: false,
@@ -57,41 +57,20 @@ export default class ProjectProvider extends Component {
     }
   }
 
-  componentDidMount() {
-    axios.get('/api/projects')
+  createProjectAndCategories = (id) => {
+    axios.post(`/api/user/${id}/projects`, this.state.project)
       .then( res => {
         this.setState({ project: res.data })
+        return axios.post(`/api/projects/${res.data.id}/categories`, this.state.categories)
+      })
+      .then(res => {
+        this.setState({ categories: res.data })
       })
       .catch( err => {
         console.log(err)
       })
-  }
 
-  estimateTotal = () => {
-
-  }
-
-  createProject = (project) => {
-    axios.post('/api/projects', project)
-      .then( res => {
-        // const { projects } = this.state
-        // this.setState({ project: [...projects, res.data]})
-      })
-      .catch( err => {
-        console.log(err)
-      })
-  }
-
-  createCategory = (category) => {
-    axios.post(`/api/${category}s`, category)
-      .then( res => {
-        // const { categories } = this.state
-        // this.setState({ categories: [...categories, res.data]})
-      })
-      .catch( err => {
-        console.log(err)
-      })
-  }
+    }
 
   initExistingProject = () => {
 
@@ -101,18 +80,18 @@ export default class ProjectProvider extends Component {
 
   }
 
-  calculate = (category, item) => {
-    const {estimate, categories} = this.state
+  calculateEstimate = (category, item) => {
+    const {project, categories} = this.state
     const newitem = categories[category][item]
     if (newitem === false)
-      this.setState({ estimate: (estimate + 1) })
-    else this.setState({ estimate: (estimate - 1) })
+      this.setState({ project: {total: (project.total + 1)} })
+    else this.setState({ project: {total: (project.total - 1)} })
   }
 
   toggleCategoryItem = (category, item) => {
     const{ categories } = this.state
     const newitem = !categories[category][item]
-    this.calculate(category, item)
+    this.calculateEstimate(category, item)
     this.setState({
       categories: {
         ...categories,
@@ -124,16 +103,33 @@ export default class ProjectProvider extends Component {
     })
   }
 
-  render(){
+  sizeSet = (size) => {
+    const{categories} = this.state
+    this.setState({ categories: { ...categories, app: { ...categories.app, size: size } } })
+  }
+  uiSet = (ui_level) => {
+    const{categories} = this.state
+    this.setState({ categories: { ...categories, app: { ...categories.app, ui_level: ui_level } } })
+  }
+
+  emailSubmit = () => {
+
+  }
+  
+  render() {
+
     return(
       <ProjectContext.Provider value={{
         ...this.state,
         toggleCategoryItem: this.toggleCategoryItem,
-        createProject: this.createProject,
-        createCategory: this.createCategory
+        createProjectAndCategories: this.createProjectAndCategories,
+        sizeSet: this.sizeSet,
+        uiSet: this.uiSet
       }}>
         { this.props.children }
       </ProjectContext.Provider>
     )
   }
 }
+
+export { ProjectContext };

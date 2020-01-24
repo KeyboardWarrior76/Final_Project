@@ -36,6 +36,6 @@ class Api::AnalyticsController < ApplicationController
   end
 
   def analytic_params
-    params.require(:analytic).permit(:cms, :admin, :moderation, :intercom, :crash_report, :performance, :multilingual)
+    params.require(:analytic).permit(:cms, :admin, :moderation, :usage, :intercom, :crash_report, :performance, :multilingual)
   end
 end
