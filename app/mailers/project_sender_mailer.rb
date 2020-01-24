@@ -12,7 +12,22 @@ class ProjectSenderMailer < ApplicationMailer
 		email = params[:email]
 		project = params[:project]
 
-		#turn all true into ✓ and all false into ✗
+		#More dry (works) but does a HUUUUUUGE loop
+		# cat.each_key{ |item|
+		# 	cat[item].each do |key, value|
+		# 		if value === true
+		# 			value = '✓'
+		# 			cat[item].merge!({key => value})
+		# 		elsif value === false
+		# 			value = '✗'
+		# 			cat[item].merge!({key => value})
+		# 		else
+		# 			cat[item].merge!({key => value})
+		# 		end
+		# 	end
+		# }
+
+		turn all true into ✓ and all false into ✗
 		cat[:account].each do |key, value|
 			if value === true
 				value = '✓'
