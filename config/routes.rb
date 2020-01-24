@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       resources :projects
     end
 
+    resources :project_senders, only: [:create]
+
     resources :projects do
       resources :integration
       resources :analytic
