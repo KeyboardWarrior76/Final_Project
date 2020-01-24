@@ -112,10 +112,10 @@ export default class ProjectProvider extends Component {
     this.setState({ categories: { ...categories, app: { ...categories.app, ui_level: ui_level } } })
   }
 
-  emailSubmit = () => {
-
+  emailSubmit = (email) => {
+    axios.post('/api/project_senders', email)
   }
-  
+
   render() {
 
     return(

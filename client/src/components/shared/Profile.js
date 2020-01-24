@@ -11,13 +11,12 @@ import ListItemText from '@material-ui/core/ListItemText';
 import EmailIcon from '@material-ui/icons/Email';
 import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import Container from '@material-ui/core/Container';
-import Modal from '@material-ui/core/Modal';
 
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
 const useStyles = makeStyles(theme => ({
-  
+
   root: {
     marginTop: 100,
     width: '100%',
@@ -39,7 +38,7 @@ const Profile = ({ auth }) =>
               <ListItemIcon>
                 <EmailIcon/>
               </ListItemIcon>
-              <ListItemText primary={` ${auth.user.email}`}/>           
+              <ListItemText primary={` ${auth.user.email}`}/>
             </ListItem>
           )}
            {auth.authenticated && (
@@ -50,20 +49,20 @@ const Profile = ({ auth }) =>
               <ListItemText primary={` ${auth.user.first_name} ${auth.user.last_name}`} />
             </ListItem>
            )}
-          
-          
-        
+
+
+
           </List>
           <div>
-          
+
         <UserFormModal/>
-      
+
     </div>
          </CardContent>
         </Card>
-      
+
     </div>
-    
+
 
 
 

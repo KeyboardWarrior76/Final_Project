@@ -69,20 +69,6 @@ class Navbar extends React.Component {
               </Button>
             </Link>
             { this.rightNavItems() }
-          </ToolBar>
-
-        </AppBar>
-      </div>
-    )
-  }
-
-  render() {
-    const{ location: {pathname} } = this.props
-    return (
-      <div>
-        <AppBar position='static'>
-
-          <ToolBar>
             <Link to='/about'>
               <Button
                 edge='start'
@@ -92,7 +78,6 @@ class Navbar extends React.Component {
                 About
               </Button>
             </Link>
-            { this.rightNavItems() }
           </ToolBar>
 
         </AppBar>
