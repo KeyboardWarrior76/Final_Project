@@ -22,6 +22,19 @@ class ProjectSenderMailer < ApplicationMailer
 		social = category[:social]
 		user_content = category[:user_content]
 
+		email_pass = account[:email_pass]
+
+		account.each{ |item|
+			if item == true
+				item = 'yes'
+				puts item
+			else
+				item = 'no'
+				puts item
+			end
+		}
+
+
 		from = Email.new(email: 'chris.anderson955@gmail.com')
 		to = Email.new(email: "#{email}")
 		subject = 'Project Estimate'
@@ -29,27 +42,42 @@ class ProjectSenderMailer < ApplicationMailer
 			"<html>
 				<body>
 				<div>
-				 you chose
+				 Your app estimation is complete!
 				 <br/>
-				 #{account}
-				 <br/>
-				 #{analytic}
-				 <br/>
-				 #{app}
-				 <br/>
-				 #{billing}
-				 <br/>
-				 #{date_location}
-				 <br/>
-				 #{integration}
-				 <br/>
-				 #{security}
-				 <br/>
-				 #{social}
-				 <br/>
-				 #{user_content}
-				 <br/>
-				 Your total estimate would be $#{total}
+				 Your app had the following selections:
+				 <ul>
+				 	<p><u>App Size</u></p>
+						 <li>Email & Password: #{account[:email_pass]}</li>
+						 <li>Facebook: #{email_pass}</li>
+						 <li>Twitter: #{email_pass}</li>
+						 <li>Google: #{email_pass}</li>
+						 <li>LinkedIn: #{email_pass}</li>
+						 <li>GitHub: #{email_pass}</li>
+						 <li>Invitation: #{email_pass}</li>
+						 <li>Multiple Accounts: #{email_pass}</li>
+						 <li>Subdomain: #{email_pass}</li>
+						 <li>Custom: #{email_pass}</li>
+					 <p><u>UI Level</u></p>
+					 <li>#{email_pass}</li>
+					 <p><u>Accounts & Users</u></p>
+					 <li>#{email_pass}</li>
+					 <p><u>Analytics</u></p>
+					 <li>#{email_pass}</li>
+					 <p><u>Billing</u></p>
+					 <li>#{email_pass}</li>
+					 <p><u>Dates & Locations</u></p>
+					 <li>#{email_pass}</li>
+					 <p><u>Integrations</u></p>
+					 <li>#{security}</li>
+					 <p><u>Security</u></p>
+					 <li>#{email_pass}</li>
+					 <p><u>Social</u></p>
+					 <li>#{email_pass}</li>
+					 <p><u>User Content</u></p>
+					 <li>#{email_pass}</li>
+				 </ul>
+				 Based on your app,
+				 the total estimation would be $#{total}
 				</div>
 				</body>
 			</html>"
