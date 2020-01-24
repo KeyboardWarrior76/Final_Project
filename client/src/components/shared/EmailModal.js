@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
 export default function EmailModal() {
   const classes = useStyles();
   const project = useContext(ProjectContext);
-  
+
   const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState('')
@@ -46,8 +46,9 @@ export default function EmailModal() {
     setOpen(false);
   };
 
-  const handleChange = () => {
-    setEmail(email)
+  const handleChange = (e) => {
+    const{ name, value } = e.target
+    setEmail(value)
   }
 
   return(
@@ -60,11 +61,12 @@ export default function EmailModal() {
             <p>We'll send you and email of your app estimation</p>
             <h5>Enter Email</h5>
           </div>
-          <form >
+          <form onSubmit={() => project.emailSubmit(email)}>
             <FormControl>
               <InputLabel htmlFor="emailInput">Email</InputLabel>
               <OutlinedInput
                 id="emailInput"
+                type="email"
                 name='email'
                 value={email}
                 onChange={handleChange} />

@@ -84,8 +84,8 @@ export default class ProjectProvider extends Component {
     const {project, categories} = this.state
     const newitem = categories[category][item]
     if (newitem === false)
-      this.setState({ project: {total: (project.total + 1)} })
-    else this.setState({ project: {total: (project.total - 1)} })
+      this.setState({ project: {...project, total: (project.total + 1)} })
+    else this.setState({ project: {...project, total: (project.total - 1)} })
   }
 
   toggleCategoryItem = (category, item) => {
@@ -113,7 +113,15 @@ export default class ProjectProvider extends Component {
   }
 
   emailSubmit = (email) => {
-    axios.post('/api/project_senders', email)
+    const { project, categories } = this.state
+    const params = {project, categories, email}
+    axios.post('/api/project_senders', params)
+    .then( res => {
+      console.log(res.data)
+    })
+    .catch( err => {
+      console.log(err)
+    })
   }
 
   render() {
@@ -124,7 +132,8 @@ export default class ProjectProvider extends Component {
         toggleCategoryItem: this.toggleCategoryItem,
         createProjectAndCategories: this.createProjectAndCategories,
         sizeSet: this.sizeSet,
-        uiSet: this.uiSet
+        uiSet: this.uiSet,
+        emailSubmit: this.emailSubmit
       }}>
         { this.props.children }
       </ProjectContext.Provider>
