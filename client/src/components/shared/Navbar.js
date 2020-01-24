@@ -67,6 +67,30 @@ class Navbar extends React.Component {
       </div>
     )
   }
+
+  render() {
+    const{ location: {pathname} } = this.props
+    return (
+      <div>
+        <AppBar position='static'>
+
+          <ToolBar>
+            <Link to='/about'>
+              <Button
+                edge='start'
+                name='about'
+                id='about'
+                active={pathname ? '/about' : undefined}>
+                About
+              </Button>
+            </Link>
+            { this.rightNavItems() }
+          </ToolBar>
+
+        </AppBar>
+      </div>
+    )
+  }
 }
 
 export class ConnectedNavbar extends React.Component {

@@ -1,0 +1,91 @@
+.about-heading1 { 
+  padding:65px;
+  text-indent: 50px;
+  text-align: left;
+  color: white;
+  font-family: Helvetica;
+  font-size: 90px;
+  padding-left: 65px ;
+  border-left: solid;
+
+}
+
+
+
+.about-heading2 { 
+  padding-top: 45px;
+  text-align: left;
+  color:white;
+  font-family: Helvetica;
+  font-size: 60px;
+  padding-left: 65px;
+
+}
+
+.about-heading3 { 
+  text-align: left;
+  color: white;
+  font-family: Helvetica;
+  font-size: 60px;
+  padding-left: 65px;
+
+}
+
+.about-heading4 { 
+  text-align: left;
+  color: white;
+  font-family: Helvetica;
+  font-size: 60px;
+  padding-left: 65px;
+}
+
+
+
+.about-paragraph1 { 
+  text-align: left;
+  color: white;
+  font-family: Helvetica;
+  font-size: 20px;
+  padding-left: 65px;
+
+}
+
+
+.about-paragraph2 { 
+  text-align: left;
+  color: white;
+  font-family:Helvetica;
+  font-size: 20px;
+  padding-left: 65px;
+
+}
+
+body { 
+}
+
+.about-anchor1 {
+  border-left-style: solid;
+display:inline-block;
+margin-right: 50px;
+padding-left: 65px;
+
+}
+
+.about-anchor2 {
+display:inline-block;
+margin-right:50px;
+;
+}
+
+.about-anchor3 {
+display:inline-block;
+margin-right: 50px;
+padding-bottom: 80px;
+padding-left: 
+
+}
+.about-anchor4 {
+  padding-top: 120px;
+  padding-left: 65px;
+  padding-bottom: 85px;
+}
