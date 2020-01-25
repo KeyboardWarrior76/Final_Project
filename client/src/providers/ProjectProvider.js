@@ -6,7 +6,7 @@ export const ProjectConsumer = ProjectContext.Consumer;
 
 export default class ProjectProvider extends Component {
 
-  state = { project: {name: '', total: 0, days: 0}, isNew: true,
+  state = { project: {name: '', total: 0, days: 0}, isNew: true, cat: {},
     categories: {
       account: {
         email_pass: false, facebook: false,
@@ -37,9 +37,6 @@ export default class ProjectProvider extends Component {
         third_party: false, api_integrate: false,
         messaging: false, phone_number: false
       },
-      project: {
-        name: '', days: false, total: false
-      },
       security: {
         certificate: false, factor_authentication: false,
         dos_protection: false
@@ -69,7 +66,7 @@ export default class ProjectProvider extends Component {
       .catch( err => {
         console.log(err)
       })
-
+      this.calculateEstimate()
     }
 
   initExistingProject = () => {
@@ -80,18 +77,29 @@ export default class ProjectProvider extends Component {
 
   }
 
-  calculateEstimate = (category, item) => {
-    const {project, categories} = this.state
-    const newitem = categories[category][item]
-    if (newitem === false)
-      this.setState({ project: {...project, total: (project.total + 1)} })
-    else this.setState({ project: {...project, total: (project.total - 1)} })
+  calculateEstimate = () => {
+    const {project, categories, cat} = this.state;
+    this.setState({ cat:
+      {...categories.account, ...categories.analytic,
+      ...categories.billing, ...categories.date_location,
+      ...categories.integration, ...categories.security,
+      ...categories.social, ...categories.user_content}
+    })
+    Object.keys(cat).map((value, index) => {
+    if (value) {
+      this.setState({ project: { ...project, total: (project.total + 1) } })
+      }
+    else if (value === false){
+      return value
+    }
+    else
+      return value
+    })
   }
 
   toggleCategoryItem = (category, item) => {
     const{ categories } = this.state
     const newitem = !categories[category][item]
-    this.calculateEstimate(category, item)
     this.setState({
       categories: {
         ...categories,
@@ -99,8 +107,9 @@ export default class ProjectProvider extends Component {
           ...categories[category],
           [item]: newitem,
         }
-      }
+      },
     })
+    this.calculateEstimate()
   }
 
   sizeSet = (size) => {

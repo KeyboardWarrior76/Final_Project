@@ -12,7 +12,7 @@ class ProjectSenderMailer < ApplicationMailer
 		email = params[:email]
 		project = params[:project]
 
-		#More dry (works) but does a HUUUUUUGE loop
+		##More dry (works) but does a HUUUUUUGE loop
 		# cat.each_key{ |item|
 		# 	cat[item].each do |key, value|
 		# 		if value === true
