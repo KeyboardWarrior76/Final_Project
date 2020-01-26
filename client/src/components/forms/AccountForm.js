@@ -4,7 +4,7 @@ import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
 class AccountForm extends Component {
 
-  state = { dumb: {
+  state = { button: {
     one: 'default', two: 'default', three: 'default',
     four: 'default', five: 'default', six: 'default',
     seven: 'default', eight: 'default', nine: 'default', ten: 'default'
@@ -12,19 +12,19 @@ class AccountForm extends Component {
   }
 
   toggle = (unique, item) => {
-    const{ dumb } = this.state
+    const{ button } = this.state
     if (unique === 'default') {
-      this.setState({ dumb: {...dumb, [item]: 'primary'} })
+      this.setState({ button: {...button, [item]: 'primary'} })
     }
     else if (unique === 'primary') {
-      this.setState({ dumb: {...dumb, [item]: 'default'} })
+      this.setState({ button: {...button, [item]: 'default'} })
     }
   }
 
   render() {
 
     const { value: {toggleCategoryItem} } = this.props
-    const { dumb: {one, two, three, four, five, six, seven, eight, nine, ten} } = this.state
+    const { button: {one, two, three, four, five, six, seven, eight, nine, ten} } = this.state
 
     return(
       <div align='center'>

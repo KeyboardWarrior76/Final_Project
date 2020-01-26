@@ -4,9 +4,27 @@ import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
 class AnalyticForm extends Component {
 
+  state = { button: {
+    one: 'default', two: 'default', three: 'default',
+    four: 'default', five: 'default', six: 'default',
+    seven: 'default', eight: 'default'
+    }
+  }
+
+  toggle = (unique, item) => {
+    const{ button } = this.state
+    if (unique === 'default') {
+      this.setState({ button: {...button, [item]: 'primary'} })
+    }
+    else if (unique === 'primary') {
+      this.setState({ button: {...button, [item]: 'default'} })
+    }
+  }
+
 render() {
 
   const{value: {toggleCategoryItem}} = this.props
+  const { button: {one, two, three, four, five, six, seven, eight} } = this.state
 
 return(
     <div align='center'>
