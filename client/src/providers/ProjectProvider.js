@@ -70,7 +70,7 @@ export default class ProjectProvider extends Component {
     }
 
   multiply = () => {
-    const {project, project: {total, ttt}, categories: {app: {size, ui_level}}} = this.state
+    const {project, project: {ttt}, categories: {app: {size, ui_level}}} = this.state
     if ((size + ui_level) === 2) {
       this.setState({ project: {...project, total: ttt} })
     }
