@@ -28,19 +28,19 @@ class BillingForm extends Component {
   return(
       <div align='center'>
         <h3><p>Billing & eCommerce</p></h3>
-        <Fab variant="extended" onClick={() => toggleCategoryItem('billing', 'subscription_plan')}>
+        <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('billing', 'subscription_plan'); this.toggle(one, 'one');}}>
           Subscription Plans
         </Fab>
-        <Fab variant="extended" onClick={() => toggleCategoryItem('billing', 'payment_processing')}>
+        <Fab variant="extended" color={two} onClick={() => {toggleCategoryItem('billing', 'payment_processing'); this.toggle(two, 'two');}}>
           Payment Processing
         </Fab>
-        <Fab variant="extended" onClick={() => toggleCategoryItem('billing', 'shopping_cart')}>
+        <Fab variant="extended" color={three} onClick={() => {toggleCategoryItem('billing', 'shopping_cart'); this.toggle(three, 'three');}}>
           Shopping Cart
         </Fab>
-        <Fab variant="extended" onClick={() => toggleCategoryItem('billing', 'user_marketplace')}>
+        <Fab variant="extended" color={four} onClick={() => {toggleCategoryItem('billing', 'user_marketplace'); this.toggle(four, 'four');}}>
           User Marketplace
         </Fab>
-        <Fab variant="extended" onClick={() => toggleCategoryItem('billing', 'product_management')}>
+        <Fab variant="extended" color={five} onClick={() => {toggleCategoryItem('billing', 'product_management'); this.toggle(five, 'five');}}>
           Product Management
         </Fab>
       </div>

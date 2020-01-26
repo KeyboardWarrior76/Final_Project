@@ -29,29 +29,29 @@ render() {
 return(
     <div align='center'>
       <h3><p>Admin, Feedback, & Analytics</p></h3>
-      <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'cms')}>
+      <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('analytic', 'cms'); this.toggle(one, 'one');}}>
         CMS Integration
       </Fab>
-      <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'admin')}>
+      <Fab variant="extended" color={two} onClick={() => {toggleCategoryItem('analytic', 'admin'); this.toggle(two, 'two');}}>
         User Admin Pages
       </Fab>
-      <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'moderation')}>
+      <Fab variant="extended" color={three} onClick={() => {toggleCategoryItem('analytic', 'moderation'); this.toggle(three, 'three');}}>
         Moderation/Content Approval
       </Fab>
-      <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'intercom')}>
+      <Fab variant="extended" color={four} onClick={() => {toggleCategoryItem('analytic', 'intercom'); this.toggle(four, 'four');}}>
         Intercom
       </Fab>
       <br/>
-      <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'usage')}>
+      <Fab variant="extended" color={five} onClick={() => {toggleCategoryItem('analytic', 'usage'); this.toggle(five, 'five');}}>
         Usage Analytics
       </Fab>
-      <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'crash_report')}>
+      <Fab variant="extended" color={six} onClick={() => {toggleCategoryItem('analytic', 'crash_report'); this.toggle(six, 'six');}}>
         Crash Reports
       </Fab>
-      <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'performance')}>
+      <Fab variant="extended" color={seven} onClick={() => {toggleCategoryItem('analytic', 'performace'); this.toggle(seven, 'seven');}}>
         Performance Monitoring
       </Fab>
-      <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'multilingual')}>
+      <Fab variant="extended" color={eight} onClick={() => {toggleCategoryItem('analytic', 'multilingual'); this.toggle(eight, 'eight');}}>
         Multilingual Support
       </Fab>
     </div>
