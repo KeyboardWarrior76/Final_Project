@@ -109,7 +109,7 @@ export default class ProjectProvider extends Component {
     })
     setTimeout(() => {
       this.calculateEstimate(category, item)
-    }, 50);
+    }, 10);
   }
 
   sizeSet = (size) => {
