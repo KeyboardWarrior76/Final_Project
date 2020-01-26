@@ -6,7 +6,7 @@ export const ProjectConsumer = ProjectContext.Consumer;
 
 export default class ProjectProvider extends Component {
 
-  state = { project: {name: '', total: 0, days: 0}, isNew: true, cat: {},
+  state = { project: {name: '', total: 0, days: 0}, isNew: true,
     categories: {
       account: {
         email_pass: false, facebook: false,
@@ -77,39 +77,27 @@ export default class ProjectProvider extends Component {
 
   }
 
-  calculateEstimate = () => {
-    const {project, categories, cat} = this.state;
-    this.setState({ cat:
-      {...categories.account, ...categories.analytic,
-      ...categories.billing, ...categories.date_location,
-      ...categories.integration, ...categories.security,
-      ...categories.social, ...categories.user_content}
-    })
-    Object.keys(cat).map((value, index) => {
-    if (value) {
-      this.setState({ project: { ...project, total: (project.total + 1) } })
-      }
-    else if (value === false){
-      return value
+  calculateEstimate = (category, item) => {
+    const {project, categories} = this.state;
+    if (categories[category][item] === true) {
+      this.setState({ project: {...project, total: (project.total + 1)}})
     }
-    else
-      return value
-    })
+    else if (categories[category][item] === false) {
+    this.setState({ project: {...project, total: (project.total - 1)}})
+    }
   }
 
   toggleCategoryItem = (category, item) => {
-    const{ categories } = this.state
+    const{ project, categories } = this.state
     const newitem = !categories[category][item]
     this.setState({
       categories: {
-        ...categories,
-        [category]: {
-          ...categories[category],
-          [item]: newitem,
-        }
-      },
+        ...categories, [category]: { ...categories[category], [item]: newitem }
+      }
     })
-    this.calculateEstimate()
+    setTimeout(() => {
+    this.calculateEstimate(category, item)
+  }, 50);
   }
 
   sizeSet = (size) => {
@@ -142,7 +130,8 @@ export default class ProjectProvider extends Component {
         createProjectAndCategories: this.createProjectAndCategories,
         sizeSet: this.sizeSet,
         uiSet: this.uiSet,
-        emailSubmit: this.emailSubmit
+        emailSubmit: this.emailSubmit,
+        calculateEstimate: this.calculateEstimate
       }}>
         { this.props.children }
       </ProjectContext.Provider>
