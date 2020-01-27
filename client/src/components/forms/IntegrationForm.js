@@ -30,13 +30,13 @@ class IntegrationForm extends Component {
         <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('integration', 'third_party'); this.toggle(one, 'one');}}>
           Third Party Services
         </Fab>
-        <Fab variant="extended" color={two} onClick={() => {toggleCategoryItem('integration', 'third_party'); this.toggle(two, 'two');}}>
+        <Fab variant="extended" color={two} onClick={() => {toggleCategoryItem('integration', 'api_integrate'); this.toggle(two, 'two');}}>
           API Integration
         </Fab>
-        <Fab variant="extended" color={three} onClick={() => {toggleCategoryItem('integration', 'third_party'); this.toggle(three, 'three');}}>
+        <Fab variant="extended" color={three} onClick={() => {toggleCategoryItem('integration', 'messaging'); this.toggle(three, 'three');}}>
           SMS Messaging
         </Fab>
-        <Fab variant="extended" color={four} onClick={() => {toggleCategoryItem('integration', 'third_party'); this.toggle(four, 'four');}}>
+        <Fab variant="extended" color={four} onClick={() => {toggleCategoryItem('integration', 'phone_number'); this.toggle(four, 'four');}}>
           Phone Number Masking
         </Fab>
       </div>

@@ -27,16 +27,16 @@ class DateLocationForm extends Component {
   return(
       <div align='center'>
         <h3><p>Dates & Locations</p></h3>
-        <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('date_location', 'calendar'); toggle(one, 'one');}}>
+        <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('date_location', 'calendar'); this.toggle(one, 'one');}}>
           Calendaring
         </Fab>
-        <Fab variant="extended" color={two} onClick={() => {toggleCategoryItem('date_location', 'calendar'); toggle(two, 'two');}}>
+        <Fab variant="extended" color={two} onClick={() => {toggleCategoryItem('date_location', 'display'); this.toggle(two, 'two');}}>
           Custom Map
         </Fab>
-        <Fab variant="extended" color={three} onClick={() => {toggleCategoryItem('date_location', 'calendar'); toggle(three, 'three');}}>
+        <Fab variant="extended" color={three} onClick={() => {toggleCategoryItem('date_location', 'map_display'); this.toggle(three, 'three');}}>
           Geolocation
         </Fab>
-        <Fab variant="extended" color={four} onClick={() => {toggleCategoryItem('date_location', 'calendar'); toggle(four, 'four');}}>
+        <Fab variant="extended" color={four} onClick={() => {toggleCategoryItem('date_location', 'booking'); this.toggle(four, 'four');}}>
           Bookings
         </Fab>
       </div>
