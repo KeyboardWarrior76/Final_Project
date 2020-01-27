@@ -66,7 +66,6 @@ export default class ProjectProvider extends Component {
       .catch( err => {
         console.log(err)
       })
-      this.calculateEstimate()
     }
 
   multiply = () => {
