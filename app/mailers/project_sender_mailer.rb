@@ -12,101 +12,101 @@ class ProjectSenderMailer < ApplicationMailer
 		email = params[:email]
 		project = params[:project]
 
-		##More dry (works) but does a HUUUUUUGE loop
-		# cat.each_key{ |item|
-		# 	cat[item].each do |key, value|
-		# 		if value === true
-		# 			value = '✓'
-		# 			cat[item].merge!({key => value})
-		# 		elsif value === false
-		# 			value = '✗'
-		# 			cat[item].merge!({key => value})
-		# 		else
-		# 			cat[item].merge!({key => value})
-		# 		end
+		#More dry (works) but does a HUUUUUUGE loop
+		cat.each_key{ |item|
+			cat[item].each do |key, value|
+				if value === true
+					value = '✓'
+					cat[item].merge!({key => value})
+				elsif value === false
+					value = '✗'
+					cat[item].merge!({key => value})
+				else
+					cat[item].merge!({key => value})
+				end
+			end
+		}
+
+		# # turn all true into ✓ and all false into ✗
+		# cat[:account].each do |key, value|
+		# 	if value === true
+		# 		value = '✓'
+		# 		cat[:account].merge!({key => value})
+		# 	else
+		# 		value = '✗'
+		# 		cat[:account].merge!({key => value})
 		# 	end
-		# }
-
-		# turn all true into ✓ and all false into ✗
-		cat[:account].each do |key, value|
-			if value === true
-				value = '✓'
-				cat[:account].merge!({key => value})
-			else
-				value = '✗'
-				cat[:account].merge!({key => value})
-			end
-		end
-
-		cat[:analytic].each do |key, value|
-			if value === true
-				value = '✓'
-				cat[:analytic].merge!({key => value})
-			else
-				value = '✗'
-				cat[:analytic].merge!({key => value})
-			end
-		end
-
-		cat[:billing].each do |key, value|
-			if value === true
-				value = '✓'
-				cat[:billing].merge!({key => value})
-			else
-				value = '✗'
-				cat[:billing].merge!({key => value})
-			end
-		end
-
-		cat[:date_location].each do |key, value|
-			if value === true
-				value = '✓'
-				cat[:date_location].merge!({key => value})
-			else
-				value = '✗'
-				cat[:date_location].merge!({key => value})
-			end
-		end
-
-		cat[:integration].each do |key, value|
-			if value === true
-				value = '✓'
-				cat[:integration].merge!({key => value})
-			else
-				value = '✗'
-				cat[:integration].merge!({key => value})
-			end
-		end
-
-		cat[:security].each do |key, value|
-			if value === true
-				value = '✓'
-				cat[:security].merge!({key => value})
-			else
-				value = '✗'
-				cat[:security].merge!({key => value})
-			end
-		end
-
-		cat[:social].each do |key, value|
-			if value === true
-				value = '✓'
-				cat[:social].merge!({key => value})
-			else
-				value = '✗'
-				cat[:social].merge!({key => value})
-			end
-		end
-
-		cat[:user_content].each do |key, value|
-			if value === true
-				value = '✓'
-				cat[:user_content].merge!({key => value})
-			else
-				value = '✗'
-				cat[:user_content].merge!({key => value})
-			end
-		end
+		# end
+		#
+		# cat[:analytic].each do |key, value|
+		# 	if value === true
+		# 		value = '✓'
+		# 		cat[:analytic].merge!({key => value})
+		# 	else
+		# 		value = '✗'
+		# 		cat[:analytic].merge!({key => value})
+		# 	end
+		# end
+		#
+		# cat[:billing].each do |key, value|
+		# 	if value === true
+		# 		value = '✓'
+		# 		cat[:billing].merge!({key => value})
+		# 	else
+		# 		value = '✗'
+		# 		cat[:billing].merge!({key => value})
+		# 	end
+		# end
+		#
+		# cat[:date_location].each do |key, value|
+		# 	if value === true
+		# 		value = '✓'
+		# 		cat[:date_location].merge!({key => value})
+		# 	else
+		# 		value = '✗'
+		# 		cat[:date_location].merge!({key => value})
+		# 	end
+		# end
+		#
+		# cat[:integration].each do |key, value|
+		# 	if value === true
+		# 		value = '✓'
+		# 		cat[:integration].merge!({key => value})
+		# 	else
+		# 		value = '✗'
+		# 		cat[:integration].merge!({key => value})
+		# 	end
+		# end
+		#
+		# cat[:security].each do |key, value|
+		# 	if value === true
+		# 		value = '✓'
+		# 		cat[:security].merge!({key => value})
+		# 	else
+		# 		value = '✗'
+		# 		cat[:security].merge!({key => value})
+		# 	end
+		# end
+		#
+		# cat[:social].each do |key, value|
+		# 	if value === true
+		# 		value = '✓'
+		# 		cat[:social].merge!({key => value})
+		# 	else
+		# 		value = '✗'
+		# 		cat[:social].merge!({key => value})
+		# 	end
+		# end
+		#
+		# cat[:user_content].each do |key, value|
+		# 	if value === true
+		# 		value = '✓'
+		# 		cat[:user_content].merge!({key => value})
+		# 	else
+		# 		value = '✗'
+		# 		cat[:user_content].merge!({key => value})
+		# 	end
+		# end
 
 		from = Email.new(email: 'chris.anderson955@gmail.com')
 		to = Email.new(email: "#{email}")
