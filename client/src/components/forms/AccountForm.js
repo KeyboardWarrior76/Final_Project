@@ -37,10 +37,10 @@ class AccountForm extends Component {
       <button className={three} onClick={() => {toggleCategoryItem('account', 'twitter'); this.toggle(three, 'three');}}>
         Twitter
       </button>
-      <br/>
       <button className={four} onClick={() => {toggleCategoryItem('account', 'google'); this.toggle(four, 'four');}}>
         Google
       </button>
+      <br/>
       <button className={five} onClick={() => {toggleCategoryItem('account', 'linkedin'); this.toggle(five, 'five');}}>
         Linkedin
       </button>

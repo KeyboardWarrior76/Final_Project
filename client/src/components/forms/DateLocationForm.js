@@ -1,21 +1,20 @@
 import React, {Component} from 'react';
-import Fab from '@material-ui/core/Fab';
 import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
 class DateLocationForm extends Component {
 
   state = { button: {
-    one: 'default', two: 'default', three: 'default', four: 'default'
+    one: 'estimatorButton', two: 'estimatorButton', three: 'estimatorButton', four: 'estimatorButton'
     }
   }
 
   toggle = (unique, item) => {
     const{ button } = this.state
-    if (unique === 'default') {
-      this.setState({ button: {...button, [item]: 'primary'} })
+    if (unique === 'estimatorButton') {
+      this.setState({ button: {...button, [item]: 'selectedButton'} })
     }
-    else if (unique === 'primary') {
-      this.setState({ button: {...button, [item]: 'default'} })
+    else if (unique === 'selectedButton') {
+      this.setState({ button: {...button, [item]: 'estimatorButton'} })
     }
   }
 
@@ -26,19 +25,19 @@ class DateLocationForm extends Component {
 
   return(
       <div id='dateLocation' align='center'>
-        <h3><p>Dates & Locations</p></h3>
-        <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('date_location', 'calendar'); this.toggle(one, 'one');}}>
+        <h2>Dates & Locations</h2>
+        <button className={one} onClick={() => {toggleCategoryItem('date_location', 'calendar'); this.toggle(one, 'one');}}>
           Calendaring
-        </Fab>
-        <Fab variant="extended" color={two} onClick={() => {toggleCategoryItem('date_location', 'display'); this.toggle(two, 'two');}}>
+        </button>
+        <button className={two} onClick={() => {toggleCategoryItem('date_location', 'display'); this.toggle(two, 'two');}}>
           Custom Map
-        </Fab>
-        <Fab variant="extended" color={three} onClick={() => {toggleCategoryItem('date_location', 'map_display'); this.toggle(three, 'three');}}>
+        </button>
+        <button className={three} onClick={() => {toggleCategoryItem('date_location', 'map_display'); this.toggle(three, 'three');}}>
           Geolocation
-        </Fab>
-        <Fab variant="extended" color={four} onClick={() => {toggleCategoryItem('date_location', 'booking'); this.toggle(four, 'four');}}>
+        </button>
+        <button className={four} onClick={() => {toggleCategoryItem('date_location', 'booking'); this.toggle(four, 'four');}}>
           Bookings
-        </Fab>
+        </button>
       </div>
     )
   }

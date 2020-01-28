@@ -1,23 +1,22 @@
 import React, {Component} from 'react';
-import Fab from '@material-ui/core/Fab';
 import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
 class AnalyticForm extends Component {
 
   state = { button: {
-    one: 'default', two: 'default', three: 'default',
-    four: 'default', five: 'default', six: 'default',
-    seven: 'default', eight: 'default'
+    one: 'estimatorButton', two: 'estimatorButton', three: 'estimatorButton',
+    four: 'estimatorButton', five: 'estimatorButton', six: 'estimatorButton',
+    seven: 'estimatorButton', eight: 'estimatorButton'
     }
   }
 
   toggle = (unique, item) => {
     const{ button } = this.state
-    if (unique === 'default') {
-      this.setState({ button: {...button, [item]: 'primary'} })
+    if (unique === 'estimatorButton') {
+      this.setState({ button: {...button, [item]: 'selectedButton'} })
     }
-    else if (unique === 'primary') {
-      this.setState({ button: {...button, [item]: 'default'} })
+    else if (unique === 'selectedButton') {
+      this.setState({ button: {...button, [item]: 'estimatorButton'} })
     }
   }
 
@@ -28,32 +27,32 @@ render() {
 
 return(
     <div id='analytics' align='center'>
-      <h3><p>Admin, Feedback, & Analytics</p></h3>
-      <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('analytic', 'cms'); this.toggle(one, 'one');}}>
+      <h2>Admin, Feedback, & Analytics</h2>
+      <button className={one} onClick={() => {toggleCategoryItem('analytic', 'cms'); this.toggle(one, 'one');}}>
         CMS Integration
-      </Fab>
-      <Fab variant="extended" color={two} onClick={() => {toggleCategoryItem('analytic', 'admin'); this.toggle(two, 'two');}}>
+      </button>
+      <button className={two} onClick={() => {toggleCategoryItem('analytic', 'admin'); this.toggle(two, 'two');}}>
         User Admin Pages
-      </Fab>
-      <Fab variant="extended" color={three} onClick={() => {toggleCategoryItem('analytic', 'moderation'); this.toggle(three, 'three');}}>
+      </button>
+      <button className={three} onClick={() => {toggleCategoryItem('analytic', 'moderation'); this.toggle(three, 'three');}}>
         Moderation/Content Approval
-      </Fab>
-      <Fab variant="extended" color={four} onClick={() => {toggleCategoryItem('analytic', 'intercom'); this.toggle(four, 'four');}}>
+      </button>
+      <button className={four} onClick={() => {toggleCategoryItem('analytic', 'intercom'); this.toggle(four, 'four');}}>
         Intercom
-      </Fab>
+      </button>
       <br/>
-      <Fab variant="extended" color={five} onClick={() => {toggleCategoryItem('analytic', 'usage'); this.toggle(five, 'five');}}>
+      <button className={five} onClick={() => {toggleCategoryItem('analytic', 'usage'); this.toggle(five, 'five');}}>
         Usage Analytics
-      </Fab>
-      <Fab variant="extended" color={six} onClick={() => {toggleCategoryItem('analytic', 'crash_report'); this.toggle(six, 'six');}}>
+      </button>
+      <button className={six} onClick={() => {toggleCategoryItem('analytic', 'crash_report'); this.toggle(six, 'six');}}>
         Crash Reports
-      </Fab>
-      <Fab variant="extended" color={seven} onClick={() => {toggleCategoryItem('analytic', 'performace'); this.toggle(seven, 'seven');}}>
+      </button>
+      <button className={seven} onClick={() => {toggleCategoryItem('analytic', 'performance'); this.toggle(seven, 'seven');}}>
         Performance Monitoring
-      </Fab>
-      <Fab variant="extended" color={eight} onClick={() => {toggleCategoryItem('analytic', 'multilingual'); this.toggle(eight, 'eight');}}>
+      </button>
+      <button className={eight} onClick={() => { toggleCategoryItem('analytic', 'multilingual'); this.toggle(eight, 'eight');}}>
         Multilingual Support
-      </Fab>
+      </button>
     </div>
     )
   }

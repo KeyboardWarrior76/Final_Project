@@ -1,23 +1,22 @@
 import React, {Component} from 'react';
-import Fab from '@material-ui/core/Fab';
 import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
 class UserContentForm extends Component {
 
   state = { button: {
-    one: 'default', two: 'default', three: 'default',
-    four: 'default', five: 'default', six: 'default',
-    seven: 'default', eight: 'default', nine: 'default'
+    one: 'estimatorButton', two: 'estimatorButton', three: 'estimatorButton',
+    four: 'estimatorButton', five: 'estimatorButton', six: 'estimatorButton',
+    seven: 'estimatorButton', eight: 'estimatorButton', nine: 'estimatorButton'
     }
   }
 
   toggle = (unique, item) => {
     const{ button } = this.state
-    if (unique === 'default') {
-      this.setState({ button: {...button, [item]: 'primary'} })
+    if (unique === 'estimatorButton') {
+      this.setState({ button: {...button, [item]: 'selectedButton'} })
     }
-    else if (unique === 'primary') {
-      this.setState({ button: {...button, [item]: 'default'} })
+    else if (unique === 'selectedButton') {
+      this.setState({ button: {...button, [item]: 'estimatorButton'} })
     }
   }
 
@@ -29,36 +28,35 @@ class UserContentForm extends Component {
 
   return(
     <div id="userContent" align='center'>
-      <h3><p>User Generated Content</p></h3>
-      <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('user_content', 'dashboard'); this.toggle(one, 'one');}}>
+      <h2>User Generated Content</h2>
+      <button className={one} onClick={() => {toggleCategoryItem('user_content', 'dashboard'); this.toggle(one, 'one');}}>
         Dashboard
-      </Fab>
-      <Fab variant="extended" color={two} onClick={() => {toggleCategoryItem('user_content', 'activity_feed'); this.toggle(two, 'two');}}>
+      </button>
+      <button className={two} onClick={() => {toggleCategoryItem('user_content', 'activity_feed'); this.toggle(two, 'two');}}>
         Activity Feed
-      </Fab>
-      <Fab variant="extended" color={three} onClick={() => {toggleCategoryItem('user_content', 'uploading'); this.toggle(three, 'three');}}>
+      </button>
+      <button className={three} onClick={() => {toggleCategoryItem('user_content', 'uploading'); this.toggle(three, 'three');}}>
         File Uploading
-      </Fab>
-      <br/>
-      <Fab variant="extended" color={four} onClick={() => {toggleCategoryItem('user_content', 'profile'); this.toggle(four, 'four');}}>
+      </button>
+      <button className={four} onClick={() => {toggleCategoryItem('user_content', 'profile'); this.toggle(four, 'four');}}>
         User Profile
-      </Fab>
-      <Fab variant="extended" color={five} onClick={() => {toggleCategoryItem('user_content', 'transactional_email'); this.toggle(five, 'five');}}>
-        Transactional Emails
-      </Fab>
-      <Fab variant="extended" color={six} onClick={() => {toggleCategoryItem('user_content', 'tags'); this.toggle(six, 'six');}}>
-        Tags
-      </Fab>
+      </button>
       <br/>
-      <Fab variant="extended" color={seven} onClick={() => {toggleCategoryItem('user_content', 'rating'); this.toggle(seven, 'seven');}}>
+      <button className={five} onClick={() => {toggleCategoryItem('user_content', 'transactional_email'); this.toggle(five, 'five');}}>
+        Transactional Emails
+      </button>
+      <button className={six} onClick={() => {toggleCategoryItem('user_content', 'tags'); this.toggle(six, 'six');}}>
+        Tags
+      </button>
+      <button className={seven} onClick={() => {toggleCategoryItem('user_content', 'rating'); this.toggle(seven, 'seven');}}>
         Ratings or Reviews
-      </Fab>
-      <Fab variant="extended" color={eight} onClick={() => {toggleCategoryItem('user_content', 'audio_video'); this.toggle(eight, 'eight');}}>
+      </button>
+      <button className={eight} onClick={() => {toggleCategoryItem('user_content', 'audio_video'); this.toggle(eight, 'eight');}}>
         Audio/Video Proccessing
-      </Fab>
-      <Fab variant="extended" color={nine} onClick={() => {toggleCategoryItem('user_content', 'searching'); this.toggle(nine, 'nine');}}>
+      </button>
+      <button className={nine} onClick={() => {toggleCategoryItem('user_content', 'searching'); this.toggle(nine, 'nine');}}>
         Free Text Searching
-      </Fab>
+      </button>
     </div>
     )
   }

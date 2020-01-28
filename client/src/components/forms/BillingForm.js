@@ -1,22 +1,21 @@
 import React, {Component} from 'react';
-import Fab from '@material-ui/core/Fab';
 import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
 class BillingForm extends Component {
 
   state = { button: {
-    one: 'default', two: 'default', three: 'default',
-    four: 'default', five: 'default'
+    one: 'estimatorButton', two: 'estimatorButton', three: 'estimatorButton',
+    four: 'estimatorButton', five: 'estimatorButton'
     }
   }
 
   toggle = (unique, item) => {
     const{ button } = this.state
-    if (unique === 'default') {
-      this.setState({ button: {...button, [item]: 'primary'} })
+    if (unique === 'estimatorButton') {
+      this.setState({ button: {...button, [item]: 'selectedButton'} })
     }
-    else if (unique === 'primary') {
-      this.setState({ button: {...button, [item]: 'default'} })
+    else if (unique === 'selectedButton') {
+      this.setState({ button: {...button, [item]: 'estimatorButton'} })
     }
   }
 
@@ -27,22 +26,22 @@ class BillingForm extends Component {
 
   return(
       <div id="ecommerce" align='center'>
-        <h3><p>Billing & eCommerce</p></h3>
-        <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('billing', 'subscription_plan'); this.toggle(one, 'one');}}>
+        <h2>Billing & eCommerce</h2>
+        <button className={one} onClick={() => {toggleCategoryItem('billing', 'subscription'); this.toggle(one, 'one');}}>
           Subscription Plans
-        </Fab>
-        <Fab variant="extended" color={two} onClick={() => {toggleCategoryItem('billing', 'payment_processing'); this.toggle(two, 'two');}}>
-          Payment Processing
-        </Fab>
-        <Fab variant="extended" color={three} onClick={() => {toggleCategoryItem('billing', 'shopping_cart'); this.toggle(three, 'three');}}>
+        </button>
+        <button className={two} onClick={() => {toggleCategoryItem('billing', 'payment_processing'); this.toggle(two, 'two');}}>
+          Subscription Processing
+        </button>
+        <button className={three} onClick={() => {toggleCategoryItem('billing', 'shopping_cart'); this.toggle(three, 'three');}}>
           Shopping Cart
-        </Fab>
-        <Fab variant="extended" color={four} onClick={() => {toggleCategoryItem('billing', 'user_marketplace'); this.toggle(four, 'four');}}>
+        </button>
+        <button className={four} onClick={() => {toggleCategoryItem('billing', 'user_marketplace'); this.toggle(four, 'four');}}>
           User Marketplace
-        </Fab>
-        <Fab variant="extended" color={five} onClick={() => {toggleCategoryItem('billing', 'product_management'); this.toggle(five, 'five');}}>
+        </button>
+        <button className={five} onClick={() => {toggleCategoryItem('billing', 'product_management'); this.toggle(five, 'five');}}>
           Product Management
-        </Fab>
+        </button>
       </div>
     )
   }

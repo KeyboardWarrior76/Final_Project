@@ -21,23 +21,21 @@ class AppForm extends Component {
   render() {
 
     const{uiSet, sizeSet} = this.props.value
-    const { size, ui_level,
-      size: {small, medium, large},
-      ui_level: {simple, detailed, soph} } = this.state
+    const { size: {small, medium, large}, ui_level: {simple, detailed, soph} } = this.state
 
   return(
     <>
       <div style={{paddingTop: '60px'}} align='center'>
-        <h1>Application Size</h1>
+        <h2>Application Size</h2>
         <button className={small} onClick={() => {sizeSet('small'); this.toggle(small, 'small');}} style={{color: "#85F0D6"}}>S</button>
         <button className={medium} onClick={() => {sizeSet('medium'); this.toggle(medium, 'medium');}} style={{color: "#859DF0"}}>M</button>
         <button className={large} onClick={() => {sizeSet('large'); this.toggle(large, 'large');}} style={{color: "#DE412E"}}>L</button>
       </div>
       <div align='center'>
         <h1>UI Level</h1>
-        <button className={simple} onClick={() => {sizeSet('simple'); this.toggle(simple, 'simple');}}>simple</button>
-        <button className={detailed} onClick={() => {sizeSet('detailed'); this.toggle(detailed, 'detailed');}}>detailed</button>
-        <button className={soph} onClick={() => {sizeSet('sophisticated'); this.toggle(soph, 'soph');}}>sophisticated</button>
+        <button className={simple} onClick={() => {uiSet('simple'); this.toggle(simple, 'simple');}}>simple</button>
+        <button className={detailed} onClick={() => {uiSet('detailed'); this.toggle(detailed, 'detailed');}}>detailed</button>
+        <button className={soph} onClick={() => {uiSet('sophisticated'); this.toggle(soph, 'soph');}}>sophisticated</button>
       </div>
     </>
     )
