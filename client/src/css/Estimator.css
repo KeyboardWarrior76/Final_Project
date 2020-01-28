@@ -1,0 +1,46 @@
+.estimatorButton {
+	background-color: #2B2B2B;
+	color: white;
+	font-size: 100px;
+	font: helvetica;
+	padding: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 50px;
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  display: inline-flex;
+}
+
+.selectedButton {
+  background-color: #2B2B2B;
+  color: white;
+  font-size: 100px;
+  font: helvetica;
+  padding: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 50px;
+  border-radius: 100%;
+  width: 140px;
+  height: 140px;
+  display: inline-flex;
+}
+
+.estimatorFooter {
+  
+}
+
+.buttonRing {
+  border-radius: 100%;
+}
+
+.mountainsImage {
+	width: 100%;
+	
+}
