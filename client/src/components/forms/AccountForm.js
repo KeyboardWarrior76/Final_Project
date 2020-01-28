@@ -26,7 +26,7 @@ class AccountForm extends Component {
     const { button: {one, two, three, four, five, six, seven, eight, nine, ten} } = this.state
 
   return(
-    <div align='center'>
+    <div id="accounts" align='center'>
       <h1>Accounts & Users</h1>
       <button className={one} onClick={() => { toggleCategoryItem("account", "email_pass"); this.toggle(one, 'one');}}>
         Email & Password

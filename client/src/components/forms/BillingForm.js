@@ -26,7 +26,7 @@ class BillingForm extends Component {
     const { button: {one, two, three, four, five} } = this.state
 
   return(
-      <div align='center'>
+      <div id="ecommerce" align='center'>
         <h3><p>Billing & eCommerce</p></h3>
         <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('billing', 'subscription_plan'); this.toggle(one, 'one');}}>
           Subscription Plans

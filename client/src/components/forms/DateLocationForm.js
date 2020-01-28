@@ -25,7 +25,7 @@ class DateLocationForm extends Component {
     const { button: {one, two, three, four} } = this.state
 
   return(
-      <div align='center'>
+      <div id='dateLocation' align='center'>
         <h3><p>Dates & Locations</p></h3>
         <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('date_location', 'calendar'); this.toggle(one, 'one');}}>
           Calendaring

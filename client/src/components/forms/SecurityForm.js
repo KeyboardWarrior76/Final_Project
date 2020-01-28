@@ -25,7 +25,7 @@ class SecurityForm extends Component {
     const { button: {one, two, three} } = this.state
 
   return(
-      <div align='center'>
+      <div id="security" align='center'>
         <h3><p>Security</p></h3>
         <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('security', 'certificate'); this.toggle(one, 'one');}}>
           SSL Certificate Based Security

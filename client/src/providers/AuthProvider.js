@@ -41,7 +41,8 @@ export default class AuthProvider extends Component {
   }
 
   updateUser = (user) => {
-    axios.put('/api/auth', user)
+    
+    axios.put('/api/auth/', user)
     .then(res => {
       this.setState({user:res.data.data})
     })

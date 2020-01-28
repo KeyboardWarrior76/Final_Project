@@ -25,7 +25,7 @@ class IntegrationForm extends Component {
     const { button: {one, two, three, four} } = this.state
 
   return(
-      <div align='center'>
+      <div id="integrations" align='center'>
         <h3><p>External APIs & Integrations</p></h3>
         <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('integration', 'third_party'); this.toggle(one, 'one');}}>
           Third Party Services
