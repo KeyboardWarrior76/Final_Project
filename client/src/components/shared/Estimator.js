@@ -16,6 +16,9 @@ import EmailModal from './EmailModal';
 
 class Estimator extends Component {
 
+componentDidUpdate() {
+  
+}
 
 render() {
 

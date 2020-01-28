@@ -4,23 +4,39 @@ import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
 class SocialForm extends Component {
 
+  state = { button: {
+    one: 'default', two: 'default', three: 'default', four: 'default'
+    }
+  }
+
+  toggle = (unique, item) => {
+    const{ button } = this.state
+    if (unique === 'default') {
+      this.setState({ button: {...button, [item]: 'primary'} })
+    }
+    else if (unique === 'primary') {
+      this.setState({ button: {...button, [item]: 'default'} })
+    }
+  }
+
   render() {
 
     const{value: {toggleCategoryItem}} = this.props
+    const { button: {one, two, three, four} } = this.state
 
   return(
       <div align='center'>
-        <h3><p>Social</p></h3>
-        <Fab variant="extended" onClick={() => toggleCategoryItem('social', 'facebook_graph')}>
-          Facebook Graph
+        <h3><p>Social & Engagement</p></h3>
+        <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('social', 'facebook_graph'); this.toggle(one, 'one');}}>
+          Push to Facebook Graph
         </Fab>
-        <Fab variant="extended" onClick={() => toggleCategoryItem('social', 'sharing')}>
-          Sharing
+        <Fab variant="extended" color={two} onClick={() => {toggleCategoryItem('social', 'sharing'); this.toggle(two, 'two');}}>
+          Social Sharing
         </Fab>
-        <Fab variant="extended" onClick={() => toggleCategoryItem('social', 'forums')}>
-          Forums
+        <Fab variant="extended" color={three} onClick={() => {toggleCategoryItem('social', 'forums'); this.toggle(three, 'three');}}>
+          Forums or Commenting
         </Fab>
-        <Fab variant="extended" onClick={() => toggleCategoryItem('social', 'messaging')}>
+        <Fab variant="extended" color={four} onClick={() => {toggleCategoryItem('social', 'messaging'); this.toggle(four, 'four');}}>
           Messaging
         </Fab>
       </div>
