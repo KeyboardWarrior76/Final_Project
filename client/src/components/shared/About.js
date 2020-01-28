@@ -44,13 +44,13 @@ const About =()=>(
     </p>
 
 
-  <h2 className="about-heading3"> 
-  Email
+  <h2 className="about-heading3">
+    Email
   </h2>
 
   <p className="about-paragraph2">
-  contact@devpointstudios.com
-    </p>
+    contact@devpointstudios.com
+  </p>
 
 
   <h2 className="about-heading4">Social

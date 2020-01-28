@@ -6,7 +6,7 @@ export const ProjectConsumer = ProjectContext.Consumer;
 
 export default class ProjectProvider extends Component {
 
-  state = { project: {name: '', total: 0, days: 0}, isNew: true,
+  state = { project: {name: '', total: 0, ttt: 0, days: 0}, isNew: true,
     categories: {
       account: {
         email_pass: false, facebook: false,
@@ -22,7 +22,7 @@ export default class ProjectProvider extends Component {
         performance: false, multilingual: false
       },
       app: {
-        size: '', ui_level: ''
+        size: 1, ui_level: 1
       },
       billing: {
         subscription_plan: false, payment_processing: false,
@@ -36,9 +36,6 @@ export default class ProjectProvider extends Component {
       integration: {
         third_party: false, api_integrate: false,
         messaging: false, phone_number: false
-      },
-      project: {
-        name: '', days: false, total: false
       },
       security: {
         certificate: false, factor_authentication: false,
@@ -69,53 +66,91 @@ export default class ProjectProvider extends Component {
       .catch( err => {
         console.log(err)
       })
-
     }
 
-  initExistingProject = () => {
-
-  }
-
-  updateProject = (category, property) => {
-
+  multiply = () => {
+    const {project, project: {ttt}, categories: {app: {size, ui_level}}} = this.state
+    if ((size + ui_level) === 2) {
+      this.setState({ project: {...project, total: ttt} })
+    }
+    else if ((size + ui_level) === 3) {
+      this.setState({ project: {...project, total: (ttt * 1.5)} })
+    }
+    else if ((size + ui_level) === 4) {
+      this.setState({ project: {...project, total: (ttt * 2)} })
+    }
+    else if ((size + ui_level) === 5) {
+      this.setState({ project: {...project, total: (ttt * 2.5)} })
+    }
+    else if ((size + ui_level) === 6) {
+      this.setState({ project: {...project, total: (ttt * 3)} })
+    }
   }
 
   calculateEstimate = (category, item) => {
-    const {project, categories} = this.state
-    const newitem = categories[category][item]
-    if (newitem === false)
-      this.setState({ project: {total: (project.total + 1)} })
-    else this.setState({ project: {total: (project.total - 1)} })
+    const { project, categories } = this.state;
+    if (categories[category][item] === true) {
+      this.setState({ project: { ...project, ttt: (project.ttt + 1) } }, () => this.multiply())
+    }
+    else if (categories[category][item] === false) {
+      this.setState({ project: { ...project, ttt: (project.ttt - 1) } }, () => this.multiply())
+    }
   }
 
   toggleCategoryItem = (category, item) => {
     const{ categories } = this.state
     const newitem = !categories[category][item]
-    this.calculateEstimate(category, item)
     this.setState({
       categories: {
-        ...categories,
-        [category]: {
-          ...categories[category],
-          [item]: newitem,
-        }
+        ...categories, [category]: { ...categories[category], [item]: newitem }
       }
-    })
+    }, () => this.calculateEstimate(category, item))
   }
 
   sizeSet = (size) => {
-    const{categories} = this.state
-    this.setState({ categories: { ...categories, app: { ...categories.app, size: size } } })
+    const { categories } = this.state;
+    if (size === 'small') {
+      this.setState({ categories: { ...categories, app: { ...categories.app, size: 1 } } })
+    }
+    else if (size === 'medium') {
+      this.setState({ categories: { ...categories, app: { ...categories.app, size: 2 } } })
+    }
+    else if (size === 'large') {
+      this.setState({ categories: { ...categories, app: { ...categories.app, size: 3 } } })
+    }
+    setTimeout(() => {
+      this.multiply()
+    }, 50);
   }
+
   uiSet = (ui_level) => {
-    const{categories} = this.state
-    this.setState({ categories: { ...categories, app: { ...categories.app, ui_level: ui_level } } })
+    const { categories } = this.state;
+    if (ui_level === 'simple') {
+      this.setState({ categories: { ...categories, app: { ...categories.app, ui_level: 1 } } })
+    }
+    else if (ui_level === 'detailed') {
+      this.setState({ categories: { ...categories, app: { ...categories.app, ui_level: 2 } } })
+    }
+    else if (ui_level === 'sophisticated') {
+      this.setState({ categories: { ...categories, app: { ...categories.app, ui_level: 3 } } })
+    }
+    setTimeout(() => {
+      this.multiply()
+    }, 50);
   }
 
-  emailSubmit = () => {
-
+  emailSubmit = (email) => {
+    const { project, categories } = this.state
+    const params = {project, categories, email}
+    axios.post('/api/project_senders', params)
+    .then( res => {
+      return res.data
+    })
+    .catch( err => {
+      console.log(err)
+    })
   }
-  
+
   render() {
 
     return(
@@ -124,7 +159,9 @@ export default class ProjectProvider extends Component {
         toggleCategoryItem: this.toggleCategoryItem,
         createProjectAndCategories: this.createProjectAndCategories,
         sizeSet: this.sizeSet,
-        uiSet: this.uiSet
+        uiSet: this.uiSet,
+        emailSubmit: this.emailSubmit,
+        calculateEstimate: this.calculateEstimate
       }}>
         { this.props.children }
       </ProjectContext.Provider>
