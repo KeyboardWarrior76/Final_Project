@@ -1,9 +1,9 @@
 import React from 'react'
 import { AuthConsumer, } from "../../providers/AuthProvider";
-import AppBar from '@material-ui/core/AppBar';
-import ToolBar from '@material-ui/core/ToolBar';
-import Button from '@material-ui/core/Button';
+import Toolbar from '@material-ui/core/Toolbar';
 import { Link, withRouter, } from 'react-router-dom'
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
 
 class Navbar extends React.Component {
 
@@ -12,7 +12,7 @@ class Navbar extends React.Component {
 
     if (user) {
       return (
-        <ToolBar position='right'>
+        <Toolbar position='right'>
           <Button
             name='logout'
             onClick={ () => handleLogout(history) }>
@@ -26,11 +26,11 @@ class Navbar extends React.Component {
               Profile
             </Button>
           </Link>
-        </ToolBar>
+        </Toolbar>
       )
     } else {
       return (
-        <ToolBar position='right'>
+        <Toolbar position='right'>
           <Link to='/login'>
             <Button
               id='login'
@@ -47,7 +47,7 @@ class Navbar extends React.Component {
               Register
             </Button>
           </Link>
-        </ToolBar>
+        </Toolbar>
       )
     }
   }
@@ -58,7 +58,7 @@ class Navbar extends React.Component {
       <div>
         <AppBar position='static'>
 
-          <ToolBar>
+          <Toolbar>
             <Link to='/'>
               <Button
                 edge='start'
@@ -77,7 +77,7 @@ class Navbar extends React.Component {
                 About
               </Button>
             </Link>
-          </ToolBar>
+          </Toolbar>
 
         </AppBar>
       </div>
