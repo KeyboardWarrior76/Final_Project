@@ -8,7 +8,6 @@ import BillingForm from '../forms/BillingForm';
 import AppForm from '../forms/AppForm';
 import AnalyticForm from '../forms/AnalyticForm';
 import AccountForm from '../forms/AccountForm';
-import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
 import { ProjectConsumer } from "../../providers/ProjectProvider";
 import { AuthConsumer } from "../../providers/AuthProvider";
@@ -28,7 +27,7 @@ class Estimator extends Component {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        width: "100%",
+        width: "100%"
       }}>
         <img className="mountainsImage" src={Mountains} />
         <AppForm/>
@@ -40,18 +39,22 @@ class Estimator extends Component {
         <SecurityForm/>
         <SocialForm/>
         <UserContentForm/>
-        <div className="estimatorFooter">
-          <p style={{fontSize: 20}}>Estimate:{` ${project.total}`}</p>
+        <div className="estimatorFooter" align='center'>
+          <p style={{fontSize: 50, color: 'white'}}>
+            Estimate
+            <hr/>
+            ${project.total}</p>
           <br/>
           <EmailModal/>
-          <Button
+          {/*<button
+            className='bottomButtons'
             variant="contained"
-            color="primary"
+            color="secondary"
             endIcon={<SaveIcon/>}
             onClick={() => createProjectAndCategories(user.id)}
           >
-            Save Project
-          </Button>
+            Save Your Estimate
+          </button>*/}
         </div>
       </div>
     )

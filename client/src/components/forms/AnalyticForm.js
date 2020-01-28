@@ -27,7 +27,7 @@ render() {
 
 return(
     <div id='analytics' align='center'>
-      <h2>Admin, Feedback, & Analytics</h2>
+      <h1>Admin, Feedback, & Analytics</h1>
       <button className={one} onClick={() => {toggleCategoryItem('analytic', 'cms'); this.toggle(one, 'one');}}>
         CMS Integration
       </button>

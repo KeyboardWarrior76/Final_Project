@@ -30,13 +30,13 @@ class AppForm extends Component {
   return(
     <>
       <div style={{paddingTop: '60px'}} align='center'>
-        <h2>Application Size</h2>
-        <button className={small} onClick={() => {sizeSet('small'); this.toggle(size, 'small');}} style={{color: "#85F0D6"}}>S</button>
-        <button className={medium} onClick={() => {sizeSet('medium'); this.toggle(size, 'medium');}} style={{color: "#859DF0"}}>M</button>
-        <button className={large} onClick={() => {sizeSet('large'); this.toggle(size, 'large');}} style={{color: "#DE412E"}}>L</button>
+        <h1>Application Size</h1>
+        <button className={small} onClick={() => {sizeSet('small'); this.toggle(size, 'small');}} style={{color: "#85F0D6", fontSize: 50}}>S</button>
+        <button className={medium} onClick={() => {sizeSet('medium'); this.toggle(size, 'medium');}} style={{color: "#859DF0", fontSize: 50}}>M</button>
+        <button className={large} onClick={() => {sizeSet('large'); this.toggle(size, 'large');}} style={{color: "#DE412E", fontSize: 50}}>L</button>
       </div>
       <div align='center'>
-        <h2>UI Level</h2>
+        <h1>UI Level</h1>
         <button className={simple} onClick={() => {uiSet('simple'); this.toggle(ui_level, 'simple');}}>simple</button>
         <button className={detailed} onClick={() => {uiSet('detailed'); this.toggle(ui_level, 'detailed');}}>detailed</button>
         <button className={soph} onClick={() => {uiSet('sophisticated'); this.toggle(ui_level, 'soph');}}>sophisticated</button>

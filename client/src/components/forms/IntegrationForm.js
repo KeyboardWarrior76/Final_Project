@@ -25,7 +25,7 @@ class IntegrationForm extends Component {
 
   return(
       <div id="integrations" align='center'>
-        <h2>External APIs & Integrations</h2>
+        <h1>External APIs & Integrations</h1>
         <button className={one} onClick={() => {toggleCategoryItem('integration', 'third_party'); this.toggle(one, 'one');}}>
           Third Party Services
         </button>

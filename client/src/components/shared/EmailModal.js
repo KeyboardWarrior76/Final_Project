@@ -1,6 +1,5 @@
 import React, {useState, useContext} from 'react'
 import Modal from '@material-ui/core/Modal';
-import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
@@ -54,7 +53,7 @@ export default function EmailModal() {
   return(
 
     <>
-      <Button variant='contained' color="primary" onClick={handleOpen}>Send Estimate</Button>
+      <button className='bottomButtons' onClick={handleOpen}>Email Your Estimate</button>
       <Modal open={open} onClose={handleClose}>
         <div style={modalStyle} className={classes.paper}>
           <div align='left'>
@@ -71,7 +70,7 @@ export default function EmailModal() {
                 value={email}
                 onChange={handleChange} />
             </FormControl>
-            <Button variant="contained" color="primary" type='submit'>Submit</Button>
+            <button className='bottomButtons' type='submit'>Submit</button>
           </form>
         </div>
       </Modal>

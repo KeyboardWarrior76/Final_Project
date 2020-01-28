@@ -28,7 +28,7 @@ class UserContentForm extends Component {
 
   return(
     <div id="userContent" align='center'>
-      <h2>User Generated Content</h2>
+      <h1>User Generated Content</h1>
       <button className={one} onClick={() => {toggleCategoryItem('user_content', 'dashboard'); this.toggle(one, 'one');}}>
         Dashboard
       </button>

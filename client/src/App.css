@@ -1,3 +1,19 @@
 .mainDiv {
 
 }
+
+.waterdiv {
+  background-color: #2B2B2B;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.watermark {
+  color: white;
+  opacity: .6;
+  align-content: center;
+}
+
+p {
+  font-family: helvetica;
+}
