@@ -8,7 +8,7 @@ import Sidebar from './components/shared/Sidebar'
 import Register from './components/auth/Register';
 import FetchUser from './components/auth/FetchUser';
 import Profile from './components/shared/Profile';*/
-import About from './components/shared/About';
+import Contact from './components/shared/Contact';
 
 const App = () => (
 
@@ -22,7 +22,7 @@ const App = () => (
           <Route exact path='/register' component={Register} />
           <Route exact path='/profile' component={Profile} />
         */}
-        <Route exact path='/about' component={About} />
+        <Route exact path='/contact' component={Contact} />
         <Route component={NoMatch}/>
       </Switch>
     {/*<FetchUser>*/}
