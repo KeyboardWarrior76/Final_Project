@@ -9,7 +9,7 @@ class AccountForm extends Component {
     const{value: {toggleCategoryItem}} = this.props
 
   return(
-    <div align='center'>
+    <div id="accounts" align='center'>
       <h3><p>Accounts & Users</p></h3>
       <Fab variant="extended" onClick={() => toggleCategoryItem("account", "email_pass")}>
         Email & Password

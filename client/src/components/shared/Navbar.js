@@ -55,47 +55,14 @@ class Navbar extends React.Component {
   render() {
     const{ location: {pathname} } = this.props
     return (
-      <div>
-        <AppBar position='static'>
-
-          <ToolBar>
-            <Link to='/'>
-              <Button
-                edge='start'
-                name='home'
-                id='home'
-                active={pathname ? '/' : undefined}>
-                Home
-              </Button>
-            </Link>
-            { this.rightNavItems() }
-          </ToolBar>
-
-        </AppBar>
-      </div>
-    )
-  }
-
-  render() {
-    const{ location: {pathname} } = this.props
-    return (
-      <div>
-        <AppBar position='static'>
-
-          <ToolBar>
-            <Link to='/about'>
-              <Button
-                edge='start'
-                name='about'
-                id='about'
-                active={pathname ? '/about' : undefined}>
-                About
-              </Button>
-            </Link>
-            { this.rightNavItems() }
-          </ToolBar>
-
-        </AppBar>
+      <div style={{ display: "flex", justifyContent: "space-evenly", width: "20rem", flexShrink: 0 }} >
+        <Link  style={{color: "white"}} to='/contact'>
+          Contact
+        </Link>
+        <Link style={{color: "white"}} to='/'>
+          Home
+        </Link>
+        {/* { this.rightNavItems() } */}
       </div>
     )
   }

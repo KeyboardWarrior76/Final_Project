@@ -9,7 +9,7 @@ class IntegrationForm extends Component {
     const{value: {toggleCategoryItem}} = this.props
 
   return(
-      <div align='center'>
+      <div id="integrations" align='center'>
         <h3><p>Integrations</p></h3>
         <Fab variant="extended" onClick={() => toggleCategoryItem('integration', 'third_party')}>
           Third Party

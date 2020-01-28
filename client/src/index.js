@@ -5,6 +5,7 @@ import App from './App';
 import {BrowserRouter} from 'react-router-dom';
 import AuthProvider from './providers/AuthProvider';
 import ProjectProvider from './providers/ProjectProvider';
+import './css/Sidebar.css';
 
 ReactDOM.render(
 

@@ -9,7 +9,7 @@ class SecurityForm extends Component {
     const{value: {toggleCategoryItem}} = this.props
 
   return(
-      <div align='center'>
+      <div id="security" align='center'>
         <h3><p>Security</p></h3>
         <Fab variant="extended" onClick={() => toggleCategoryItem('security', 'certificate')}>
           Certificate

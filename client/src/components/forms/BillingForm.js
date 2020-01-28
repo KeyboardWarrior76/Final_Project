@@ -9,7 +9,7 @@ class BillingForm extends Component {
     const{value: {toggleCategoryItem}} = this.props
 
   return(
-      <div align='center'>
+      <div  id="ecommerce" align='center'>
         <h3><p>Billing</p></h3>
         <Fab variant="extended" onClick={() => toggleCategoryItem('billing', 'subscription_plan')}>
           Subscription

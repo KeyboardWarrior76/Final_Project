@@ -9,7 +9,7 @@ render() {
   const{value: {toggleCategoryItem}} = this.props
 
 return(
-    <div align='center'>
+    <div id='analytics' align='center'>
       <h3><p>Analytics</p></h3>
       <Fab variant="extended" onClick={() => toggleCategoryItem('analytic', 'cms')}>
         CMS

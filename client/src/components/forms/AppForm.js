@@ -8,13 +8,13 @@ class AppForm extends Component {
     const{uiSet, sizeSet} = this.props.value
   return(
     <>
-      <div align='center'>
+      <div id="size" align='center'>
         <h3><p>App Size</p></h3>
         <Fab onClick={()=>sizeSet('small')} variant="extended">Small</Fab>
         <Fab onClick={()=>sizeSet('medium')} variant="extended">Medium</Fab>
         <Fab onClick={()=>sizeSet('large')} variant="extended">Large</Fab>
       </div>
-      <div align='center'>
+      <div id="userInterface" align='center'>
         <h3><p>UI Level</p></h3>
         <Fab onClick={()=>uiSet('simple')} variant="extended">simple</Fab>
         <Fab onClick={()=>uiSet('detailed')} variant="extended">detailed</Fab>
