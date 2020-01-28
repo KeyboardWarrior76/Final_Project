@@ -6,6 +6,7 @@ import {BrowserRouter} from 'react-router-dom';
 import AuthProvider from './providers/AuthProvider';
 import ProjectProvider from './providers/ProjectProvider';
 import './css/Sidebar.css';
+import './css/Estimator.css';
 
 ReactDOM.render(
 

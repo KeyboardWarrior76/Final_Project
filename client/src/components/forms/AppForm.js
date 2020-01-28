@@ -1,24 +1,42 @@
 import React, {Component} from 'react';
-import Fab from '@material-ui/core/Fab';
 import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
 class AppForm extends Component {
 
+  state = { size: {small: 'selectedButton', medium: 'estimatorButton', large: 'estimatorButton'},
+    ui_level: {simple: 'selectedButton', detailed: 'estimatorButton', soph: 'estimatorButton'}
+  }
+
+  toggle = (item, string) => {
+    const { size, ui_level } = this.state
+    if (item === size) {
+      this.setState({ size: {[string]: 'selectedButton'} })
+    }
+    else if (item === ui_level) {
+      this.setState({ ui_level: {[string]: 'selectedButton'} })
+    }
+  }
+
   render() {
+
     const{uiSet, sizeSet} = this.props.value
+    const { size, ui_level,
+      size: {small, medium, large},
+      ui_level: {simple, detailed, soph} } = this.state
+
   return(
     <>
-      <div id="size" align='center'>
-        <h3><p>App Size</p></h3>
-        <Fab onClick={()=>sizeSet('small')} variant="extended">Small</Fab>
-        <Fab onClick={()=>sizeSet('medium')} variant="extended">Medium</Fab>
-        <Fab onClick={()=>sizeSet('large')} variant="extended">Large</Fab>
+      <div id="size" style={{paddingTop: '200px'}} align='center'>
+        <h1>Application Size</h1>
+        <button className="estimatorButton" onClick={()=>sizeSet('small')} style={{color: "#85F0D6"}}>S</button>
+        <button className="estimatorButton" onClick={()=>sizeSet('medium')} style={{color: "#859DF0"}}>M</button>
+        <button className="estimatorButton" onClick={()=>sizeSet('large')} style={{color: "#DE412E"}}>L</button>
       </div>
-      <div id="userInterface" align='center'>
-        <h3><p>UI Level</p></h3>
-        <Fab onClick={()=>uiSet('simple')} variant="extended">simple</Fab>
-        <Fab onClick={()=>uiSet('detailed')} variant="extended">detailed</Fab>
-        <Fab onClick={()=>uiSet('sophisticated')} variant="extended">sophisticated</Fab>
+      <div align='center'>
+        <h1>UI Level</h1>
+        <button className="estimatorButton" onClick={()=>uiSet('simple')}>simple</button>
+        <button className="estimatorButton" onClick={()=>uiSet('detailed')}>detailed</button>
+        <button className="estimatorButton" onClick={()=>uiSet('sophisticated')}>sophisticated</button>
       </div>
     </>
     )

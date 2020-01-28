@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const AuthContext = React.createContext();
 export const AuthConsumer = AuthContext.Consumer;
+
 export default class AuthProvider extends Component {
 
   state = { user: null, edit:false}
@@ -38,7 +39,7 @@ export default class AuthProvider extends Component {
     this.setState({edit:!this.setState.edit})
 
   }
-  
+
   updateUser = (user) => {
     
     axios.put('/api/auth/', user)

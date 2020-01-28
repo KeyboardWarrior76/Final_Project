@@ -14,9 +14,13 @@ import { ProjectConsumer } from "../../providers/ProjectProvider";
 import { AuthConsumer } from "../../providers/AuthProvider";
 import EmailModal from './EmailModal';
 import { flexbox } from '@material-ui/system';
+import mountains from '../../images/mountains.png';
 
 class Estimator extends Component {
 
+componentDidUpdate() {
+  
+}
 
 render() {
 
@@ -29,6 +33,7 @@ return(
       alignItems: "center",
       width: "100%",
     }}>
+      <img className="mountainsImage" src={mountains} />
       <AppForm/>
       <AccountForm/>
       <AnalyticForm/>
@@ -38,8 +43,8 @@ return(
       <SecurityForm/>
       <SocialForm/>
       <UserContentForm/>
-      <div>
-        Total:{` ${project.total}`}
+      <div className="estimatorFooter">
+        Estimate:{` ${project.total}`}
         <br/>
         <EmailModal/>
         <Button

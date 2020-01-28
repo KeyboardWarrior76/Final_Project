@@ -1,48 +1,63 @@
 import React, {Component} from 'react';
-import Fab from '@material-ui/core/Fab';
 import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
 class AccountForm extends Component {
 
+  state = { button: {
+    one: 'estimatorButton', two: 'estimatorButton', three: 'estimatorButton',
+    four: 'estimatorButton', five: 'estimatorButton', six: 'estimatorButton',
+    seven: 'estimatorButton', eight: 'estimatorButton', nine: 'estimatorButton', ten: 'estimatorButton'
+    }
+  }
+
+  toggle = (unique, item) => {
+    const{ button } = this.state
+    if (unique === 'estimatorButton') {
+      this.setState({ button: {...button, [item]: 'selectedButton'} })
+    }
+    else if (unique === 'selectedButton') {
+      this.setState({ button: {...button, [item]: 'estimatorButton'} })
+    }
+  }
+
   render() {
 
-    const{value: {toggleCategoryItem}} = this.props
+    const { value: {toggleCategoryItem} } = this.props
+    const { button: {one, two, three, four, five, six, seven, eight, nine, ten} } = this.state
 
   return(
     <div id="accounts" align='center'>
-      <h3><p>Accounts & Users</p></h3>
-      <Fab variant="extended" onClick={() => toggleCategoryItem("account", "email_pass")}>
+      <h1>Accounts & Users</h1>
+      <button className={one} onClick={() => { toggleCategoryItem("account", "email_pass"); this.toggle(one, 'one');}}>
         Email & Password
-      </Fab>
-      <Fab variant="extended" onClick={() => toggleCategoryItem("account", "facebook")}>
+      </button>
+      <button className={two} onClick={() => {toggleCategoryItem("account", "facebook"); this.toggle(two, 'two');}}>
         Facebook
-      </Fab>
-      <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'twitter')}>
+      </button>
+      <button className={three} onClick={() => {toggleCategoryItem('account', 'twitter'); this.toggle(three, 'three');}}>
         Twitter
-      </Fab>
-      <br/>
-      <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'google')}>
+      </button>
+      <button className={four} onClick={() => {toggleCategoryItem('account', 'google'); this.toggle(four, 'four');}}>
         Google
-      </Fab>
-      <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'linkedin')}>
+      </button>
+      <button className={five} onClick={() => {toggleCategoryItem('account', 'linkedin'); this.toggle(five, 'five');}}>
         Linkedin
-      </Fab>
-      <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'github')}>
+      </button>
+      <button className={six} onClick={() => {toggleCategoryItem('account', 'github'); this.toggle(six, 'six');}}>
         GitHub
-      </Fab>
-      <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'invitation')}>
+      </button>
+      <button className={seven} onClick={() => {toggleCategoryItem('account', 'invitation'); this.toggle(seven, 'seven');}}>
         Invitation
-      </Fab>
-      <br/>
-      <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'multi_account')}>
+      </button>
+      <button className={eight} onClick={() => {toggleCategoryItem('account', 'multi_account'); this.toggle(eight, 'eight');}}>
         Multiple Accounts
-      </Fab>
-      <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'subdomain')}>
+      </button>
+      <button className={nine} onClick={() => {toggleCategoryItem('account', 'subdomain'); this.toggle(nine, 'nine');}}>
         Subdomain
-      </Fab>
-      <Fab variant="extended" onClick={() => toggleCategoryItem('account', 'custom')}>
+      </button>
+      <button className={ten} onClick={() => {toggleCategoryItem('account', 'custom'); this.toggle(ten, 'ten');}}>
         Custom
-      </Fab>
+      </button>
     </div>
     )
   }

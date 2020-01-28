@@ -53,9 +53,9 @@ export default function SimpleModal() {
         onClose={handleClose}
       >
         <div style={modalStyle} className={classes.paper}>
-          
-          
-          <UserForm/>
+
+
+          <UserForm />
         </div>
       </Modal>
     </div>
