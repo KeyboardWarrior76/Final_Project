@@ -1,20 +1,19 @@
 import React, {Component} from 'react';
-import Fab from '@material-ui/core/Fab';
 import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
 class AppForm extends Component {
 
-  state = { size: {small: 'primary', medium: 'default', large: 'default'},
-    ui_level: {simple: 'primary', detailed: 'default', soph: 'default'}
+  state = { size: {small: 'selectedButton', medium: 'estimatorButton', large: 'estimatorButton'},
+    ui_level: {simple: 'selectedButton', detailed: 'estimatorButton', soph: 'estimatorButton'}
   }
 
   toggle = (item, string) => {
     const { size, ui_level } = this.state
     if (item === size) {
-      this.setState({ size: {[string]: 'primary'} })
+      this.setState({ size: {[string]: 'selectedButton'} })
     }
     else if (item === ui_level) {
-      this.setState({ ui_level: {[string]: 'primary'} })
+      this.setState({ ui_level: {[string]: 'selectedButton'} })
     }
   }
 
@@ -27,29 +26,17 @@ class AppForm extends Component {
 
   return(
     <>
-      <div align='center'>
-        <h3><p>App Size</p></h3>
-        <Fab color={small} onClick={()=> {sizeSet('small'); this.toggle(size, 'small');}} variant="extended">
-          Small
-        </Fab>
-        <Fab color={medium} onClick={()=> {sizeSet('medium'); this.toggle(size, 'medium');}} variant="extended">
-          Medium
-        </Fab>
-        <Fab color={large} onClick={()=> {sizeSet('large'); this.toggle(size, 'large');}} variant="extended">
-          Large
-        </Fab>
+      <div style={{paddingTop: '200px'}} align='center'>
+        <h1>Application Size</h1>
+        <button className="estimatorButton" onClick={()=>sizeSet('small')} style={{color: "#85F0D6"}}>S</button>
+        <button className="estimatorButton" onClick={()=>sizeSet('medium')} style={{color: "#859DF0"}}>M</button>
+        <button className="estimatorButton" onClick={()=>sizeSet('large')} style={{color: "#DE412E"}}>L</button>
       </div>
       <div align='center'>
-        <h3><p>UI Level</p></h3>
-        <Fab color={simple} onClick={()=> {uiSet('simple'); this.toggle(ui_level, 'simple');}} variant="extended">
-          Simple
-        </Fab>
-        <Fab color={detailed} onClick={()=> {uiSet('detailed'); this.toggle(ui_level, 'detailed');}} variant="extended">
-          Detailed
-        </Fab>
-        <Fab color={soph} onClick={()=> {uiSet('sophisticated'); this.toggle(ui_level, 'soph');}} variant="extended">
-          Sophisticated
-        </Fab>
+        <h1>UI Level</h1>
+        <button className="estimatorButton" onClick={()=>uiSet('simple')}>simple</button>
+        <button className="estimatorButton" onClick={()=>uiSet('detailed')}>detailed</button>
+        <button className="estimatorButton" onClick={()=>uiSet('sophisticated')}>sophisticated</button>
       </div>
     </>
     )

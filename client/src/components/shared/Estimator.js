@@ -13,6 +13,7 @@ import SaveIcon from '@material-ui/icons/Save';
 import { ProjectConsumer } from "../../providers/ProjectProvider";
 import { AuthConsumer } from "../../providers/AuthProvider";
 import EmailModal from './EmailModal';
+import mountains from '../../images/mountains.png';
 
 class Estimator extends Component {
 
@@ -26,6 +27,7 @@ render() {
 
 return(
     <>
+      <img className="mountainsImage" src={mountains} />
       <AppForm/>
       <AccountForm/>
       <AnalyticForm/>
@@ -35,8 +37,8 @@ return(
       <SecurityForm/>
       <SocialForm/>
       <UserContentForm/>
-      <div>
-        Total:{` ${project.total}`}
+      <div className="estimatorFooter">
+        Estimate:{` ${project.total}`}
         <br/>
         <EmailModal/>
         <Button
