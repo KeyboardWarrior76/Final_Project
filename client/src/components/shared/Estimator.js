@@ -8,7 +8,6 @@ import BillingForm from '../forms/BillingForm';
 import AppForm from '../forms/AppForm';
 import AnalyticForm from '../forms/AnalyticForm';
 import AccountForm from '../forms/AccountForm';
-import SaveIcon from '@material-ui/icons/Save';
 import { ProjectConsumer } from "../../providers/ProjectProvider";
 import { AuthConsumer } from "../../providers/AuthProvider";
 import EmailModal from './EmailModal';
@@ -19,7 +18,7 @@ class Estimator extends Component {
 
   render() {
 
-    const{ value: {createProjectAndCategories, project}, auth: {user} } = this.props
+    const{ value: {project} } = this.props
 
     return(
 

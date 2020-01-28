@@ -56,10 +56,10 @@ export default function EmailModal() {
       <button className='bottomButtons' onClick={handleOpen}>Email Your Estimate</button>
       <Modal open={open} onClose={handleClose}>
         <div style={modalStyle} className={classes.paper}>
-          <div align='left'>
-            <p style={{fontSize: 20}}>We'll send you and email of your app estimation</p>
-            <h4>Enter Email</h4>
-          </div>
+          <br/>
+          <p style={{fontSize: 20}}>We'll send you an email of your app estimation</p>
+          <br/>
+          <h4 style={{margin: 10}}>Enter Email</h4>
           <form onSubmit={() => project.emailSubmit(email)}>
             <OutlinedInput
               fullWidth={true}

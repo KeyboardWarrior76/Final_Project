@@ -36,11 +36,12 @@
 	border-color: #DE412E;
 	color: white;
 	background-color: #DE412E;
-	margin: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	padding-top: 15px;
 	padding-bottom: 15px;
-	padding-left: 30px;
-	padding-right: 30px;
+	padding-left: 35px;
+	padding-right: 35px;
 	border-radius: 5px;
 	font-size: 15pt;
 }
