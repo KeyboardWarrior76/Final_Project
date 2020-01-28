@@ -79,7 +79,7 @@ const About =()=>(
 
     <div>
       <Button className="contact-btn" href='https://www.devpointstudios.com/contact'>
-      Contact
+      Contact Form
       </Button>
     </div>
     
