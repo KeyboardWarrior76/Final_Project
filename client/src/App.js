@@ -12,7 +12,7 @@ import Contact from './components/shared/Contact';
 
 const App = () => (
 
-  <>
+  <div className='mainDiv'>
     <Sidebar/>
     {/*<FetchUser>*/}
       <Switch>
@@ -26,7 +26,7 @@ const App = () => (
         <Route component={NoMatch}/>
       </Switch>
     {/*<FetchUser>*/}
-  </>
+  </div>
 )
 
 export default App;

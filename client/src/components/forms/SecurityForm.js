@@ -25,7 +25,7 @@ class SecurityForm extends Component {
 
   return(
       <div id="security" align='center'>
-        <h3><p>Security</p></h3>
+        <h2>Security</h2>
         <button className={one} onClick={() => {toggleCategoryItem('security', 'certificate'); this.toggle(one, 'one');}}>
           SSL Certificate Based Security
         </button>

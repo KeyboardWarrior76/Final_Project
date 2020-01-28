@@ -36,7 +36,7 @@ class AppForm extends Component {
         <button className={large} onClick={() => {sizeSet('large'); this.toggle(size, 'large');}} style={{color: "#DE412E"}}>L</button>
       </div>
       <div align='center'>
-        <h1>UI Level</h1>
+        <h2>UI Level</h2>
         <button className={simple} onClick={() => {uiSet('simple'); this.toggle(ui_level, 'simple');}}>simple</button>
         <button className={detailed} onClick={() => {uiSet('detailed'); this.toggle(ui_level, 'detailed');}}>detailed</button>
         <button className={soph} onClick={() => {uiSet('sophisticated'); this.toggle(ui_level, 'soph');}}>sophisticated</button>

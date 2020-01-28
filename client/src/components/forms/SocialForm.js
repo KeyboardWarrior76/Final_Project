@@ -25,7 +25,7 @@ class SocialForm extends Component {
 
   return(
       <div id='engagment' align='center'>
-        <h3><p>Social & Engagement</p></h3>
+        <h2>Social & Engagement</h2>
         <button className={one} onClick={() => {toggleCategoryItem('social', 'facebook_graph'); this.toggle(one, 'one');}}>
           Push to Facebook Graph
         </button>

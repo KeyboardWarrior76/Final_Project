@@ -41,7 +41,7 @@ class Estimator extends Component {
         <SocialForm/>
         <UserContentForm/>
         <div className="estimatorFooter">
-          Estimate:{` ${project.total}`}
+          <p style={{fontSize: 20}}>Estimate:{` ${project.total}`}</p>
           <br/>
           <EmailModal/>
           <Button
