@@ -37,6 +37,7 @@ class AccountForm extends Component {
       <button className={three} onClick={() => {toggleCategoryItem('account', 'twitter'); this.toggle(three, 'three');}}>
         Twitter
       </button>
+      <br/>
       <button className={four} onClick={() => {toggleCategoryItem('account', 'google'); this.toggle(four, 'four');}}>
         Google
       </button>
@@ -46,6 +47,7 @@ class AccountForm extends Component {
       <button className={six} onClick={() => {toggleCategoryItem('account', 'github'); this.toggle(six, 'six');}}>
         GitHub
       </button>
+      <br/>
       <button className={seven} onClick={() => {toggleCategoryItem('account', 'invitation'); this.toggle(seven, 'seven');}}>
         Invitation
       </button>
