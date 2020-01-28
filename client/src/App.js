@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import {Route, Switch} from 'react-router-dom';
-import Navbar from './components/shared/Navbar';
 import NoMatch from './components/shared/NoMatch';
 import Estimator from './components/shared/Estimator';
+import Sidebar from './components/shared/Sidebar'
 /*import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import FetchUser from './components/auth/FetchUser';
@@ -13,7 +13,7 @@ import About from './components/shared/About';
 const App = () => (
 
   <>
-    <Navbar/>
+    <Sidebar/>
     {/*<FetchUser>*/}
       <Switch>
         <Route exact path='/' component={Estimator}/>

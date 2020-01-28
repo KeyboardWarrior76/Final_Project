@@ -13,6 +13,7 @@ import SaveIcon from '@material-ui/icons/Save';
 import { ProjectConsumer } from "../../providers/ProjectProvider";
 import { AuthConsumer } from "../../providers/AuthProvider";
 import EmailModal from './EmailModal';
+import { flexbox } from '@material-ui/system';
 import mountains from '../../images/mountains.png';
 
 class Estimator extends Component {
@@ -26,7 +27,12 @@ render() {
   const{ value: {createProjectAndCategories, project}, auth: {user} } = this.props
 
 return(
-    <>
+    <div style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      width: "100%",
+    }}>
       <img className="mountainsImage" src={mountains} />
       <AppForm/>
       <AccountForm/>
@@ -50,7 +56,7 @@ return(
           Save Project
         </Button>
       </div>
-    </>
+    </div>
     )
   }
 }

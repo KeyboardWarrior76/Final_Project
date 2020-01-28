@@ -27,7 +27,7 @@ render() {
   const { button: {one, two, three, four, five, six, seven, eight} } = this.state
 
 return(
-    <div align='center'>
+    <div id='analytics' align='center'>
       <h3><p>Admin, Feedback, & Analytics</p></h3>
       <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('analytic', 'cms'); this.toggle(one, 'one');}}>
         CMS Integration

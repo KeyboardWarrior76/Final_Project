@@ -26,7 +26,7 @@ class AppForm extends Component {
 
   return(
     <>
-      <div style={{paddingTop: '200px'}} align='center'>
+      <div id="size" style={{paddingTop: '200px'}} align='center'>
         <h1>Application Size</h1>
         <button className="estimatorButton" onClick={()=>sizeSet('small')} style={{color: "#85F0D6"}}>S</button>
         <button className="estimatorButton" onClick={()=>sizeSet('medium')} style={{color: "#859DF0"}}>M</button>

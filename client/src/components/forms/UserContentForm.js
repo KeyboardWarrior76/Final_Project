@@ -28,7 +28,7 @@ class UserContentForm extends Component {
     const { button: {one, two, three, four, five, six, seven, eight, nine} } = this.state
 
   return(
-    <div align='center'>
+    <div id="userContent" align='center'>
       <h3><p>User Generated Content</p></h3>
       <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('user_content', 'dashboard'); this.toggle(one, 'one');}}>
         Dashboard
