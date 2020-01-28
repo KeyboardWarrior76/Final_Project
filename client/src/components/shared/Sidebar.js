@@ -1,20 +1,20 @@
 import React from 'react';
 import Navbar from './Navbar';
 import { Link } from 'react-router-dom'
-import devpointLogo from '../../images/DevpointLogo.png';
+import DevpointLogo from '../../images/DevpointLogo.png';
 
 const Sidebar = () => {
 
 
   return(
    <div className="sidebarClearFix">
-   
+
     <div className="sidebar">
       <div className="sidebar-top">
-         <img src={devpointLogo} height="18%" width="auto" alt="Italian Trulli"></img>
+         <img src={DevpointLogo} height="18%" width="auto" alt="Italian Trulli"></img>
       </div>
       <div className="sidebar-middle">
-       
+
           <a href="#size">
             Size
           </a>
@@ -48,7 +48,7 @@ const Sidebar = () => {
           <a href="#estimate">
             Estimate
           </a>
-    
+
       </div>
       <div className="sidebar-bottom">
            <Navbar/>
