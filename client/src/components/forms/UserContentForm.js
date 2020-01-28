@@ -27,7 +27,7 @@ class UserContentForm extends Component {
     const { button: {one, two, three, four, five, six, seven, eight, nine} } = this.state
 
   return(
-    <div id="userContent" align='center'>
+    <div id="userContent" align='center' style={{marginBottom: 30}}>
       <h1>User Generated Content</h1>
       <button className={one} onClick={() => {toggleCategoryItem('user_content', 'dashboard'); this.toggle(one, 'one');}}>
         Dashboard

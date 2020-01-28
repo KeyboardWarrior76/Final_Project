@@ -39,11 +39,15 @@ class Estimator extends Component {
         <SecurityForm/>
         <SocialForm/>
         <UserContentForm/>
+        <br/>
         <div className="estimatorFooter" align='center'>
-          <p style={{fontSize: 50, color: 'white'}}>
+          <p style={{fontSize: 70, color: 'white', marginBottom: 17}}>
             Estimate
+          </p>
             <hr/>
-            ${project.total}</p>
+          <p style={{fontSize: 50, color: 'white', marginTop: 25}}>
+            ${project.total}
+          </p>
           <br/>
           <EmailModal/>
           {/*<button

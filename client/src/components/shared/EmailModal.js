@@ -1,7 +1,5 @@
 import React, {useState, useContext} from 'react'
 import Modal from '@material-ui/core/Modal';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import { makeStyles } from '@material-ui/core/styles';
 import { ProjectContext } from '../../providers/ProjectProvider';
@@ -22,9 +20,9 @@ const useStyles = makeStyles(
   theme => ({
     paper: {
       position: 'absolute',
-      width: 400,
+      width: 500,
       backgroundColor: theme.palette.background.paper,
-      border: '2px solid #000',
+      border: '4px solid #000',
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
     },
@@ -59,19 +57,18 @@ export default function EmailModal() {
       <Modal open={open} onClose={handleClose}>
         <div style={modalStyle} className={classes.paper}>
           <div align='left'>
-            <p>We'll send you and email of your app estimation</p>
-            <h5>Enter Email</h5>
+            <p style={{fontSize: 20}}>We'll send you and email of your app estimation</p>
+            <h4>Enter Email</h4>
           </div>
           <form onSubmit={() => project.emailSubmit(email)}>
-            <FormControl>
-              <InputLabel htmlFor="emailInput">Email</InputLabel>
-              <OutlinedInput
-                id="emailInput"
-                type="email"
-                name='email'
-                value={email}
-                onChange={handleChange} />
-            </FormControl>
+            <OutlinedInput
+              fullWidth={true}
+              placeholder='Email'
+              type='email'
+              name='email'
+              value={email}
+              onChange={handleChange}
+            />
             <button className='bottomButtons' type='submit'>Submit</button>
           </form>
         </div>
