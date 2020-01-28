@@ -68,7 +68,6 @@ class Navbar extends React.Component {
                 Home
               </Button>
             </Link>
-            { this.rightNavItems() }
             <Link to='/about'>
               <Button
                 edge='start'
