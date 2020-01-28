@@ -90,12 +90,11 @@ export default class ProjectProvider extends Component {
   calculateEstimate = (category, item) => {
     const { project, categories } = this.state;
     if (categories[category][item] === true) {
-      this.setState({ project: { ...project, ttt: (project.ttt + 1) } })
+      this.setState({ project: { ...project, ttt: (state.project.ttt + 1) } }, () => this.multiply())
     }
     else if (categories[category][item] === false) {
-      this.setState({ project: { ...project, ttt: (project.ttt - 1) } })
+      this.setState({ project: { ...project, ttt: (project.ttt - 1) } }, () => this.multiply())
     }
-    this.multiply()
   }
 
   toggleCategoryItem = (category, item) => {
@@ -105,10 +104,7 @@ export default class ProjectProvider extends Component {
       categories: {
         ...categories, [category]: { ...categories[category], [item]: newitem }
       }
-    })
-    setTimeout(() => {
-      this.calculateEstimate(category, item)
-    }, 10);
+    }, () => this.calculateEstimate(category, item))
   }
 
   sizeSet = (size) => {
