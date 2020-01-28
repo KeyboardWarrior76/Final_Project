@@ -14,49 +14,46 @@ import { ProjectConsumer } from "../../providers/ProjectProvider";
 import { AuthConsumer } from "../../providers/AuthProvider";
 import EmailModal from './EmailModal';
 import { flexbox } from '@material-ui/system';
-import mountains from '../../images/mountains.png';
+import Mountains from '../../images/Mountains.png';
 
 class Estimator extends Component {
 
-componentDidUpdate() {
-  
-}
+  render() {
 
-render() {
+    const{ value: {createProjectAndCategories, project}, auth: {user} } = this.props
 
-  const{ value: {createProjectAndCategories, project}, auth: {user} } = this.props
+    return(
 
-return(
-    <div style={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      width: "100%",
-    }}>
-      <img className="mountainsImage" src={mountains} />
-      <AppForm/>
-      <AccountForm/>
-      <AnalyticForm/>
-      <BillingForm/>
-      <DateLocationForm/>
-      <IntegrationForm/>
-      <SecurityForm/>
-      <SocialForm/>
-      <UserContentForm/>
-      <div className="estimatorFooter">
-        Estimate:{` ${project.total}`}
-        <br/>
-        <EmailModal/>
-        <Button
-          variant="contained"
-          color="primary"
-          endIcon={<SaveIcon/>}
-          onClick={() => createProjectAndCategories(user.id)}
-        >
-          Save Project
-        </Button>
+      <div style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        width: "100%",
+      }}>
+        <img className="mountainsImage" src={Mountains} />
+        <AppForm/>
+        <AccountForm/>
+        <AnalyticForm/>
+        <BillingForm/>
+        <DateLocationForm/>
+        <IntegrationForm/>
+        <SecurityForm/>
+        <SocialForm/>
+        <UserContentForm/>
+        <div className="estimatorFooter">
+          Estimate:{` ${project.total}`}
+          <br/>
+          <EmailModal/>
+          <Button
+            variant="contained"
+            color="primary"
+            endIcon={<SaveIcon/>}
+            onClick={() => createProjectAndCategories(user.id)}
+          >
+            Save Project
+          </Button>
+        </div>
       </div>
-    </div>
     )
   }
 }
