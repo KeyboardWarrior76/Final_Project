@@ -1,0 +1,20 @@
+.mainDiv {
+  display: flex;
+}
+
+.waterdiv {
+  background-color: #141414;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  width: 100%;
+}
+
+.watermark {
+  color: white;
+  opacity: .6;
+  align-content: center;
+}
+
+p {
+  font-family: helvetica;
+}

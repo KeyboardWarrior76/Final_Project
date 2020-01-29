@@ -26,39 +26,41 @@ class AccountForm extends Component {
     const { button: {one, two, three, four, five, six, seven, eight, nine, ten} } = this.state
 
   return(
-    <div id="accounts" align='center'>
-      <h1>Accounts & Users</h1>
-      <button className={one} onClick={() => { toggleCategoryItem("account", "email_pass"); this.toggle(one, 'one');}}>
-        Email & Password
-      </button>
-      <button className={two} onClick={() => {toggleCategoryItem("account", "facebook"); this.toggle(two, 'two');}}>
-        Facebook
-      </button>
-      <button className={three} onClick={() => {toggleCategoryItem('account', 'twitter'); this.toggle(three, 'three');}}>
-        Twitter
-      </button>
-      <button className={four} onClick={() => {toggleCategoryItem('account', 'google'); this.toggle(four, 'four');}}>
-        Google
-      </button>
-      <button className={five} onClick={() => {toggleCategoryItem('account', 'linkedin'); this.toggle(five, 'five');}}>
-        Linkedin
-      </button>
-      <button className={six} onClick={() => {toggleCategoryItem('account', 'github'); this.toggle(six, 'six');}}>
-        GitHub
-      </button>
-      <button className={seven} onClick={() => {toggleCategoryItem('account', 'invitation'); this.toggle(seven, 'seven');}}>
-        Invitation
-      </button>
-      <button className={eight} onClick={() => {toggleCategoryItem('account', 'multi_account'); this.toggle(eight, 'eight');}}>
-        Multiple Accounts
-      </button>
-      <button className={nine} onClick={() => {toggleCategoryItem('account', 'subdomain'); this.toggle(nine, 'nine');}}>
-        Subdomain
-      </button>
-      <button className={ten} onClick={() => {toggleCategoryItem('account', 'custom'); this.toggle(ten, 'ten');}}>
-        Custom
-      </button>
-    </div>
+    <>
+      <h1 style={{paddingTop: '60px'}}>Accounts & Users</h1>
+      <div id="accounts" align='center' className='grid-container'>
+        <button className={one} onClick={() => { toggleCategoryItem("account", "email_pass"); this.toggle(one, 'one');}}>
+          Email & Password
+        </button>
+        <button className={two} onClick={() => {toggleCategoryItem("account", "facebook"); this.toggle(two, 'two');}}>
+          Facebook
+        </button>
+        <button className={three} onClick={() => {toggleCategoryItem('account', 'twitter'); this.toggle(three, 'three');}}>
+          Twitter
+        </button>
+        <button className={four} onClick={() => {toggleCategoryItem('account', 'google'); this.toggle(four, 'four');}}>
+          Google
+        </button>
+        <button className={five} onClick={() => {toggleCategoryItem('account', 'linkedin'); this.toggle(five, 'five');}}>
+          Linkedin
+        </button>
+        <button className={six} onClick={() => {toggleCategoryItem('account', 'github'); this.toggle(six, 'six');}}>
+          GitHub
+        </button>
+        <button className={seven} onClick={() => {toggleCategoryItem('account', 'invitation'); this.toggle(seven, 'seven');}}>
+          Invitation
+        </button>
+        <button className={eight} onClick={() => {toggleCategoryItem('account', 'multi_account'); this.toggle(eight, 'eight');}}>
+          Multiple Accounts
+        </button>
+        <button className={nine} onClick={() => {toggleCategoryItem('account', 'subdomain'); this.toggle(nine, 'nine');}}>
+          Subdomain
+        </button>
+        <button className={ten} onClick={() => {toggleCategoryItem('account', 'custom'); this.toggle(ten, 'ten');}}>
+          Custom
+        </button>
+      </div>
+    </>
     )
   }
 }

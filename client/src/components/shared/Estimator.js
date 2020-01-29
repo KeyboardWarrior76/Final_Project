@@ -8,55 +8,70 @@ import BillingForm from '../forms/BillingForm';
 import AppForm from '../forms/AppForm';
 import AnalyticForm from '../forms/AnalyticForm';
 import AccountForm from '../forms/AccountForm';
-import Button from '@material-ui/core/Button';
-import SaveIcon from '@material-ui/icons/Save';
 import { ProjectConsumer } from "../../providers/ProjectProvider";
 import { AuthConsumer } from "../../providers/AuthProvider";
 import EmailModal from './EmailModal';
 import { flexbox } from '@material-ui/system';
-import mountains from '../../images/mountains.png';
+import Mountains from '../../images/Mountains.png';
 
 class Estimator extends Component {
 
-componentDidUpdate() {
-  
-}
+  render() {
 
-render() {
+    const{ value: {project} } = this.props
 
-  const{ value: {createProjectAndCategories, project}, auth: {user} } = this.props
+    return(
 
-return(
-    <div style={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      width: "100%",
-    }}>
-      <img className="mountainsImage" src={mountains} />
-      <AppForm/>
-      <AccountForm/>
-      <AnalyticForm/>
-      <BillingForm/>
-      <DateLocationForm/>
-      <IntegrationForm/>
-      <SecurityForm/>
-      <SocialForm/>
-      <UserContentForm/>
-      <div className="estimatorFooter">
-        Estimate:{` ${project.total}`}
+      <div style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        width: "100%"
+      }}>
+        <img className="mountainsImage" src={Mountains} />
+        <AppForm/>
+        <AccountForm/>
+        <AnalyticForm/>
+        <BillingForm/>
+        <DateLocationForm/>
+        <IntegrationForm/>
+        <SecurityForm/>
+        <SocialForm/>
+        <UserContentForm/>
         <br/>
-        <EmailModal/>
-        <Button
-          variant="contained"
-          color="primary"
-          endIcon={<SaveIcon/>}
-          onClick={() => createProjectAndCategories(user.id)}
-        >
-          Save Project
-        </Button>
+        <div className="estimatorFooter" align='center'>
+          <p style={{fontSize: 70, color: 'white', marginBottom: 17}}>
+            Estimate
+          </p>
+            <hr/>
+          <p style={{fontSize: 50, color: 'white', marginTop: 25}}>
+            ${project.total}
+          </p>
+          <br/>
+          <EmailModal/>
+          {/*<button
+            className='bottomButtons'
+            variant="contained"
+            color="secondary"
+            endIcon={<SaveIcon/>}
+            onClick={() => createProjectAndCategories(user.id)}
+          >
+            Save Your Estimate
+          </button>*/}
+        </div>
+        <div className='waterdiv' align='center'>
+          <p className='watermark'>
+            DevPoint Studios ®
+            <br/>
+            370 S 300 E Church & State
+            <br/>
+            Salt Lake City, UT 84111
+            <br/>
+            <br/>
+            contact@devpointstudios.com
+          </p>
+        </div>
       </div>
-    </div>
     )
   }
 }
