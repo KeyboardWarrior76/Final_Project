@@ -27,18 +27,35 @@ class SocialForm extends Component {
     <>
       <h1 id='engagment' style={{paddingTop: '60px'}}>Social & Engagement</h1>
       <div align='center' className='grid-container'>
-        <button className={one} onClick={() => {toggleCategoryItem('social', 'facebook_graph'); this.toggle(one, 'one');}}>
-          Push to Facebook Graph
-        </button>
-        <button className={two} onClick={() => {toggleCategoryItem('social', 'sharing'); this.toggle(two, 'two');}}>
-          Social Sharing
-        </button>
-        <button className={three} onClick={() => {toggleCategoryItem('social', 'forums'); this.toggle(three, 'three');}}>
-          Forums or Commenting
-        </button>
-        <button className={four} onClick={() => {toggleCategoryItem('social', 'messaging'); this.toggle(four, 'four');}}>
-          Messaging
-        </button>
+
+        <fieldset>
+          <legend>Push to Facebook Graph</legend>
+          <button className={one} onClick={() => {toggleCategoryItem('social', 'facebook_graph'); this.toggle(one, 'one');}}>
+
+          </button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Social Sharing</legend>
+          <button className={two} onClick={() => {toggleCategoryItem('social', 'sharing'); this.toggle(two, 'two');}}>
+
+          </button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Forums or Commenting</legend>
+          <button className={three} onClick={() => {toggleCategoryItem('social', 'forums'); this.toggle(three, 'three');}}>
+
+          </button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Messaging</legend>
+          <button className={four} onClick={() => {toggleCategoryItem('social', 'messaging'); this.toggle(four, 'four');}}>
+
+          </button>
+        </fieldset>
+
       </div>
     </>
     )
