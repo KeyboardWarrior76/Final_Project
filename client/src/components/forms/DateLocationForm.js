@@ -24,21 +24,23 @@ class DateLocationForm extends Component {
     const { button: {one, two, three, four} } = this.state
 
   return(
-      <div id='dateLocation' align='center'>
+      <>
         <h1>Dates & Locations</h1>
-        <button className={one} onClick={() => {toggleCategoryItem('date_location', 'calendar'); this.toggle(one, 'one');}}>
-          Calendaring
-        </button>
-        <button className={two} onClick={() => {toggleCategoryItem('date_location', 'display'); this.toggle(two, 'two');}}>
-          Custom Map
-        </button>
-        <button className={three} onClick={() => {toggleCategoryItem('date_location', 'map_display'); this.toggle(three, 'three');}}>
-          Geolocation
-        </button>
-        <button className={four} onClick={() => {toggleCategoryItem('date_location', 'booking'); this.toggle(four, 'four');}}>
-          Bookings
-        </button>
-      </div>
+        <div id='dateLocation' align='center' className='grid-container'>
+          <button className={one} onClick={() => {toggleCategoryItem('date_location', 'calendar'); this.toggle(one, 'one');}}>
+            Calendaring
+          </button>
+          <button className={two} onClick={() => {toggleCategoryItem('date_location', 'display'); this.toggle(two, 'two');}}>
+            Custom Map
+          </button>
+          <button className={three} onClick={() => {toggleCategoryItem('date_location', 'map_display'); this.toggle(three, 'three');}}>
+            Geolocation
+          </button>
+          <button className={four} onClick={() => {toggleCategoryItem('date_location', 'booking'); this.toggle(four, 'four');}}>
+            Bookings
+          </button>
+        </div>
+      </>
     )
   }
 }

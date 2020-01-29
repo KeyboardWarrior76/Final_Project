@@ -26,34 +26,35 @@ render() {
   const { button: {one, two, three, four, five, six, seven, eight} } = this.state
 
 return(
-    <div id='analytics' align='center'>
+    <>
       <h1>Admin, Feedback, & Analytics</h1>
-      <button className={one} onClick={() => {toggleCategoryItem('analytic', 'cms'); this.toggle(one, 'one');}}>
-        CMS Integration
-      </button>
-      <button className={two} onClick={() => {toggleCategoryItem('analytic', 'admin'); this.toggle(two, 'two');}}>
-        User Admin Pages
-      </button>
-      <button className={three} onClick={() => {toggleCategoryItem('analytic', 'moderation'); this.toggle(three, 'three');}}>
-        Moderation/Content Approval
-      </button>
-      <button className={four} onClick={() => {toggleCategoryItem('analytic', 'intercom'); this.toggle(four, 'four');}}>
-        Intercom
-      </button>
-      <br/>
-      <button className={five} onClick={() => {toggleCategoryItem('analytic', 'usage'); this.toggle(five, 'five');}}>
-        Usage Analytics
-      </button>
-      <button className={six} onClick={() => {toggleCategoryItem('analytic', 'crash_report'); this.toggle(six, 'six');}}>
-        Crash Reports
-      </button>
-      <button className={seven} onClick={() => {toggleCategoryItem('analytic', 'performance'); this.toggle(seven, 'seven');}}>
-        Performance Monitoring
-      </button>
-      <button className={eight} onClick={() => { toggleCategoryItem('analytic', 'multilingual'); this.toggle(eight, 'eight');}}>
-        Multilingual Support
-      </button>
-    </div>
+      <div id='analytics' align='center' className='grid-container'>
+        <button className={one} onClick={() => {toggleCategoryItem('analytic', 'cms'); this.toggle(one, 'one');}}>
+          CMS Integration
+        </button>
+        <button className={two} onClick={() => {toggleCategoryItem('analytic', 'admin'); this.toggle(two, 'two');}}>
+          User Admin Pages
+        </button>
+        <button className={three} onClick={() => {toggleCategoryItem('analytic', 'moderation'); this.toggle(three, 'three');}}>
+          Moderation/Content Approval
+        </button>
+        <button className={four} onClick={() => {toggleCategoryItem('analytic', 'intercom'); this.toggle(four, 'four');}}>
+          Intercom
+        </button>
+        <button className={five} onClick={() => {toggleCategoryItem('analytic', 'usage'); this.toggle(five, 'five');}}>
+          Usage Analytics
+        </button>
+        <button className={six} onClick={() => {toggleCategoryItem('analytic', 'crash_report'); this.toggle(six, 'six');}}>
+          Crash Reports
+        </button>
+        <button className={seven} onClick={() => {toggleCategoryItem('analytic', 'performance'); this.toggle(seven, 'seven');}}>
+          Performance Monitoring
+        </button>
+        <button className={eight} onClick={() => { toggleCategoryItem('analytic', 'multilingual'); this.toggle(eight, 'eight');}}>
+          Multilingual Support
+        </button>
+      </div>
+    </>
     )
   }
 }

@@ -25,24 +25,26 @@ class BillingForm extends Component {
     const { button: {one, two, three, four, five} } = this.state
 
   return(
-      <div id="ecommerce" align='center'>
+      <>
         <h1>Billing & eCommerce</h1>
-        <button className={one} onClick={() => {toggleCategoryItem('billing', 'subscription'); this.toggle(one, 'one');}}>
-          Subscription Plans
-        </button>
-        <button className={two} onClick={() => {toggleCategoryItem('billing', 'payment_processing'); this.toggle(two, 'two');}}>
-          Subscription Processing
-        </button>
-        <button className={three} onClick={() => {toggleCategoryItem('billing', 'shopping_cart'); this.toggle(three, 'three');}}>
-          Shopping Cart
-        </button>
-        <button className={four} onClick={() => {toggleCategoryItem('billing', 'user_marketplace'); this.toggle(four, 'four');}}>
-          User Marketplace
-        </button>
-        <button className={five} onClick={() => {toggleCategoryItem('billing', 'product_management'); this.toggle(five, 'five');}}>
-          Product Management
-        </button>
-      </div>
+        <div id="ecommerce" align='center' className='grid-container'>
+          <button className={one} onClick={() => {toggleCategoryItem('billing', 'subscription'); this.toggle(one, 'one');}}>
+            Subscription Plans
+          </button>
+          <button className={two} onClick={() => {toggleCategoryItem('billing', 'payment_processing'); this.toggle(two, 'two');}}>
+            Subscription Processing
+          </button>
+          <button className={three} onClick={() => {toggleCategoryItem('billing', 'shopping_cart'); this.toggle(three, 'three');}}>
+            Shopping Cart
+          </button>
+          <button className={four} onClick={() => {toggleCategoryItem('billing', 'user_marketplace'); this.toggle(four, 'four');}}>
+            User Marketplace
+          </button>
+          <button className={five} onClick={() => {toggleCategoryItem('billing', 'product_management'); this.toggle(five, 'five');}}>
+            Product Management
+          </button>
+        </div>
+      </>
     )
   }
 }

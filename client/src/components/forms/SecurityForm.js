@@ -24,8 +24,9 @@ class SecurityForm extends Component {
     const { button: {one, two, three} } = this.state
 
   return(
-      <div id="security" align='center'>
-        <h1>Security</h1>
+    <>
+      <h1>Security</h1>
+      <div id="security" align='center' className='grid-container'>
         <button className={one} onClick={() => {toggleCategoryItem('security', 'certificate'); this.toggle(one, 'one');}}>
           SSL Certificate Based Security
         </button>
@@ -36,6 +37,7 @@ class SecurityForm extends Component {
           DoS Protection
         </button>
       </div>
+    </>
     )
   }
 }

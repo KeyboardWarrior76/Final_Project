@@ -24,8 +24,9 @@ class SocialForm extends Component {
     const { button: {one, two, three, four} } = this.state
 
   return(
-      <div id='engagment' align='center'>
-        <h1>Social & Engagement</h1>
+    <>
+      <h1>Social & Engagement</h1>
+      <div id='engagment' align='center' className='grid-container'>
         <button className={one} onClick={() => {toggleCategoryItem('social', 'facebook_graph'); this.toggle(one, 'one');}}>
           Push to Facebook Graph
         </button>
@@ -39,6 +40,7 @@ class SocialForm extends Component {
           Messaging
         </button>
       </div>
+    </>
     )
   }
 }
