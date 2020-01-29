@@ -24,8 +24,8 @@
   align-items: center;
   text-decoration: none;
   border-radius: 100%;
-  width: 171px;
-  height: 171px;
+  width: 170.6px;
+  height: 170.6px;
   display: inline-flex;
 	border: 6px solid #FFFFFF;
 	box-shadow: 0 0 0 3px #2B2B2B;
@@ -55,7 +55,7 @@
 
 button:focus {
 	outline: none;
-	box-shadow: 0 0 0 6px #000000;
+	box-shadow: 0 0 3px 4px #000000;
 }
 
 hr {
@@ -74,7 +74,7 @@ hr {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  grid-gap: 13px;
+  grid-gap: 14px;
   background-color: #FFFFFF;
   padding: 10px;
 }
