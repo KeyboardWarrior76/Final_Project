@@ -1,7 +1,7 @@
 import React from 'react';
 
 const EstimatorNav = () => (
-<>   
+<>
   <a href="#size">
     Size
   </a>
@@ -11,26 +11,26 @@ const EstimatorNav = () => (
   <a href="#accounts">
     Accounts
   </a>
-  <a href="#userContent">
-    User Content
+  <a href="#analytics">
+    Analytics
+  </a>
+  <a href="#ecommerce">
+    eCommerce
   </a>
   <a href="#dateLocation">
     Dates & Locations
-  </a>
-  <a href="#engagment">
-    Engagment
-  </a>
-  <a href="#ecommerce">
-    Ecommerce
-  </a>
-  <a href="#analytics">
-    Analytics
   </a>
   <a href="#integrations">
     Integrations
   </a>
   <a href="#security">
     Security
+  </a>
+  <a href="#engagement">
+    Social Engagement
+  </a>
+  <a href="#userContent">
+    User Content
   </a>
   <a href="#estimate">
     Estimate

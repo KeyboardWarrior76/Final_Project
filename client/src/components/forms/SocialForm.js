@@ -25,7 +25,7 @@ class SocialForm extends Component {
 
   return(
     <>
-      <h1 id='engagment' style={{paddingTop: '60px'}}>Social & Engagement</h1>
+      <h1 id='engagement' style={{paddingTop: '60px'}}>Social & Engagement</h1>
       <div align='center' className='grid-container'>
 
         <fieldset>
