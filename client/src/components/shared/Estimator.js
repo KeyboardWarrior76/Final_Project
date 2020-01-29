@@ -12,7 +12,7 @@ import { ProjectConsumer } from "../../providers/ProjectProvider";
 import { AuthConsumer } from "../../providers/AuthProvider";
 import EmailModal from './EmailModal';
 import { flexbox } from '@material-ui/system';
-import Mountains from '../../images/Mountains.png';
+import Mountains from '../../images/mountains.png';
 
 class Estimator extends Component {
 
@@ -39,7 +39,7 @@ class Estimator extends Component {
         <SocialForm/>
         <UserContentForm/>
         <br/>
-        <div className="estimatorFooter" align='center'>
+        <div className="estimatorFooter" align='center' id='estimate'>
           <p style={{fontSize: 70, color: 'white', marginBottom: 17}}>
             Estimate
           </p>

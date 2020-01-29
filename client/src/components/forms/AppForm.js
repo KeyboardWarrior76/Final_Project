@@ -29,7 +29,7 @@ class AppForm extends Component {
 
   return(
     <>
-      <h1 style={{paddingTop: '60px'}}>Application Size</h1>
+      <h1 id='app' style={{paddingTop: '60px'}}>Application Size</h1>
       <div align='center' className='grid-container'>
         <button className={small} onClick={() => {sizeSet('small'); this.toggle(size, 'small');}} style={{color: "#85F0D6", fontSize: 50}}>S</button>
         <button className={medium} onClick={() => {sizeSet('medium'); this.toggle(size, 'medium');}} style={{color: "#859DF0", fontSize: 50}}>M</button>
