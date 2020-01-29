@@ -44,4 +44,5 @@ a {
 .sidebar-clearfix {
   height: 100vh;
   width: 20rem;
+  flex-shrink: 0;
 }

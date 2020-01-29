@@ -27,7 +27,7 @@ class AccountForm extends Component {
 
   return(
     <>
-      <h1>Accounts & Users</h1>
+      <h1 style={{paddingTop: '60px'}}>Accounts & Users</h1>
       <div id="accounts" align='center' className='grid-container'>
         <button className={one} onClick={() => { toggleCategoryItem("account", "email_pass"); this.toggle(one, 'one');}}>
           Email & Password
