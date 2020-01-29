@@ -7,7 +7,7 @@ import { keys } from '@material-ui/core/styles/createBreakpoints';
 import { green, purple, white } from '@material-ui/core/colors';
 
 
-const About =()=>(
+const Contact =()=>(
 <div>
 
   <div style2={{paddingleft:'10px'}}>
@@ -31,15 +31,15 @@ const About =()=>(
 
   </div>
           <h2 className="about-heading2">
-      
+
           Location
 
           </h2>
   <p className="about-paragraph1">
-      370 S 300 E Church & State 
+      370 S 300 E Church & State
       <br></br>
       <br></br>
-      Salt Lake City, 
+      Salt Lake City,
       UT 84111
     </p>
 
@@ -74,7 +74,7 @@ const About =()=>(
     <a href ='https://www.instagram.com/devpointlabs/?hl=en'><img src={require('../../images/instagram.svg')}/>
     </a>
     </div>
-          
+
     <br></br>
 
     <div>
@@ -82,10 +82,10 @@ const About =()=>(
       Contact Form
       </Button>
     </div>
-    
+
 </div>
 
 
 )
 
-export default About;
+export default Contact;

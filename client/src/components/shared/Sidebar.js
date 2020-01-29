@@ -44,8 +44,7 @@ class Sidebar extends Component{
       <div className="sidebar-bottom">
            <Navbar/>
       </div>
-    </div>
-  </div>
+    </>
   )
    }
 }

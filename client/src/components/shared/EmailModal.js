@@ -1,8 +1,5 @@
 import React, {useState, useContext} from 'react'
 import Modal from '@material-ui/core/Modal';
-import Button from '@material-ui/core/Button';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import { makeStyles } from '@material-ui/core/styles';
 import { ProjectContext } from '../../providers/ProjectProvider';
@@ -13,22 +10,25 @@ function getModalStyle() {
 
   return {
     top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
+    left: `calc(${left}% + 8rem)`,
+    transform: `translate(-${left}%, -${top}%)`
   };
 }
 
 
-const useStyles = makeStyles(theme => ({
-  paper: {
-    position: 'absolute',
-    width: 400,
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  },
-}));
+const useStyles = makeStyles(
+  theme => ({
+    paper: {
+      position: 'absolute',
+      width: 500,
+      backgroundColor: theme.palette.background.paper,
+      border: '8px solid #000',
+      boxShadow: theme.shadows[5],
+      padding: theme.spacing(2, 4, 3),
+      outline: 'none'
+    },
+  })
+);
 
 export default function EmailModal() {
   const classes = useStyles();
@@ -54,24 +54,25 @@ export default function EmailModal() {
   return(
 
     <>
-      <Button variant='contained' color="primary" onClick={handleOpen}>Send Estimate</Button>
+      <button className='bottomButtons' onClick={handleOpen}>Email Your Estimate</button>
       <Modal open={open} onClose={handleClose}>
         <div style={modalStyle} className={classes.paper}>
-          <div align='left'>
-            <p>We'll send you and email of your app estimation</p>
-            <h5>Enter Email</h5>
-          </div>
+          <br/>
+          <h2 style={{fontSize: 20}}>We'll send you an email of your app estimation</h2>
+          <br/>
+          <h4 style={{margin: 10}}>Enter Email</h4>
           <form onSubmit={() => project.emailSubmit(email)}>
-            <FormControl>
-              <InputLabel htmlFor="emailInput">Email</InputLabel>
-              <OutlinedInput
-                id="emailInput"
-                type="email"
-                name='email'
-                value={email}
-                onChange={handleChange} />
-            </FormControl>
-            <Button variant="contained" color="primary" type='submit'>Submit</Button>
+            <OutlinedInput
+              fullWidth={true}
+              placeholder='Email'
+              type='email'
+              name='email'
+              value={email}
+              onChange={handleChange}
+            />
+            <div style={{display: 'flex', width: '100%', justifyContent: 'flex-end'}}>
+              <button className='bottomButtons' type='submit'>Submit</button>
+            </div>
           </form>
         </div>
       </Modal>

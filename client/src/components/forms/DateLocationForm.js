@@ -1,21 +1,20 @@
 import React, {Component} from 'react';
-import Fab from '@material-ui/core/Fab';
 import { ProjectConsumer, } from "../../providers/ProjectProvider";
 
 class DateLocationForm extends Component {
 
   state = { button: {
-    one: 'default', two: 'default', three: 'default', four: 'default'
+    one: 'estimatorButton', two: 'estimatorButton', three: 'estimatorButton', four: 'estimatorButton'
     }
   }
 
   toggle = (unique, item) => {
     const{ button } = this.state
-    if (unique === 'default') {
-      this.setState({ button: {...button, [item]: 'primary'} })
+    if (unique === 'estimatorButton') {
+      this.setState({ button: {...button, [item]: 'selectedButton'} })
     }
-    else if (unique === 'primary') {
-      this.setState({ button: {...button, [item]: 'default'} })
+    else if (unique === 'selectedButton') {
+      this.setState({ button: {...button, [item]: 'estimatorButton'} })
     }
   }
 
@@ -25,21 +24,23 @@ class DateLocationForm extends Component {
     const { button: {one, two, three, four} } = this.state
 
   return(
-      <div id='dateLocation' align='center'>
-        <h3><p>Dates & Locations</p></h3>
-        <Fab variant="extended" color={one} onClick={() => {toggleCategoryItem('date_location', 'calendar'); this.toggle(one, 'one');}}>
-          Calendaring
-        </Fab>
-        <Fab variant="extended" color={two} onClick={() => {toggleCategoryItem('date_location', 'display'); this.toggle(two, 'two');}}>
-          Custom Map
-        </Fab>
-        <Fab variant="extended" color={three} onClick={() => {toggleCategoryItem('date_location', 'map_display'); this.toggle(three, 'three');}}>
-          Geolocation
-        </Fab>
-        <Fab variant="extended" color={four} onClick={() => {toggleCategoryItem('date_location', 'booking'); this.toggle(four, 'four');}}>
-          Bookings
-        </Fab>
-      </div>
+      <>
+        <h1 id='dateLocation' style={{paddingTop: '60px'}}>Dates & Locations</h1>
+        <div align='center' className='grid-container'>
+          <button className={one} onClick={() => {toggleCategoryItem('date_location', 'calendar'); this.toggle(one, 'one');}}>
+            Calendaring
+          </button>
+          <button className={two} onClick={() => {toggleCategoryItem('date_location', 'display'); this.toggle(two, 'two');}}>
+            Custom Map
+          </button>
+          <button className={three} onClick={() => {toggleCategoryItem('date_location', 'map_display'); this.toggle(three, 'three');}}>
+            Geolocation
+          </button>
+          <button className={four} onClick={() => {toggleCategoryItem('date_location', 'booking'); this.toggle(four, 'four');}}>
+            Bookings
+          </button>
+        </div>
+      </>
     )
   }
 }
