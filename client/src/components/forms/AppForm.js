@@ -32,7 +32,7 @@ class AppForm extends Component {
         <button className="estimatorButton" onClick={()=>sizeSet('medium')} style={{color: "#859DF0"}}>M</button>
         <button className="estimatorButton" onClick={()=>sizeSet('large')} style={{color: "#DE412E"}}>L</button>
       </div>
-      <div align='center'>
+      <div id='userInterface' align='center'>
         <h1>UI Level</h1>
         <button className="estimatorButton" onClick={()=>uiSet('simple')}>simple</button>
         <button className="estimatorButton" onClick={()=>uiSet('detailed')}>detailed</button>
