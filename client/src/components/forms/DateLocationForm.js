@@ -25,7 +25,7 @@ class DateLocationForm extends Component {
 
   return(
       <>
-        <h1 style={{paddingTop: '60px'}} id='dateLocation'>Dates & Locations</h1>
+        <h1 id='dateLocation' style={{paddingTop: '60px'}}>Dates & Locations</h1>
         <div align='center' className='grid-container'>
           <button className={one} onClick={() => {toggleCategoryItem('date_location', 'calendar'); this.toggle(one, 'one');}}>
             Calendaring

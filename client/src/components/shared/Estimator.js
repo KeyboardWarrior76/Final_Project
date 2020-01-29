@@ -39,7 +39,7 @@ class Estimator extends Component {
         <SocialForm/>
         <UserContentForm/>
         <br/>
-        <div className="estimatorFooter" align='center'>
+        <div className="estimatorFooter" align='center' id='estimate'>
           <p style={{fontSize: 70, color: 'white', marginBottom: 17}}>
             Estimate
           </p>

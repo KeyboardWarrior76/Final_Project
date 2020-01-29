@@ -26,7 +26,7 @@ class BillingForm extends Component {
 
   return(
       <>
-        <h1 style={{paddingTop: '60px'}} id="ecommerce">Billing & eCommerce</h1>
+        <h1 id="ecommerce" style={{paddingTop: '60px'}}>Billing & eCommerce</h1>
         <div align='center' className='grid-container'>
           <button className={one} onClick={() => {toggleCategoryItem('billing', 'subscription'); this.toggle(one, 'one');}}>
             Subscription Plans

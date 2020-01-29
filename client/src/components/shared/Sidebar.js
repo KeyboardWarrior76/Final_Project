@@ -21,26 +21,26 @@ const Sidebar = () => {
           <a href="#accounts">
             Accounts
           </a>
-          <a href="#userContent">
-            User Content
-          </a>
-          <a href="#dateLocation">
-            Dates & Locations
-          </a>
-          <a href="#engagment">
-            Engagment
+          <a href="#analytics">
+            Analytics
           </a>
           <a href="#ecommerce">
             Ecommerce
           </a>
-          <a href="#analytics">
-            Analytics
+          <a href="#dateLocation">
+            Dates & Locations
           </a>
           <a href="#integrations">
             Integrations
           </a>
           <a href="#security">
             Security
+          </a>
+          <a href="#engagment">
+            Engagment
+          </a>
+          <a href="#userContent">
+            User Content
           </a>
           <a href="#estimate">
             Estimate
