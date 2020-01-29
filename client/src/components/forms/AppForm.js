@@ -29,7 +29,7 @@ class AppForm extends Component {
 
   return(
     <>
-      <h1 id='app' style={{paddingTop: '60px'}}>Application Size</h1>
+      <h1 id='size' style={{paddingTop: '60px'}}>Application Size</h1>
       <div align='center' className='grid-container'>
 
         <fieldset>
@@ -49,7 +49,7 @@ class AppForm extends Component {
 
       </div>
 
-      <h1 style={{paddingTop: '60px'}}>UI Level</h1>
+      <h1 id='userInterface' style={{paddingTop: '60px'}}>UI Level</h1>
       <div align='center' className='grid-container'>
 
         <fieldset>
