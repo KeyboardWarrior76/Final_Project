@@ -61,7 +61,7 @@ class Navbar extends React.Component {
         </Link>
         <div className='navbar-break'/>
         <Link style={{color: "white"}} to='/'>
-          Home
+          Estimator
         </Link>
         {/* { this.rightNavItems() } */}
       </>

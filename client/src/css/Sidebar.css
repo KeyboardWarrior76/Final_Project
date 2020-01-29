@@ -44,6 +44,9 @@
   color: white;
   /* text-decoration: none; */
 }
+.sidebar-middle p {
+  /* text-align: right; */
+}
 .sidebar-bottom {
   display: flex;
   align-items: center;
