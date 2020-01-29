@@ -12,7 +12,7 @@ import { ProjectConsumer } from "../../providers/ProjectProvider";
 import { AuthConsumer } from "../../providers/AuthProvider";
 import EmailModal from './EmailModal';
 import { flexbox } from '@material-ui/system';
-import Mountains from '../../images/Mountains.png';
+import Mountains from '../../images/mountains.png';
 
 class Estimator extends Component {
 
