@@ -2,7 +2,7 @@ import React from 'react';
 
 const EstimatorNav = () => (
 <>   
-  <a href="#size">
+  <a href="#app">
     Size
   </a>
   <a href="#userInterface">
