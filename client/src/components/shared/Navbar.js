@@ -4,6 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import { Link, withRouter, } from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 
+
 class Navbar extends React.Component {
 
   rightNavItems = () => {
@@ -54,15 +55,16 @@ class Navbar extends React.Component {
   render() {
     const{ location: {pathname} } = this.props
     return (
-      <div style={{ display: "flex", justifyContent: "space-evenly", width: "20rem", flexShrink: 0 }} >
+      <>
         <Link  style={{color: "white"}} to='/contact'>
           Contact
         </Link>
+        <div className='navbar-break'/>
         <Link style={{color: "white"}} to='/'>
           Home
         </Link>
         {/* { this.rightNavItems() } */}
-      </div>
+      </>
     )
   }
 }
