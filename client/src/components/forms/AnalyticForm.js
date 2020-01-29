@@ -29,30 +29,63 @@ return(
     <>
       <h1 id='analytics' style={{paddingTop: '60px'}}>Admin, Feedback, & Analytics</h1>
       <div align='center' className='grid-container'>
+
+      <fieldset>
+        <legend>CMS Integration</legend>
         <button className={one} onClick={() => {toggleCategoryItem('analytic', 'cms'); this.toggle(one, 'one');}}>
-          CMS Integration
+
         </button>
+      </fieldset>
+
+      <fieldset>
+        <legend>User Admin Pages</legend>
         <button className={two} onClick={() => {toggleCategoryItem('analytic', 'admin'); this.toggle(two, 'two');}}>
-          User Admin Pages
+
         </button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Moderation/Content Approval</legend>
         <button className={three} onClick={() => {toggleCategoryItem('analytic', 'moderation'); this.toggle(three, 'three');}}>
-          Moderation/Content Approval
+
         </button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Intercom</legend>
         <button className={four} onClick={() => {toggleCategoryItem('analytic', 'intercom'); this.toggle(four, 'four');}}>
-          Intercom
+
         </button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Usage Analytics</legend>
         <button className={five} onClick={() => {toggleCategoryItem('analytic', 'usage'); this.toggle(five, 'five');}}>
-          Usage Analytics
+
         </button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Crash Reports</legend>
         <button className={six} onClick={() => {toggleCategoryItem('analytic', 'crash_report'); this.toggle(six, 'six');}}>
-          Crash Reports
+
         </button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Performance Monitoring</legend>
         <button className={seven} onClick={() => {toggleCategoryItem('analytic', 'performance'); this.toggle(seven, 'seven');}}>
-          Performance Monitoring
+
         </button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Multilingual Support</legend>
         <button className={eight} onClick={() => { toggleCategoryItem('analytic', 'multilingual'); this.toggle(eight, 'eight');}}>
-          Multilingual Support
+
         </button>
+      </fieldset>
+
       </div>
     </>
     )

@@ -31,15 +31,42 @@ class AppForm extends Component {
     <>
       <h1 id='app' style={{paddingTop: '60px'}}>Application Size</h1>
       <div align='center' className='grid-container'>
-        <button className={small} onClick={() => {sizeSet('small'); this.toggle(size, 'small');}} style={{color: "#85F0D6", fontSize: 50}}>S</button>
-        <button className={medium} onClick={() => {sizeSet('medium'); this.toggle(size, 'medium');}} style={{color: "#859DF0", fontSize: 50}}>M</button>
-        <button className={large} onClick={() => {sizeSet('large'); this.toggle(size, 'large');}} style={{color: "#DE412E", fontSize: 50}}>L</button>
+
+        <fieldset>
+          <legend>Small</legend>
+          <button className={small} onClick={() => {sizeSet('small'); this.toggle(size, 'small');}} style={{color: "#85F0D6", fontSize: 50}}>S</button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Medium</legend>
+          <button className={medium} onClick={() => {sizeSet('medium'); this.toggle(size, 'medium');}} style={{color: "#859DF0", fontSize: 50}}>M</button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Large</legend>
+          <button className={large} onClick={() => {sizeSet('large'); this.toggle(size, 'large');}} style={{color: "#DE412E", fontSize: 50}}>L</button>
+        </fieldset>
+
       </div>
+
       <h1 style={{paddingTop: '60px'}}>UI Level</h1>
       <div align='center' className='grid-container'>
-        <button className={simple} onClick={() => {uiSet('simple'); this.toggle(ui_level, 'simple');}}>simple</button>
-        <button className={detailed} onClick={() => {uiSet('detailed'); this.toggle(ui_level, 'detailed');}}>detailed</button>
-        <button className={soph} onClick={() => {uiSet('sophisticated'); this.toggle(ui_level, 'soph');}}>sophisticated</button>
+
+        <fieldset>
+          <legend>Simple</legend>
+          <button className={simple} onClick={() => {uiSet('simple'); this.toggle(ui_level, 'simple');}}>Simple</button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Detailed</legend>
+          <button className={detailed} onClick={() => {uiSet('detailed'); this.toggle(ui_level, 'detailed');}}>Detailed</button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Sophisticated</legend>
+          <button className={soph} onClick={() => {uiSet('sophisticated'); this.toggle(ui_level, 'soph');}}>Soph</button>
+        </fieldset>
+
       </div>
     </>
     )
