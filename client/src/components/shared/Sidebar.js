@@ -10,7 +10,7 @@ const Sidebar = () => {
       <div className="sidebar-clearfix" />
       <div className="sidebar">
         <div className="sidebar-top">
-          <img src={DevpointLogo} height="18%" width="auto" alt="Italian Trulli"></img>
+          <img src={DevpointLogo} height="18%" width="auto" alt="DevPoint Logo"></img>
         </div>
         <div className="sidebar-middle">
 
