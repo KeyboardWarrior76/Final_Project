@@ -44,12 +44,12 @@
   color: white;
   /* text-decoration: none; */
 }
+
 .sidebar-bottom {
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: center;
-  z-index: -1;
 }
 
 .navbar-break{
