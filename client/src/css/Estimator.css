@@ -11,6 +11,7 @@
   width: 170px;
   height: 170px;
   display: inline-flex;
+	border: none;
 }
 
 .selectedButton {
@@ -23,8 +24,8 @@
   align-items: center;
   text-decoration: none;
   border-radius: 100%;
-  width: 170px;
-  height: 170px;
+  width: 171px;
+  height: 171px;
   display: inline-flex;
 	border: 6px solid #FFFFFF;
 	box-shadow: 0 0 0 3px #2B2B2B;
@@ -54,6 +55,7 @@
 
 button:focus {
 	outline: none;
+	box-shadow: 0 0 0 6px #000000;
 }
 
 hr {
