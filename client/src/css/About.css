@@ -1,10 +1,5 @@
- body {
-  background-color: grey;
-}
 
-
-
-.about-heading2 { 
+.about-heading2 {
   padding-top: 0px;
   text-align: left;
   color:white;
@@ -12,7 +7,8 @@
   font-size: 35px;
   padding-left: 26px;
   margin-bottom: 10px;
-  
+  margin-top: 0px;
+
 }
 
 .about-heading3 { 
@@ -37,7 +33,7 @@
 
 
 
-.about-paragraph1 { 
+.about-paragraph1 {
   text-align: left;
   color: white;
   font-family: Helvetica;
@@ -47,7 +43,7 @@
 }
 
 
-.about-paragraph2 { 
+.about-paragraph2 {
   text-align: left;
   color: white;
   font-family:Helvetica;
@@ -55,7 +51,6 @@
   padding-left: 26px;
 
 }
-
 
 .about-anchor1 {
   border-left-style: solid;
@@ -81,6 +76,7 @@ padding-bottom: 32px;
   padding-left: 26px;
 }
 .contact-btn {
+
   display: inline-block;
   color:white !important;
   margin-left: 26px !important;
@@ -95,4 +91,23 @@ padding-bottom: 32px;
   font-size: 20px !important;
   margin-top: 70px !important;
   
+}
+
+.Mount{
+	width: 100%;
+  z-index: -1;
+  position: absolute;
+  
+}
+
+.Everything {
+  margin-left: 20px;
+}
+
+.svg {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+.body {
+  background-image:;
 }
