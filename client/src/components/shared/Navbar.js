@@ -55,16 +55,16 @@ class Navbar extends React.Component {
   render() {
     const{ location: {pathname} } = this.props
     return (
-      <div style={{ display: "flex", justifyContent: "space-evenly", width: "20rem", flexShrink: 0 }} >
+      <>
         <Link  style={{color: "white"}} to='/contact'>
           Contact
         </Link>
-        
+        <div className='navbar-break'/>
         <Link style={{color: "white"}} to='/'>
           Home
         </Link>
         {/* { this.rightNavItems() } */}
-      </div>
+      </>
     )
   }
 }

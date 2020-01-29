@@ -5,48 +5,44 @@ import devpointLogo from '../../images/DevpointLogo.png';
 import EstimatorNav from './EstimatorNav';
 import Estimator from './Estimator';
 import AboutNav from './AboutNav';
+import { withRouter } from "react-router-dom";
 
 class Sidebar extends Component{
-   switchEstimator = () => {
    
-     <Route exact path='/' component={Estimator}/>
-   
-   }
-   switchContact = () => {
-    
-      <Route exact path='/about' component={About}/>
-    
-    }
     
   sidebarNav = () => {
-    const {switchEstimator, switchContact} = this.props;
-   if (switchEstimator) {
-     return(
-       <EstimatorNav/>
-     )
-   }
-   if (aboutContact) {
-    return(
-      <aboutNav/>
-    )
-  }
+    const path = this.props.location.pathname;
+    if (path === '/')  {
+      return(
+        <EstimatorNav/>
+      )
+    } else {
+      return(
+        <AboutNav/>
+      )
+    }
   }
    render(){
 
   return(
-   <div className="sidebarClearFix">
-   
-    <div className="sidebar">
-      <div className="sidebar-top">
-         <img src={devpointLogo} height="18%" width="auto" alt="Italian Trulli"></img>
-      </div>
-      
-      <div className="sidebar-bottom">
-           <Navbar/>
+    <>
+      <div className="sidebar-clearfix" />
+      <div className="sidebar">
+        <div className="sidebar-top">
+          <img src={devpointLogo} style={{width: "100%"}} alt="Italian Trulli"></img>
+        </div>
+
+        <div className="sidebar-middle">
+          { this.sidebarNav() }
+        </div>
+        
+        <div className="sidebar-bottom">
+            <Navbar/>
+        </div>
       </div>
     </>
   )
    }
 }
 
-export default Sidebar;
+export default withRouter(Sidebar);
