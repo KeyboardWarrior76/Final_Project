@@ -59,6 +59,18 @@ class Estimator extends Component {
             Save Your Estimate
           </button>*/}
         </div>
+        <div className='waterdiv' align='center'>
+          <p className='watermark'>
+            DevPoint Studios ®
+            <br/>
+            370 S 300 E Church & State
+            <br/>
+            Salt Lake City, UT 84111
+            <br/>
+            <br/>
+            contact@devpointstudios.com
+          </p>
+        </div>
       </div>
     )
   }

@@ -10,8 +10,8 @@ function getModalStyle() {
 
   return {
     top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
+    left: `calc(${left}% + 8rem)`,
+    transform: `translate(-${left}%, -${top}%)`
   };
 }
 
@@ -22,9 +22,10 @@ const useStyles = makeStyles(
       position: 'absolute',
       width: 500,
       backgroundColor: theme.palette.background.paper,
-      border: '4px solid #000',
+      border: '8px solid #000',
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
+      outline: 'none'
     },
   })
 );
@@ -57,7 +58,7 @@ export default function EmailModal() {
       <Modal open={open} onClose={handleClose}>
         <div style={modalStyle} className={classes.paper}>
           <br/>
-          <p style={{fontSize: 20}}>We'll send you an email of your app estimation</p>
+          <h2 style={{fontSize: 20}}>We'll send you an email of your app estimation</h2>
           <br/>
           <h4 style={{margin: 10}}>Enter Email</h4>
           <form onSubmit={() => project.emailSubmit(email)}>
@@ -69,7 +70,9 @@ export default function EmailModal() {
               value={email}
               onChange={handleChange}
             />
-            <button className='bottomButtons' type='submit'>Submit</button>
+            <div style={{display: 'flex', width: '100%', justifyContent: 'flex-end'}}>
+              <button className='bottomButtons' type='submit'>Submit</button>
+            </div>
           </form>
         </div>
       </Modal>
