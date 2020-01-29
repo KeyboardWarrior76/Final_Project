@@ -6,16 +6,16 @@ class AccountForm extends Component {
   state = { button: {
     one: 'estimatorButton', two: 'estimatorButton', three: 'estimatorButton',
     four: 'estimatorButton', five: 'estimatorButton', six: 'estimatorButton',
-    seven: 'estimatorButton', eight: 'estimatorButton', nine: 'estimatorButton', ten: 'estimatorButton'
+    seven: 'estimatorButton', eight: 'estimatorButton', nine: 'estimatorButton', ten: 'estimatorButton', ring: 'buttonRing'
     }
   }
 
   toggle = (unique, item) => {
     const{ button } = this.state
     if (unique === 'estimatorButton') {
-      this.setState({ button: {...button, [item]: 'selectedButton'} })
+      this.setState({ button: {...button, [item]: 'selectedButton buttonRing'} })
     }
-    else if (unique === 'selectedButton') {
+    else if (unique === 'selectedButton buttonRing') {
       this.setState({ button: {...button, [item]: 'estimatorButton'} })
     }
   }
@@ -23,7 +23,7 @@ class AccountForm extends Component {
   render() {
 
     const { value: {toggleCategoryItem} } = this.props
-    const { button: {one, two, three, four, five, six, seven, eight, nine, ten} } = this.state
+    const { button: {one, two, three, four, five, six, seven, eight, nine, ten, buttonRing} } = this.state
 
   return(
     <>
