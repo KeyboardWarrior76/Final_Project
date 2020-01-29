@@ -27,8 +27,8 @@ render() {
 
 return(
     <>
-      <h1 style={{paddingTop: '60px'}}>Admin, Feedback, & Analytics</h1>
-      <div id='analytics' align='center' className='grid-container'>
+      <h1 id='analytics' style={{paddingTop: '60px'}}>Admin, Feedback, & Analytics</h1>
+      <div align='center' className='grid-container'>
         <button className={one} onClick={() => {toggleCategoryItem('analytic', 'cms'); this.toggle(one, 'one');}}>
           CMS Integration
         </button>
