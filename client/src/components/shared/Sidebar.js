@@ -1,58 +1,48 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Navbar from './Navbar';
-import { Link } from 'react-router-dom'
-import DevpointLogo from '../../images/DevpointLogo.png';
+import { Link, Route, Switch } from 'react-router-dom'
+import devpointLogo from '../../images/DevpointLogo.png';
+import EstimatorNav from './EstimatorNav';
+import Estimator from './Estimator';
+import AboutNav from './AboutNav';
+import { withRouter } from "react-router-dom";
 
-const Sidebar = () => {
-
+class Sidebar extends Component{
+   
+    
+  sidebarNav = () => {
+    const path = this.props.location.pathname;
+    if (path === '/')  {
+      return(
+        <EstimatorNav/>
+      )
+    } else {
+      return(
+        <AboutNav/>
+      )
+    }
+  }
+   render(){
 
   return(
     <>
       <div className="sidebar-clearfix" />
       <div className="sidebar">
         <div className="sidebar-top">
-           <img src={DevpointLogo} height="18%" width="auto" alt="Italian Trulli"></img>
+          <img src={devpointLogo} style={{width: "100%"}} alt="Italian Trulli"></img>
         </div>
+
         <div className="sidebar-middle">
-
-          <a href="#app">
-            App
-          </a>
-          <a href="#accounts">
-            Accounts
-          </a>
-          <a href="#analytics">
-            Analytics
-          </a>
-          <a href="#ecommerce">
-            Ecommerce
-          </a>
-          <a href="#dateLocation">
-            Dates & Locations
-          </a>
-          <a href="#integrations">
-            Integrations
-          </a>
-          <a href="#security">
-            Security
-          </a>
-          <a href="#engagment">
-            Engagment
-          </a>
-          <a href="#userContent">
-            User Content
-          </a>
-          <a href="#estimate">
-            Estimate
-          </a>
-
+          { this.sidebarNav() }
         </div>
+        
         <div className="sidebar-bottom">
-             <Navbar/>
+            <Navbar/>
         </div>
       </div>
     </>
   )
+   }
 }
 
-export default Sidebar;
+export default withRouter(Sidebar);
