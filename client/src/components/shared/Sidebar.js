@@ -1,9 +1,26 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Navbar from './Navbar';
 import DevpointLogo from '../../images/DevpointLogo.png';
+import EstimatorNav from './EstimatorNav';
+import AboutNav from './AboutNav';
+import { withRouter } from "react-router-dom";
 
-const Sidebar = () => {
+class Sidebar extends Component{
 
+
+  sidebarNav = () => {
+    const path = this.props.location.pathname;
+    if (path === '/')  {
+      return(
+        <EstimatorNav/>
+      )
+    } else {
+      return(
+        <AboutNav/>
+      )
+    }
+  }
+   render(){
 
   return(
     <>
@@ -12,46 +29,18 @@ const Sidebar = () => {
         <div className="sidebar-top">
           <img src={DevpointLogo} height="18%" width="auto" alt="DevPoint Logo"></img>
         </div>
+
         <div className="sidebar-middle">
-
-          <a href="#app">
-            App
-          </a>
-          <a href="#accounts">
-            Accounts
-          </a>
-          <a href="#analytics">
-            Analytics
-          </a>
-          <a href="#ecommerce">
-            Ecommerce
-          </a>
-          <a href="#dateLocation">
-            Dates & Locations
-          </a>
-          <a href="#integrations">
-            Integrations
-          </a>
-          <a href="#security">
-            Security
-          </a>
-          <a href="#engagment">
-            Engagment
-          </a>
-          <a href="#userContent">
-            User Content
-          </a>
-          <a href="#estimate">
-            Estimate
-          </a>
-
+          { this.sidebarNav() }
         </div>
+
         <div className="sidebar-bottom">
          <Navbar/>
         </div>
       </div>
     </>
   )
+   }
 }
 
-export default Sidebar;
+export default withRouter(Sidebar);
