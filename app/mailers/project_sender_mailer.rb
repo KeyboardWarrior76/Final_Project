@@ -16,10 +16,10 @@ class ProjectSenderMailer < ApplicationMailer
 		cat.each_key{ |item|
 			cat[item].each do |key, value|
 				if value === true
-					value = '✓'
+					value = '<span>✅</span>'
 					cat[item].merge!({key => value})
 				elsif value === false
-					value = '✗'
+					value = '<span>❌</span>'
 					cat[item].merge!({key => value})
 				else
 					cat[item].merge!({key => value})
@@ -38,10 +38,9 @@ class ProjectSenderMailer < ApplicationMailer
 				 <br/>
 				 Your app had the following selections:
 				 <ul>
-				 	<p><u>App Size</u></p>
-						<li>#{cat[:app][:size].capitalize}</li>
-					 <p><u>UI Level</u></p>
-					 	<li>#{cat[:app][:ui_level].capitalize}</li>
+				 	<p><u>Application</u></p>
+						<li>Size: <span style='color:DodgerBlue;'>#{cat[:app][:size].capitalize}</span></li>
+						<li>Size: <span style='color:MediumSeaGreen;'>#{cat[:app][:ui_level].capitalize}</span></li>
 					 <p><u>Users & Accounts</u></p>
 						 <li>Email/Password Login: #{cat[:account]["email_pass"]}</li>
 						 <li>Facebook Login: #{cat[:account]["facebook"]}</li>

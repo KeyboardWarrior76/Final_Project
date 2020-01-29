@@ -49,22 +49,22 @@ class AppForm extends Component {
 
       </div>
 
-      <h1 id='userInterface' style={{paddingTop: '60px'}}>UI Level</h1>
+      <h1 id='UI' style={{paddingTop: '60px'}}>UI Level</h1>
       <div align='center' className='grid-container'>
 
         <fieldset>
           <legend>Simple</legend>
-          <button className={simple} onClick={() => {uiSet('simple'); this.toggle(ui_level, 'simple');}}>Simple</button>
+          <button className={simple} onClick={() => {uiSet('simple'); this.toggle(ui_level, 'simple');}}></button>
         </fieldset>
 
         <fieldset>
           <legend>Detailed</legend>
-          <button className={detailed} onClick={() => {uiSet('detailed'); this.toggle(ui_level, 'detailed');}}>Detailed</button>
+          <button className={detailed} onClick={() => {uiSet('detailed'); this.toggle(ui_level, 'detailed');}}></button>
         </fieldset>
 
         <fieldset>
           <legend>Sophisticated</legend>
-          <button className={soph} onClick={() => {uiSet('sophisticated'); this.toggle(ui_level, 'soph');}}>Soph</button>
+          <button className={soph} onClick={() => {uiSet('sophisticated'); this.toggle(ui_level, 'soph');}}></button>
         </fieldset>
 
       </div>

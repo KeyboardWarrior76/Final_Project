@@ -5,7 +5,7 @@ const EstimatorNav = () => (
   <a href="#size">
     Size
   </a>
-  <a href="#userInterface">
+  <a href="#UI">
     User Interface
   </a>
   <a href="#accounts">
