@@ -45,7 +45,15 @@
   /* text-decoration: none; */
 }
 .sidebar-middle p {
-  /* text-align: right; */
+  font-size: 14px;
+  text-align: right;
+  
+  
+}
+.sidebar-middle h1 {
+  font-size: 36px;
+  font-weight: bold;
+  
 }
 .sidebar-bottom {
   display: flex;
