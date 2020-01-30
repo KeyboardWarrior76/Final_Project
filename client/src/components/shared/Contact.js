@@ -49,7 +49,7 @@ const Contact =()=>(
       <br />
 
       <div>
-        <Button className="contact-btn" href='https://www.devpointstudios.com/contact'>
+        <Button className="contact-btn" href='https://www.devpointstudios.com/contact' target="_blank">
         Contact Form
         </Button>
       </div>
