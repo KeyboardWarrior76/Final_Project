@@ -27,18 +27,35 @@ class DateLocationForm extends Component {
       <>
         <h1 id='dateLocation' style={{paddingTop: '60px'}}>Dates & Locations</h1>
         <div align='center' className='grid-container'>
-          <button className={one} onClick={() => {toggleCategoryItem('date_location', 'calendar'); this.toggle(one, 'one');}}>
-            Calendaring
-          </button>
-          <button className={two} onClick={() => {toggleCategoryItem('date_location', 'display'); this.toggle(two, 'two');}}>
-            Custom Map
-          </button>
-          <button className={three} onClick={() => {toggleCategoryItem('date_location', 'map_display'); this.toggle(three, 'three');}}>
-            Geolocation
-          </button>
-          <button className={four} onClick={() => {toggleCategoryItem('date_location', 'booking'); this.toggle(four, 'four');}}>
-            Bookings
-          </button>
+
+          <fieldset>
+            <legend>Calendaring</legend>
+            <button className={one} onClick={() => {toggleCategoryItem('date_location', 'calendar'); this.toggle(one, 'one');}}>
+
+            </button>
+          </fieldset>
+
+          <fieldset>
+            <legend>Custom Map</legend>
+            <button className={two} onClick={() => {toggleCategoryItem('date_location', 'display'); this.toggle(two, 'two');}}>
+
+            </button>
+          </fieldset>
+
+          <fieldset>
+            <legend>Geolocation</legend>
+            <button className={three} onClick={() => {toggleCategoryItem('date_location', 'map_display'); this.toggle(three, 'three');}}>
+
+            </button>
+          </fieldset>
+
+          <fieldset>
+            <legend>Bookings</legend>
+            <button className={four} onClick={() => {toggleCategoryItem('date_location', 'booking'); this.toggle(four, 'four');}}>
+
+            </button>
+          </fieldset>
+
         </div>
       </>
     )
