@@ -1,11 +1,20 @@
+.contact-heading {
+  display: flex;
+  align-items: center;
+  color: white;
+  padding-left: 10px;
+  font-size: 30px;
+  font-family: Helvetica;
+
+}
+
 
 .about-heading2 {
-  padding-top: 0px;
+  padding-top: 20px;
   text-align: left;
   color:white;
   font-family: Helvetica;
   font-size: 35px;
-  padding-left: 26px;
   margin-bottom: 10px;
   margin-top: 0px;
 
@@ -18,9 +27,8 @@
   color: white;
   font-family: Helvetica;
   font-size: 35px;
-  padding-left: 26px;
-}
 
+}
 
 .about-heading4 { 
   padding-top: 20px;
@@ -28,35 +36,36 @@
   color: white;
   font-family: Helvetica;
   font-size: 35px;
-  padding-left: 26px;
+  margin-bottom: 25px;
 }
 
 
 
 .about-paragraph1 {
+  margin-top: 0px;
   text-align: left;
   color: white;
   font-family: Helvetica;
   font-size: 18px;
-  padding-left: 26px;
 
 }
 
 
 .about-paragraph2 {
+  margin-top: 5px;
+
   text-align: left;
   color: white;
   font-family:Helvetica;
   font-size: 18px;
-  padding-left: 26px;
 
 }
 
 .about-anchor1 {
-  border-left-style: solid;
+  margin-top: 0px;
+
 display:inline-block;
 margin-right: 30px;
-padding-left: 26px;
 
 }
 
@@ -68,46 +77,47 @@ margin-right:30px;
 .about-anchor3 {
 display:inline-block;
 margin-right: 40px;
-padding-bottom: 32px;
-
+padding-bottom: 12px;
 }
 .about-anchor4 {
   padding-top: 19px;
-  padding-left: 26px;
+  padding-left: 30px;
 }
 .contact-btn {
-
   display: inline-block;
   color:white !important;
-  margin-left: 26px !important;
   margin-bottom: 30px !important;
   border-color:#de412e !important;
   border-style: solid !important;
   border-width: 3px !important;
   font-family: Helvetica !important;
-  width: 220px;
+  width: 230px;
   height: 60px;
   text-transform: capitalize !important;
   font-size: 20px !important;
   margin-top: 70px !important;
-  
 }
 
 .Mount{
 	width: 100%;
   z-index: -1;
   position: absolute;
-  
 }
 
 .Everything {
-  margin-left: 20px;
+  width: 100%;
+  padding-top: 2.5rem;
+  padding-left: 2.5rem;
+  background:black;
+  background-size: cover;
+  background-image:linear-gradient(to top,
+    rgba( 0,0,0, 0.70),
+    rgba(43, 43, 43, 1)
+  ),url("../images/mountains.png");
 }
 
-.svg {
-  padding-bottom: 0px;
-  margin-bottom: 0px;
+
+.contact-bars {
+  padding-right: 20px;
 }
-.body {
-  background-image:;
-}
+
