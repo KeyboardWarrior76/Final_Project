@@ -11,7 +11,7 @@
   width: 170px;
   height: 170px;
   display: inline-flex;
-	border: none;
+	border: 6px solid transparent;
 }
 
 .selectedButton {
@@ -24,8 +24,8 @@
   align-items: center;
   text-decoration: none;
   border-radius: 100%;
-  width: 170.6px;
-  height: 170.6px;
+  width: 170px;
+  height: 170px;
   display: inline-flex;
 	border: 6px solid #FFFFFF;
 	box-shadow: 0 0 0 3px #2B2B2B;
