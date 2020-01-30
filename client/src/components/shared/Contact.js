@@ -36,7 +36,7 @@ const Contact =()=>(
 
       <div className="about-anchor2">
         <a href ='https://twitter.com/devpointlabs?lang=en'>
-          <img  src={require('../../images/twitter.svg')}/>
+          <img  src={require('../../images/twitter2.svg')}/>
         </a>
       </div>
 
