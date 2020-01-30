@@ -12,6 +12,7 @@ import { ProjectConsumer } from "../../providers/ProjectProvider";
 import { AuthConsumer } from "../../providers/AuthProvider";
 import EmailModal from './EmailModal';
 import Mountains from '../../images/mountains.png';
+import Bars from '../../images/bars.svg';
 
 class Estimator extends Component {
 
@@ -27,6 +28,14 @@ class Estimator extends Component {
         alignItems: "center",
         width: "100%"
       }}>
+        <header className='header'>
+          <h1>Get an Estimate</h1>
+          <img src={Bars} />
+          <div className='header-p'>
+            <p>from DevPoint Studios</p>
+            <p>for your application or website</p>
+          </div>
+        </header>
         <img className="mountainsImage" alt='DevPoint Studios Mountains' src={Mountains} />
         <AppForm/>
         <AccountForm/>
