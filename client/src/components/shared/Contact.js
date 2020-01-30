@@ -1,18 +1,14 @@
 import React from 'react'
-import Grid from '@material-ui/core/Grid';
 import '../../css/About.css';
 import Button from '@material-ui/core/Button';
-import { keys } from '@material-ui/core/styles/createBreakpoints';
-import Mountains from '../../images/mountains.png';
 import Bars from '../../images/bars.svg';
-import { green, purple, white } from '@material-ui/core/colors';
 
 
 const Contact =()=>(
   <div className= 'Everything'>
-    <div className= 'Gradient'>   
+    <div className= 'Gradient'>
       <div className="contact-heading">
-        <img className='contact-bars' src={Bars} />
+        <img className='contact-bars' alt='Bars' src={Bars} />
         <h1 className="about-heading1">Contact</h1>
       </div>
 
@@ -30,19 +26,19 @@ const Contact =()=>(
 
       <div className="about-anchor1">
         <a href ='https://www.facebook.com/DevPointLabs/?ref=br_rs'>
-          <img  src={require('../../images/Subtract.svg')}/>
+          <img  src={require('../../images/Subtract.svg')} alt='Subtract'/>
         </a>
       </div>
 
       <div className="about-anchor2">
         <a href ='https://twitter.com/devpointlabs?lang=en'>
-          <img  src={require('../../images/twitter2.svg')}/>
+          <img  src={require('../../images/twitter2.svg')} alt='Twitter'/>
         </a>
       </div>
 
       <div className="about-anchor3">
         <a href ='https://www.instagram.com/devpointlabs/?hl=en'>
-          <img src={require('../../images/instagram.svg')}/>
+          <img src={require('../../images/instagram.svg')} alt='Instagram'/>
         </a>
       </div>
 
@@ -50,7 +46,7 @@ const Contact =()=>(
 
       <div>
         <Button className="contact-btn" href='https://www.devpointstudios.com/contact' target="_blank">
-        Contact Form
+          Contact Form
         </Button>
       </div>
     </div>
