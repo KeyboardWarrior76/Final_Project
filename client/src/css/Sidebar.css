@@ -40,9 +40,20 @@
 }
 
 .sidebar-middle a {
-  margin-top: 15%;
+  margin-top: 1.5rem;
   color: white;
   /* text-decoration: none; */
+}
+.sidebar-middle p {
+  font-size: 14px;
+  text-align: right;
+  
+  
+}
+.sidebar-middle h1 {
+  font-size: 36px;
+  font-weight: bold;
+  
 }
 .sidebar-bottom {
   display: flex;

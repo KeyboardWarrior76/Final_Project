@@ -27,15 +27,28 @@ class SecurityForm extends Component {
     <>
       <h1 id='security' style={{paddingTop: '60px'}}>Security</h1>
       <div align='center' className='grid-container'>
-        <button className={one} onClick={() => {toggleCategoryItem('security', 'certificate'); this.toggle(one, 'one');}}>
-          SSL Certificate Based Security
-        </button>
-        <button className={two} onClick={() => {toggleCategoryItem('security', 'factor_authentication'); this.toggle(two, 'two');}}>
-          Two-Factor Authentication
-        </button>
-        <button className={three} onClick={() => {toggleCategoryItem('security', 'dos_protection'); this.toggle(three, 'three');}}>
-          DoS Protection
-        </button>
+
+        <fieldset>
+          <legend>SSL Certificate Based Security</legend>
+          <button className={one} onClick={() => {toggleCategoryItem('security', 'certificate'); this.toggle(one, 'one');}}>
+
+          </button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Two-Factor Authentication</legend>
+          <button className={two} onClick={() => {toggleCategoryItem('security', 'factor_authentication'); this.toggle(two, 'two');}}>
+
+          </button>
+        </fieldset>
+
+        <fieldset>
+          <legend>DoS Protection</legend>
+          <button className={three} onClick={() => {toggleCategoryItem('security', 'dos_protection'); this.toggle(three, 'three');}}>
+
+          </button>
+        </fieldset>
+
       </div>
     </>
     )

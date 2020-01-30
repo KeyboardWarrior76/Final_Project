@@ -6,7 +6,7 @@ export const ProjectConsumer = ProjectContext.Consumer;
 
 export default class ProjectProvider extends Component {
 
-  state = { project: {name: '', total: 0, ttt: 0, days: 0}, isNew: true,
+  state = { project: {name: '', total: 0, ttt: 0, days: 0}, isNew: true, si: 1, ui: 1,
     categories: {
       account: {
         email_pass: false, facebook: false,
@@ -22,7 +22,7 @@ export default class ProjectProvider extends Component {
         performance: false, multilingual: false
       },
       app: {
-        size: 1, ui_level: 1
+        size: 'small', ui_level: 'simple'
       },
       billing: {
         subscription_plan: false, payment_processing: false,
@@ -69,20 +69,20 @@ export default class ProjectProvider extends Component {
     }
 
   multiply = () => {
-    const {project, project: {ttt}, categories: {app: {size, ui_level}}} = this.state
-    if ((size + ui_level) === 2) {
+    const { project, si, ui, project: {ttt} } = this.state
+    if ((si + ui) === 2) {
       this.setState({ project: {...project, total: ttt} })
     }
-    else if ((size + ui_level) === 3) {
+    else if ((si + ui) === 3) {
       this.setState({ project: {...project, total: (ttt * 1.5)} })
     }
-    else if ((size + ui_level) === 4) {
+    else if ((si + ui) === 4) {
       this.setState({ project: {...project, total: (ttt * 2)} })
     }
-    else if ((size + ui_level) === 5) {
+    else if ((si + ui) === 5) {
       this.setState({ project: {...project, total: (ttt * 2.5)} })
     }
-    else if ((size + ui_level) === 6) {
+    else if ((si + ui) === 6) {
       this.setState({ project: {...project, total: (ttt * 3)} })
     }
   }
@@ -110,13 +110,13 @@ export default class ProjectProvider extends Component {
   sizeSet = (size) => {
     const { categories } = this.state;
     if (size === 'small') {
-      this.setState({ categories: { ...categories, app: { ...categories.app, size: 1 } } })
+      this.setState({ si: 1, categories: { ...categories, app: { ...categories.app, size: 'small' } } })
     }
     else if (size === 'medium') {
-      this.setState({ categories: { ...categories, app: { ...categories.app, size: 2 } } })
+      this.setState({ si: 2, categories: { ...categories, app: { ...categories.app, size: 'medium' } } })
     }
     else if (size === 'large') {
-      this.setState({ categories: { ...categories, app: { ...categories.app, size: 3 } } })
+      this.setState({ si: 3, categories: { ...categories, app: { ...categories.app, size: 'large' } } })
     }
     setTimeout(() => {
       this.multiply()
@@ -126,13 +126,13 @@ export default class ProjectProvider extends Component {
   uiSet = (ui_level) => {
     const { categories } = this.state;
     if (ui_level === 'simple') {
-      this.setState({ categories: { ...categories, app: { ...categories.app, ui_level: 1 } } })
+      this.setState({ ui: 1, categories: { ...categories, app: { ...categories.app, ui_level: 'simple' } } })
     }
     else if (ui_level === 'detailed') {
-      this.setState({ categories: { ...categories, app: { ...categories.app, ui_level: 2 } } })
+      this.setState({ ui: 2, categories: { ...categories, app: { ...categories.app, ui_level: 'detailed' } } })
     }
     else if (ui_level === 'sophisticated') {
-      this.setState({ categories: { ...categories, app: { ...categories.app, ui_level: 3 } } })
+      this.setState({ ui: 3, categories: { ...categories, app: { ...categories.app, ui_level: 'sophisticated' } } })
     }
     setTimeout(() => {
       this.multiply()
@@ -140,7 +140,7 @@ export default class ProjectProvider extends Component {
   }
 
   emailSubmit = (email) => {
-    const { project, categories } = this.state
+    const { project, categories, categories: {app} } = this.state
     const params = {project, categories, email}
     axios.post('/api/project_senders', params)
     .then( res => {

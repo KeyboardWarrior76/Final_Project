@@ -27,18 +27,35 @@ class IntegrationForm extends Component {
       <>
         <h1 id="integrations" style={{paddingTop: '60px'}}>External APIs & Integrations</h1>
         <div align='center' className='grid-container'>
-          <button className={one} onClick={() => {toggleCategoryItem('integration', 'third_party'); this.toggle(one, 'one');}}>
-            Third Party Services
-          </button>
-          <button className={two} onClick={() => {toggleCategoryItem('integration', 'api_integrate'); this.toggle(two, 'two');}}>
-            API Integration
-          </button>
-          <button className={three} onClick={() => {toggleCategoryItem('integration', 'messaging'); this.toggle(three, 'three');}}>
-            SMS Messaging
-          </button>
-          <button className={four} onClick={() => {toggleCategoryItem('integration', 'phone_number'); this.toggle(four, 'four');}}>
-            Phone Number Masking
-          </button>
+
+          <fieldset>
+            <legend>Third Party Services</legend>
+            <button className={one} onClick={() => {toggleCategoryItem('integration', 'third_party'); this.toggle(one, 'one');}}>
+
+            </button>
+          </fieldset>
+
+          <fieldset>
+            <legend>API Integration</legend>
+            <button className={two} onClick={() => {toggleCategoryItem('integration', 'api_integrate'); this.toggle(two, 'two');}}>
+
+            </button>
+          </fieldset>
+
+          <fieldset>
+            <legend>SMS Messaging</legend>
+            <button className={three} onClick={() => {toggleCategoryItem('integration', 'messaging'); this.toggle(three, 'three');}}>
+
+            </button>
+          </fieldset>
+
+          <fieldset>
+            <legend>Phone Number Masking</legend>
+            <button className={four} onClick={() => {toggleCategoryItem('integration', 'phone_number'); this.toggle(four, 'four');}}>
+
+            </button>
+          </fieldset>
+
         </div>
       </>
     )

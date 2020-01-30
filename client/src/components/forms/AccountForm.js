@@ -29,36 +29,77 @@ class AccountForm extends Component {
     <>
       <h1 id="accounts" style={{paddingTop: '60px'}}>Accounts & Users</h1>
       <div align='center' className='grid-container'>
-        <button className={one} onClick={() => { toggleCategoryItem("account", "email_pass"); this.toggle(one, 'one');}}>
-          Email & Password
-        </button>
-        <button className={two} onClick={() => {toggleCategoryItem("account", "facebook"); this.toggle(two, 'two');}}>
-          Facebook
-        </button>
-        <button className={three} onClick={() => {toggleCategoryItem('account', 'twitter'); this.toggle(three, 'three');}}>
-          Twitter
-        </button>
-        <button className={four} onClick={() => {toggleCategoryItem('account', 'google'); this.toggle(four, 'four');}}>
-          Google
-        </button>
-        <button className={five} onClick={() => {toggleCategoryItem('account', 'linkedin'); this.toggle(five, 'five');}}>
-          Linkedin
-        </button>
-        <button className={six} onClick={() => {toggleCategoryItem('account', 'github'); this.toggle(six, 'six');}}>
-          GitHub
-        </button>
-        <button className={seven} onClick={() => {toggleCategoryItem('account', 'invitation'); this.toggle(seven, 'seven');}}>
-          Invitation
-        </button>
-        <button className={eight} onClick={() => {toggleCategoryItem('account', 'multi_account'); this.toggle(eight, 'eight');}}>
-          Multiple Accounts
-        </button>
-        <button className={nine} onClick={() => {toggleCategoryItem('account', 'subdomain'); this.toggle(nine, 'nine');}}>
-          Subdomain
-        </button>
-        <button className={ten} onClick={() => {toggleCategoryItem('account', 'custom'); this.toggle(ten, 'ten');}}>
-          Custom
-        </button>
+
+        <fieldset>
+          <legend>Email & Password</legend>
+          <button className={one} onClick={() => { toggleCategoryItem("account", "email_pass"); this.toggle(one, 'one');}}>
+
+          </button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Facebook</legend>
+          <button className={two} onClick={() => {toggleCategoryItem("account", "facebook"); this.toggle(two, 'two');}}>
+
+          </button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Twitter</legend>
+          <button className={three} onClick={() => {toggleCategoryItem('account', 'twitter'); this.toggle(three, 'three');}}>
+
+          </button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Google</legend>
+          <button className={four} onClick={() => {toggleCategoryItem('account', 'google'); this.toggle(four, 'four');}}>
+
+          </button>
+        </fieldset>
+
+        <fieldset>
+          <legend>LinkedIn</legend>
+          <button className={five} onClick={() => {toggleCategoryItem('account', 'linkedin'); this.toggle(five, 'five');}}>
+
+          </button>
+        </fieldset>
+
+        <fieldset>
+          <legend>GitHub</legend>
+          <button className={six} onClick={() => {toggleCategoryItem('account', 'github'); this.toggle(six, 'six');}}>
+
+          </button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Invitation</legend>
+          <button className={seven} onClick={() => {toggleCategoryItem('account', 'invitation'); this.toggle(seven, 'seven');}}>
+
+          </button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Multiple Accounts</legend>
+          <button className={eight} onClick={() => {toggleCategoryItem('account', 'multi_account'); this.toggle(eight, 'eight');}}>
+
+          </button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Subdomain</legend>
+          <button className={nine} onClick={() => {toggleCategoryItem('account', 'subdomain'); this.toggle(nine, 'nine');}}>
+
+          </button>
+        </fieldset>
+
+        <fieldset>
+          <legend>Custom</legend>
+          <button className={ten} onClick={() => {toggleCategoryItem('account', 'custom'); this.toggle(ten, 'ten');}}>
+
+          </button>
+        </fieldset>
+        
       </div>
     </>
     )
