@@ -34,63 +34,63 @@ class UserContentForm extends Component {
         <fieldset>
           <legend>Dashboard</legend>
           <button className={one} onClick={() => {toggleCategoryItem('user_content', 'dashboard'); this.toggle(one, 'one');}}>
-            <img className='estimatorIcons' src={require("../../images/dashboard.svg")}/>
+            <img className='estimatorIcons' alt='Button Icon' src={require("../../images/dashboard.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Activity Feed</legend>
           <button className={two} onClick={() => {toggleCategoryItem('user_content', 'activity_feed'); this.toggle(two, 'two');}}>
-            <img className='estimatorIcons' src={require("../../images/activity_feed.svg")}/>
+            <img className='estimatorIcons' alt='Button Icon' src={require("../../images/activity_feed.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>File Uploading</legend>
           <button className={three} onClick={() => {toggleCategoryItem('user_content', 'uploading'); this.toggle(three, 'three');}}>
-            <img className='estimatorIcons' src={require("../../images/uploading.svg")}/>
+            <img className='estimatorIcons' alt='Button Icon' src={require("../../images/uploading.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>User Profile</legend>
           <button className={four} onClick={() => {toggleCategoryItem('user_content', 'profile'); this.toggle(four, 'four');}}>
-            <img className='estimatorIcons' src={require("../../images/profile.svg")}/>
+            <img className='estimatorIcons' alt='Button Icon' src={require("../../images/profile.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Transactional Emails</legend>
           <button className={five} onClick={() => {toggleCategoryItem('user_content', 'transactional_email'); this.toggle(five, 'five');}}>
-            <img className='estimatorIcons' src={require("../../images/transactional_email.svg")}/>
+            <img className='estimatorIcons' alt='Button Icon' src={require("../../images/transactional_email.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Tags</legend>
           <button className={six} onClick={() => {toggleCategoryItem('user_content', 'tags'); this.toggle(six, 'six');}}>
-            <img className='estimatorIcons' src={require("../../images/tags.svg")}/>
+            <img className='estimatorIcons' alt='Button Icon' src={require("../../images/tags.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Rating or Reviews</legend>
           <button className={seven} onClick={() => {toggleCategoryItem('user_content', 'rating'); this.toggle(seven, 'seven');}}>
-            <img className='estimatorIcons' src={require("../../images/rating.svg")}/>
+            <img className='estimatorIcons' alt='Button Icon' src={require("../../images/rating.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Audio/Video Processing</legend>
           <button className={eight} onClick={() => {toggleCategoryItem('user_content', 'audio_video'); this.toggle(eight, 'eight');}}>
-            <img className='estimatorIcons' src={require("../../images/audio_video.svg")}/>
+            <img className='estimatorIcons' alt='Button Icon' src={require("../../images/audio_video.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Free Text Searching</legend>
           <button className={nine} onClick={() => {toggleCategoryItem('user_content', 'searching'); this.toggle(nine, 'nine');}}>
-            <img className='estimatorIcons' src={require("../../images/searching.svg")}/>
+            <img className='estimatorIcons' alt='Button Icon' src={require("../../images/searching.svg")}/>
           </button>
         </fieldset>
 

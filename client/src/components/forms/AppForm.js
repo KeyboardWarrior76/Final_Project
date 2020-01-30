@@ -55,21 +55,21 @@ class AppForm extends Component {
         <fieldset>
           <legend>Simple</legend>
           <button className={simple} onClick={() => {uiSet('simple'); this.toggle(ui_level, 'simple');}}>
-            <img className='estimatorIcons' src={require("../../images/simple.svg")}/>
+            <img className='estimatorIcons' alt='Button Icon' src={require("../../images/simple.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Detailed</legend>
           <button className={detailed} onClick={() => {uiSet('detailed'); this.toggle(ui_level, 'detailed');}}>
-            <img className='estimatorIcons' src={require("../../images/detailed.svg")}/>
+            <img className='estimatorIcons' alt='Button Icon' src={require("../../images/detailed.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Sophisticated</legend>
           <button className={soph} onClick={() => {uiSet('sophisticated'); this.toggle(ui_level, 'soph');}}>
-            <img className='estimatorIcons' src={require("../../images/sophisticated.svg")}/>
+            <img className='estimatorIcons' alt='Button Icon' src={require("../../images/sophisticated.svg")}/>
           </button>
         </fieldset>
 
