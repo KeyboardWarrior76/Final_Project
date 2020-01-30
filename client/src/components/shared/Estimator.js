@@ -69,6 +69,18 @@ class Estimator extends Component {
             <br/>
             <br/>
             contact@devpointstudios.com
+            <br/>
+            <br/>
+            Icons created by &nbsp;
+            <a href='https://www.flaticon.com/authors/smashicons' target='_blank'>
+              Smashicons
+            </a>, &nbsp;
+            <a href='https://www.flaticon.com/authors/pixel-perfect' target='_blank'>
+              Pixel perfect
+            </a>, & &nbsp;
+            <a href='https://www.flaticon.com/authors/prettycons' target='_blank'>
+              prettycons
+            </a>.
           </p>
         </div>
       </div>

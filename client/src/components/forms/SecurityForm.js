@@ -31,21 +31,21 @@ class SecurityForm extends Component {
         <fieldset>
           <legend>SSL Certificate Based Security</legend>
           <button className={one} onClick={() => {toggleCategoryItem('security', 'certificate'); this.toggle(one, 'one');}}>
-
+            <img className='estimatorIcons' src={require("../../images/certificate.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Two-Factor Authentication</legend>
           <button className={two} onClick={() => {toggleCategoryItem('security', 'factor_authentication'); this.toggle(two, 'two');}}>
-
+            <img className='estimatorIcons' src={require("../../images/factor_authentication.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>DoS Protection</legend>
           <button className={three} onClick={() => {toggleCategoryItem('security', 'dos_protection'); this.toggle(three, 'three');}}>
-
+            <img className='estimatorIcons' src={require("../../images/dos_protection.svg")}/>
           </button>
         </fieldset>
 

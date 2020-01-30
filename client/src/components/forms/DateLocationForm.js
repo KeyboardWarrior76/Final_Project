@@ -31,28 +31,28 @@ class DateLocationForm extends Component {
           <fieldset>
             <legend>Calendaring</legend>
             <button className={one} onClick={() => {toggleCategoryItem('date_location', 'calendar'); this.toggle(one, 'one');}}>
-
+              <img className='estimatorIcons' src={require("../../images/calendar.svg")}/>
             </button>
           </fieldset>
 
           <fieldset>
             <legend>Custom Map</legend>
             <button className={two} onClick={() => {toggleCategoryItem('date_location', 'display'); this.toggle(two, 'two');}}>
-
+              <img className='estimatorIcons' src={require("../../images/display.svg")}/>
             </button>
           </fieldset>
 
           <fieldset>
             <legend>Geolocation</legend>
             <button className={three} onClick={() => {toggleCategoryItem('date_location', 'map_display'); this.toggle(three, 'three');}}>
-
+              <img className='estimatorIcons' src={require("../../images/map_display.svg")}/>
             </button>
           </fieldset>
 
           <fieldset>
             <legend>Bookings</legend>
             <button className={four} onClick={() => {toggleCategoryItem('date_location', 'booking'); this.toggle(four, 'four');}}>
-
+              <img className='estimatorIcons' src={require("../../images/bookings.svg")}/>
             </button>
           </fieldset>
 
