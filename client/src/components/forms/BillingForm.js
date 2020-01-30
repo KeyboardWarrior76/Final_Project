@@ -28,21 +28,42 @@ class BillingForm extends Component {
       <>
         <h1 id="ecommerce" style={{paddingTop: '60px'}}>Billing & eCommerce</h1>
         <div align='center' className='grid-container'>
-          <button className={one} onClick={() => {toggleCategoryItem('billing', 'subscription'); this.toggle(one, 'one');}}>
-            Subscription Plans
-          </button>
-          <button className={two} onClick={() => {toggleCategoryItem('billing', 'payment_processing'); this.toggle(two, 'two');}}>
-            Subscription Processing
-          </button>
-          <button className={three} onClick={() => {toggleCategoryItem('billing', 'shopping_cart'); this.toggle(three, 'three');}}>
-            Shopping Cart
-          </button>
-          <button className={four} onClick={() => {toggleCategoryItem('billing', 'user_marketplace'); this.toggle(four, 'four');}}>
-            User Marketplace
-          </button>
-          <button className={five} onClick={() => {toggleCategoryItem('billing', 'product_management'); this.toggle(five, 'five');}}>
-            Product Management
-          </button>
+
+          <fieldset>
+            <legend>Subscription Plans</legend>
+            <button className={one} onClick={() => {toggleCategoryItem('billing', 'subscription'); this.toggle(one, 'one');}}>
+
+            </button>
+          </fieldset>
+
+          <fieldset>
+            <legend>Payment Processing</legend>
+            <button className={two} onClick={() => {toggleCategoryItem('billing', 'payment_processing'); this.toggle(two, 'two');}}>
+
+            </button>
+          </fieldset>
+
+          <fieldset>
+            <legend>Shopping Cart</legend>
+            <button className={three} onClick={() => {toggleCategoryItem('billing', 'shopping_cart'); this.toggle(three, 'three');}}>
+
+            </button>
+          </fieldset>
+
+          <fieldset>
+            <legend>User Marketplace</legend>
+            <button className={four} onClick={() => {toggleCategoryItem('billing', 'user_marketplace'); this.toggle(four, 'four');}}>
+
+            </button>
+          </fieldset>
+
+          <fieldset>
+            <legend>Product Management</legend>
+            <button className={five} onClick={() => {toggleCategoryItem('billing', 'product_management'); this.toggle(five, 'five');}}>
+
+            </button>
+          </fieldset>
+
         </div>
       </>
     )
