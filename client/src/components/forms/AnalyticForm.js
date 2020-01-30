@@ -32,8 +32,8 @@ return(
 
       <fieldset>
         <legend>CMS Integration</legend>
-        <button className={one} onClick={() => {toggleCategoryItem('analytic', 'cms'); this.toggle(one, 'one');}}>
-
+        <button className={one} style={{fontSize: 50, fontWeight: 'bold', display: 'flex'}} onClick={() => {toggleCategoryItem('analytic', 'cms'); this.toggle(one, 'one');}}>
+          <img className='estimatorIcons' src={require("../../images/cms.svg")}/>
         </button>
       </fieldset>
 

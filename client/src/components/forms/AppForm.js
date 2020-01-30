@@ -34,17 +34,17 @@ class AppForm extends Component {
 
         <fieldset>
           <legend>Small</legend>
-          <button className={small} onClick={() => {sizeSet('small'); this.toggle(size, 'small');}} style={{color: "#85F0D6", fontSize: 50}}>S</button>
+          <button className={small} onClick={() => {sizeSet('small'); this.toggle(size, 'small');}} style={{color: "#85F0D6", fontSize: 85}}>S</button>
         </fieldset>
 
         <fieldset>
           <legend>Medium</legend>
-          <button className={medium} onClick={() => {sizeSet('medium'); this.toggle(size, 'medium');}} style={{color: "#859DF0", fontSize: 50}}>M</button>
+          <button className={medium} onClick={() => {sizeSet('medium'); this.toggle(size, 'medium');}} style={{color: "#859DF0", fontSize: 85}}>M</button>
         </fieldset>
 
         <fieldset>
           <legend>Large</legend>
-          <button className={large} onClick={() => {sizeSet('large'); this.toggle(size, 'large');}} style={{color: "#DE412E", fontSize: 50}}>L</button>
+          <button className={large} onClick={() => {sizeSet('large'); this.toggle(size, 'large');}} style={{color: "#DE412E", fontSize: 85}}>L</button>
         </fieldset>
 
       </div>

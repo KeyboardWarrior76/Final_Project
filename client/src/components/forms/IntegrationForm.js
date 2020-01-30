@@ -45,7 +45,7 @@ class IntegrationForm extends Component {
           <fieldset>
             <legend>SMS Messaging</legend>
             <button className={three} onClick={() => {toggleCategoryItem('integration', 'messaging'); this.toggle(three, 'three');}}>
-              <img className='estimatorIcons' src={require("../../images/messaging.svg")}/>
+              <img className='estimatorIcons' src={require("../../images/sms_messaging.svg")}/>
             </button>
           </fieldset>
 
