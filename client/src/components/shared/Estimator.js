@@ -30,7 +30,7 @@ class Estimator extends Component {
       }}>
         <header className='header'>
           <h1>Get an Estimate</h1>
-          <img src={Bars} />
+          <img src={Bars} alt='Bars'/>
           <div className='header-p'>
             <p>from DevPoint Studios</p>
             <p>for your application or website</p>
