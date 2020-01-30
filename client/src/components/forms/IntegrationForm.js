@@ -31,28 +31,28 @@ class IntegrationForm extends Component {
           <fieldset>
             <legend>Third Party Services</legend>
             <button className={one} onClick={() => {toggleCategoryItem('integration', 'third_party'); this.toggle(one, 'one');}}>
-
+              <img className='estimatorIcons' src={require("../../images/third_party.svg")}/>
             </button>
           </fieldset>
 
           <fieldset>
             <legend>API Integration</legend>
             <button className={two} onClick={() => {toggleCategoryItem('integration', 'api_integrate'); this.toggle(two, 'two');}}>
-
+              <img className='estimatorIcons' src={require("../../images/api_integrate.svg")}/>
             </button>
           </fieldset>
 
           <fieldset>
             <legend>SMS Messaging</legend>
             <button className={three} onClick={() => {toggleCategoryItem('integration', 'messaging'); this.toggle(three, 'three');}}>
-
+              <img className='estimatorIcons' src={require("../../images/sms_messaging.svg")}/>
             </button>
           </fieldset>
 
           <fieldset>
             <legend>Phone Number Masking</legend>
             <button className={four} onClick={() => {toggleCategoryItem('integration', 'phone_number'); this.toggle(four, 'four');}}>
-
+              <img className='estimatorIcons' src={require("../../images/phone_number.svg")}/>
             </button>
           </fieldset>
 

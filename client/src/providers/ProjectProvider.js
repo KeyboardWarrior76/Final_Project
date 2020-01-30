@@ -140,7 +140,7 @@ export default class ProjectProvider extends Component {
   }
 
   emailSubmit = (email) => {
-    const { project, categories, categories: {app} } = this.state
+    const { project, categories } = this.state
     const params = {project, categories, email}
     axios.post('/api/project_senders', params)
     .then( res => {

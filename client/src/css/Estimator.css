@@ -11,7 +11,7 @@
   width: 170px;
   height: 170px;
   display: inline-flex;
-	border: none;
+	border: 6px solid transparent;
 }
 
 .selectedButton {
@@ -24,8 +24,8 @@
   align-items: center;
   text-decoration: none;
   border-radius: 100%;
-  width: 170.6px;
-  height: 170.6px;
+  width: 170px;
+  height: 170px;
   display: inline-flex;
 	border: 6px solid #FFFFFF;
 	box-shadow: 0 0 0 3px #2B2B2B;
@@ -44,6 +44,7 @@
 	border-radius: 5px;
 	font-size: 15pt;
 	box-shadow: 0 2px 4px 0 #DE412E;
+	border: none;
 }
 
 .estimatorFooter {
@@ -106,12 +107,16 @@ fieldset {
 }
 .header h1 {
 	font-weight: bold;
-font-size: 48px;
-line-height: 58px;
+	font-size: 48px;
+	line-height: 58px;
 }
 
 .header p {
 	font-weight: bold;
-font-size: 20px;
-line-height: 100%;
+	font-size: 20px;
+	line-height: 100%;
+}
+
+.estimatorIcons {
+	height: 5rem;
 }

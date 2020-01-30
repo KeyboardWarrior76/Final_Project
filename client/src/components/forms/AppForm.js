@@ -34,17 +34,17 @@ class AppForm extends Component {
 
         <fieldset>
           <legend>Small</legend>
-          <button className={small} onClick={() => {sizeSet('small'); this.toggle(size, 'small');}} style={{color: "#85F0D6", fontSize: 50}}>S</button>
+          <button className={small} onClick={() => {sizeSet('small'); this.toggle(size, 'small');}} style={{color: "#85F0D6", fontSize: 85}}>S</button>
         </fieldset>
 
         <fieldset>
           <legend>Medium</legend>
-          <button className={medium} onClick={() => {sizeSet('medium'); this.toggle(size, 'medium');}} style={{color: "#859DF0", fontSize: 50}}>M</button>
+          <button className={medium} onClick={() => {sizeSet('medium'); this.toggle(size, 'medium');}} style={{color: "#859DF0", fontSize: 85}}>M</button>
         </fieldset>
 
         <fieldset>
           <legend>Large</legend>
-          <button className={large} onClick={() => {sizeSet('large'); this.toggle(size, 'large');}} style={{color: "#DE412E", fontSize: 50}}>L</button>
+          <button className={large} onClick={() => {sizeSet('large'); this.toggle(size, 'large');}} style={{color: "#DE412E", fontSize: 85}}>L</button>
         </fieldset>
 
       </div>
@@ -54,17 +54,23 @@ class AppForm extends Component {
 
         <fieldset>
           <legend>Simple</legend>
-          <button className={simple} onClick={() => {uiSet('simple'); this.toggle(ui_level, 'simple');}}></button>
+          <button className={simple} onClick={() => {uiSet('simple'); this.toggle(ui_level, 'simple');}}>
+            <img className='estimatorIcons' src={require("../../images/simple.svg")}/>
+          </button>
         </fieldset>
 
         <fieldset>
           <legend>Detailed</legend>
-          <button className={detailed} onClick={() => {uiSet('detailed'); this.toggle(ui_level, 'detailed');}}></button>
+          <button className={detailed} onClick={() => {uiSet('detailed'); this.toggle(ui_level, 'detailed');}}>
+            <img className='estimatorIcons' src={require("../../images/detailed.svg")}/>
+          </button>
         </fieldset>
 
         <fieldset>
           <legend>Sophisticated</legend>
-          <button className={soph} onClick={() => {uiSet('sophisticated'); this.toggle(ui_level, 'soph');}}></button>
+          <button className={soph} onClick={() => {uiSet('sophisticated'); this.toggle(ui_level, 'soph');}}>
+            <img className='estimatorIcons' src={require("../../images/sophisticated.svg")}/>
+          </button>
         </fieldset>
 
       </div>
