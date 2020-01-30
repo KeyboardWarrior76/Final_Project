@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { ProjectConsumer, } from "../../providers/ProjectProvider";
-import EmailPass from '../../images/email_pass.svg';
 
 class AccountForm extends Component {
 
@@ -34,70 +33,70 @@ class AccountForm extends Component {
         <fieldset>
           <legend>Email & Password</legend>
           <button className={one} onClick={() => { toggleCategoryItem("account", "email_pass"); this.toggle(one, 'one');}}>
-
+            <img className='estimatorIcons' src={require("../../images/email_pass.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Facebook</legend>
           <button className={two} onClick={() => {toggleCategoryItem("account", "facebook"); this.toggle(two, 'two');}}>
-
+            <img className='estimatorIcons' src={require("../../images/facebook.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Twitter</legend>
           <button className={three} onClick={() => {toggleCategoryItem('account', 'twitter'); this.toggle(three, 'three');}}>
-
+            <img className='estimatorIcons' src={require("../../images/twitter.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Google</legend>
           <button className={four} onClick={() => {toggleCategoryItem('account', 'google'); this.toggle(four, 'four');}}>
-
+            <img className='estimatorIcons' src={require("../../images/google.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>LinkedIn</legend>
           <button className={five} onClick={() => {toggleCategoryItem('account', 'linkedin'); this.toggle(five, 'five');}}>
-
+            <img className='estimatorIcons' src={require("../../images/linkedin.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>GitHub</legend>
           <button className={six} onClick={() => {toggleCategoryItem('account', 'github'); this.toggle(six, 'six');}}>
-
+            <img className='estimatorIcons' src={require("../../images/github.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Invitation</legend>
           <button className={seven} onClick={() => {toggleCategoryItem('account', 'invitation'); this.toggle(seven, 'seven');}}>
-
+            <img className='estimatorIcons' src={require("../../images/invitation.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Multiple Accounts</legend>
           <button className={eight} onClick={() => {toggleCategoryItem('account', 'multi_account'); this.toggle(eight, 'eight');}}>
-
+            <img className='estimatorIcons' src={require("../../images/multi_account.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Subdomain</legend>
           <button className={nine} onClick={() => {toggleCategoryItem('account', 'subdomain'); this.toggle(nine, 'nine');}}>
-
+            <img className='estimatorIcons' src={require("../../images/subdomain.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Custom</legend>
           <button className={ten} onClick={() => {toggleCategoryItem('account', 'custom'); this.toggle(ten, 'ten');}}>
-
+            <img className='estimatorIcons' src={require("../../images/custom.svg")}/>
           </button>
         </fieldset>
 

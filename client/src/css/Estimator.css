@@ -90,3 +90,7 @@ hr {
 fieldset {
 	border: 0;
 }
+
+.estimatorIcons {
+	height: 5rem;
+}
