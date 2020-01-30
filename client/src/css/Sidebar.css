@@ -47,12 +47,13 @@
 .sidebar-middle p {
   font-size: 14px;
   text-align: right;
-  
-  
+
+
 }
 .sidebar-middle h1 {
-  font-size: 36px;
+  font-size: 35px;
   font-weight: bold;
+  line-height: 10%;
   
 }
 .sidebar-bottom {
@@ -72,3 +73,15 @@
 html{
   scroll-behavior: smooth;
 }
+
+.estimator-anchor {
+  display: flex ;
+  align-items: center;
+  height: 25px;
+  position: relative;
+  left: 20px;
+  border-right: 4px solid #DE412E ;
+  padding-right: 20px;
+}
+
+

@@ -31,28 +31,28 @@ class SocialForm extends Component {
         <fieldset>
           <legend>Push to Facebook Graph</legend>
           <button className={one} onClick={() => {toggleCategoryItem('social', 'facebook_graph'); this.toggle(one, 'one');}}>
-
+            <img className='estimatorIcons' src={require("../../images/facebook_graph.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Social Sharing</legend>
           <button className={two} onClick={() => {toggleCategoryItem('social', 'sharing'); this.toggle(two, 'two');}}>
-
+            <img className='estimatorIcons' src={require("../../images/sharing.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Forums or Commenting</legend>
           <button className={three} onClick={() => {toggleCategoryItem('social', 'forums'); this.toggle(three, 'three');}}>
-
+            <img className='estimatorIcons' src={require("../../images/forums.svg")}/>
           </button>
         </fieldset>
 
         <fieldset>
           <legend>Messaging</legend>
           <button className={four} onClick={() => {toggleCategoryItem('social', 'messaging'); this.toggle(four, 'four');}}>
-
+            <img className='estimatorIcons' src={require("../../images/messaging.svg")}/>
           </button>
         </fieldset>
 

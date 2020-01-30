@@ -32,7 +32,7 @@ const EstimatorNav = () => (
   <a href="#userContent">
     User Content
   </a>
-  <a href="#estimate">
+  <a className='estimator-anchor' href="#estimate">
     Estimate
   </a>
 </>
