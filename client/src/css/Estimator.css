@@ -91,6 +91,32 @@ fieldset {
 	border: 0;
 }
 
+.header {
+	font-family: Helvetica;
+	position: absolute;
+	display: flex;
+	justify-content: space-evenly;
+	color: white;
+	/* background-color: black; */
+	align-items: center;
+	padding: 50px 0 0 0 ;
+}
+
+.header img {
+	padding: 0 20px 0 20px;
+}
+.header h1 {
+	font-weight: bold;
+	font-size: 48px;
+	line-height: 58px;
+}
+
+.header p {
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 100%;
+}
+
 .estimatorIcons {
 	height: 5rem;
 }
