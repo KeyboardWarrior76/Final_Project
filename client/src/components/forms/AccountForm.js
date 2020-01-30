@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { ProjectConsumer, } from "../../providers/ProjectProvider";
+import EmailPass from '../../images/email_pass.svg';
 
 class AccountForm extends Component {
 
@@ -99,7 +100,7 @@ class AccountForm extends Component {
 
           </button>
         </fieldset>
-        
+
       </div>
     </>
     )

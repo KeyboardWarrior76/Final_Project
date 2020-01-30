@@ -44,6 +44,7 @@
 	border-radius: 5px;
 	font-size: 15pt;
 	box-shadow: 0 2px 4px 0 #DE412E;
+	border: none;
 }
 
 .estimatorFooter {
