@@ -27,7 +27,7 @@ class ProjectSenderMailer < ApplicationMailer
 			end
 		}
 
-		from = Email.new(email: 'chris.anderson955@gmail.com')
+		from = Email.new(email: 'contact@devpointstudios.com')
 		to = Email.new(email: "#{email}")
 		subject = 'Project Estimate'
 		content = Content.new(type: 'text/html', value:
