@@ -1,8 +1,6 @@
 import React from 'react'
 import { AuthConsumer, } from "../../providers/AuthProvider";
-import Toolbar from '@material-ui/core/Toolbar';
 import { Link, withRouter, } from 'react-router-dom'
-import Button from '@material-ui/core/Button';
 
 
 class Navbar extends React.Component {
@@ -16,16 +14,16 @@ class Navbar extends React.Component {
           <Link  style={{color: "white"}} to='/contact'>
             Contact
           </Link>
-          
+
           <div className='navbar-break'/>
           <Link style={{color: "#DE412E"}} to='/'>
             Estimator
           </Link>
         </>
       )
-    } 
+    }
 
-    
+
     else {
       return(
         <>
@@ -88,13 +86,13 @@ class Navbar extends React.Component {
   // }
 
   render() {
-    
+
     return (
       <>
-       
+
         {this.highlightlink()}
         {/* { this.rightNavItems() } */}
-        
+
       </>
     )
   }
