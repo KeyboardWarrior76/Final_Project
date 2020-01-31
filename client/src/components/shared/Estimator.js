@@ -28,7 +28,7 @@ class Estimator extends Component {
     const{ value: {project} } = this.props
 
     if ( Number.isInteger(project.total) ) {
-      var fixedTotal = project.total
+      var fixedTotal = thousands_separators(project.total)
     }
     else {
       var fixedTotal = thousands_separators(project.total.toFixed(2))
