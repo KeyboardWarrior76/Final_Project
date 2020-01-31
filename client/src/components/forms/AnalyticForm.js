@@ -45,7 +45,7 @@ return(
       </fieldset>
 
       <fieldset>
-        <legend>Moderation/Content Approval</legend>
+        <legend>Content Moderation</legend>
         <button className={three} onClick={() => {toggleCategoryItem('analytic', 'moderation'); this.toggle(three, 'three');}}>
           <img className='estimatorIcons' alt='Button Icon' src={require("../../images/moderation.svg")}/>
         </button>

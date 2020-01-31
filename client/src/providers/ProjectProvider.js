@@ -90,10 +90,10 @@ export default class ProjectProvider extends Component {
   calculateEstimate = (category, item) => {
     const { project, categories } = this.state;
     if (categories[category][item] === true) {
-      this.setState({ project: { ...project, ttt: (project.ttt + 1) } }, () => this.multiply())
+      this.setState({ project: { ...project, ttt: (project.ttt + 635) } }, () => this.multiply())
     }
     else if (categories[category][item] === false) {
-      this.setState({ project: { ...project, ttt: (project.ttt - 1) } }, () => this.multiply())
+      this.setState({ project: { ...project, ttt: (project.ttt - 635) } }, () => this.multiply())
     }
   }
 

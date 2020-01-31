@@ -50,7 +50,7 @@ class IntegrationForm extends Component {
           </fieldset>
 
           <fieldset>
-            <legend>Phone Number Masking</legend>
+            <legend>Number Masking</legend>
             <button className={four} onClick={() => {toggleCategoryItem('integration', 'phone_number'); this.toggle(four, 'four');}}>
               <img className='estimatorIcons' alt='Button Icon' src={require("../../images/phone_number.svg")}/>
             </button>

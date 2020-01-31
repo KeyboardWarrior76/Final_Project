@@ -81,7 +81,7 @@ class UserContentForm extends Component {
         </fieldset>
 
         <fieldset>
-          <legend>Audio/Video Processing</legend>
+          <legend>Audio/Video</legend>
           <button className={eight} onClick={() => {toggleCategoryItem('user_content', 'audio_video'); this.toggle(eight, 'eight');}}>
             <img className='estimatorIcons' alt='Button Icon' src={require("../../images/audio_video.svg")}/>
           </button>
