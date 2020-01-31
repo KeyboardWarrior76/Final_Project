@@ -27,6 +27,13 @@ class Estimator extends Component {
 
     const{ value: {project} } = this.props
 
+    if ( Number.isInteger(project.total) ) {
+      var fixedTotal = project.total
+    }
+    else {
+      var fixedTotal = thousands_separators(project.total.toFixed(2))
+    }
+
     return(
 
       <div style={{
@@ -60,7 +67,7 @@ class Estimator extends Component {
           </p>
             <hr/>
           <p style={{fontSize: 50, color: 'white', marginTop: 25}}>
-            ${thousands_separators(project.total.toFixed(2))}
+            ${fixedTotal}
           </p>
           <br/>
           <EmailModal/>
