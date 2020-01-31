@@ -15,8 +15,8 @@ const Contact =()=>(
       <h2 className="about-heading2">Location</h2>
       <p className="about-paragraph1">
         370 S 300 E Church & State
-        <br></br>
-        <br></br>
+        <br/>
+        
         Salt Lake City,
         UT 84111
       </p>
