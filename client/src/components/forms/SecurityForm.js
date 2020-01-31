@@ -29,7 +29,7 @@ class SecurityForm extends Component {
       <div align='center' className='grid-container'>
 
         <fieldset>
-          <legend>SSL Certificate Based Security</legend>
+          <legend>SSL Certificate</legend>
           <button className={one} onClick={() => {toggleCategoryItem('security', 'certificate'); this.toggle(one, 'one');}}>
             <img className='estimatorIcons' alt='Button Icon' src={require("../../images/certificate.svg")}/>
           </button>

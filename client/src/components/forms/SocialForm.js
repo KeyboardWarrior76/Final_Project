@@ -29,7 +29,7 @@ class SocialForm extends Component {
       <div align='center' className='grid-container'>
 
         <fieldset>
-          <legend>Push to Facebook Graph</legend>
+          <legend>Facebook Graph</legend>
           <button className={one} onClick={() => {toggleCategoryItem('social', 'facebook_graph'); this.toggle(one, 'one');}}>
             <img className='estimatorIcons' alt='Button Icon' src={require("../../images/facebook_graph.svg")}/>
           </button>

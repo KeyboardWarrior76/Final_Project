@@ -49,7 +49,7 @@ class AppForm extends Component {
 
       </div>
 
-      <h1 id='UI' style={{paddingTop: '60px'}}>UI Level</h1>
+      <h1 id='UI' style={{paddingTop: '60px'}}>User Interface Level</h1>
       <div align='center' className='grid-container'>
 
         <fieldset>
