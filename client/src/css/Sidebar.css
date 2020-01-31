@@ -45,15 +45,16 @@
   /* text-decoration: none; */
 }
 .sidebar-middle p {
-  font-size: 14px;
+  font-size: 18px;
   text-align: right;
+  font-weight: normal;
 
 
 }
 .sidebar-middle h1 {
   font-size: 35px;
   font-weight: bold;
-  line-height: 10%;
+  margin: 10px 0;
   
 }
 .sidebar-bottom {
