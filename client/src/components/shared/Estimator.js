@@ -18,7 +18,21 @@ class Estimator extends Component {
 
   render() {
 
+    function thousands_separators(num)
+    {
+      var num_parts = num.toString().split(".");
+      num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return num_parts.join(".");
+    }
+
     const{ value: {project} } = this.props
+
+    if ( Number.isInteger(project.total) ) {
+      var fixedTotal = project.total
+    }
+    else {
+      var fixedTotal = thousands_separators(project.total.toFixed(2))
+    }
 
     return(
 
@@ -53,7 +67,7 @@ class Estimator extends Component {
           </p>
             <hr/>
           <p style={{fontSize: 50, color: 'white', marginTop: 25}}>
-            ${project.total}
+            ${fixedTotal}
           </p>
           <br/>
           <EmailModal/>
