@@ -46,7 +46,7 @@ const Contact =()=>(
 
       <div>
         <Button className="contact-btn" href='https://www.devpointstudios.com/contact' target="_blank">
-          Contact Form
+          Contact Us
         </Button>
       </div>
     </div>

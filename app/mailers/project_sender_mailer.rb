@@ -40,7 +40,7 @@ class ProjectSenderMailer < ApplicationMailer
 				 <ul>
 				 	<p><u>Application</u></p>
 						<li>Size: <span style='color:DodgerBlue;'>#{cat[:app][:size].capitalize}</span></li>
-						<li>Size: <span style='color:MediumSeaGreen;'>#{cat[:app][:ui_level].capitalize}</span></li>
+						<li>UI Level: <span style='color:MediumSeaGreen;'>#{cat[:app][:ui_level].capitalize}</span></li>
 					 <p><u>Users & Accounts</u></p>
 						 <li>Email/Password Login: #{cat[:account]["email_pass"]}</li>
 						 <li>Facebook Login: #{cat[:account]["facebook"]}</li>
