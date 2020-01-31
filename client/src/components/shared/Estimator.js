@@ -36,7 +36,7 @@ class Estimator extends Component {
             <p>for your application or website</p>
           </div>
         </header>
-        <img className="mountainsImage" alt='DevPoint Studios Mountains' src={Mountains} />
+        <div className="mountainsImage"></div>
         <AppForm/>
         <AccountForm/>
         <AnalyticForm/>
