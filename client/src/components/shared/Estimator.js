@@ -18,6 +18,13 @@ class Estimator extends Component {
 
   render() {
 
+    function thousands_separators(num)
+    {
+      var num_parts = num.toString().split(".");
+      num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return num_parts.join(".");
+    }
+
     const{ value: {project} } = this.props
 
     return(
@@ -53,7 +60,7 @@ class Estimator extends Component {
           </p>
             <hr/>
           <p style={{fontSize: 50, color: 'white', marginTop: 25}}>
-            ${project.total}
+            ${thousands_separators(project.total)}
           </p>
           <br/>
           <EmailModal/>
