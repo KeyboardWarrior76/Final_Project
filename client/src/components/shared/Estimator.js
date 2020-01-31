@@ -60,7 +60,7 @@ class Estimator extends Component {
           </p>
             <hr/>
           <p style={{fontSize: 50, color: 'white', marginTop: 25}}>
-            ${thousands_separators(project.total)}
+            ${thousands_separators(project.total.toFixed(2))}
           </p>
           <br/>
           <EmailModal/>
