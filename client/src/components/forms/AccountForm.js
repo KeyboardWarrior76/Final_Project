@@ -13,7 +13,7 @@ class AccountForm extends Component {
   toggle = (unique, item) => {
     const{ button } = this.state
     if (unique === 'estimatorButton') {
-      this.setState({ button: {...button, [item]: 'selectedButton buttonRing'} })
+      this.setState({ button: {...button, [item]: 'selectedButton'} })
     }
     else if (unique === 'selectedButton buttonRing') {
       this.setState({ button: {...button, [item]: 'estimatorButton'} })
